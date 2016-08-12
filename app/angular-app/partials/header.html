@@ -1,38 +1,40 @@
 <div class="toolbar">
-  <h1><a ng-href="/" class="logo">Nations Auction</a></h1>
-  <nav>
-    <ul>
-      <li><input tabindex="-1" type="search" /></li>
-      <li ng-if="vm.isSignedIn()">
-        <i class="menu" tabindex="-1">Alerts</i>
-        <menu>
-          <ul>
-            <li>Notification Message</li>
-            <li>Notification Message</li>
-            <li>Notification Message</li>
-            <li>Notification Message</li>
-            <li>Notification Message</li>
-            <li>Notification Message</li>
-          </ul>
-        </menu>
-      </li>
-      <li ng-if="vm.isSignedIn()">
-        <i class="menu" tabindex="-1">Profile</i>
-        <menu>
-          <ul>
-            <li>Menu Item</li>
-            <li>Menu Item</li>
-            <li>Menu Item</li>
-            <li>Menu Item</li>
-            <li class="signout">Sign Out</li>
-          </ul>
-        </menu>
-      </li>
-      <li ng-if="!vm.isSignedIn()">
-        <button class="modal" toggle-modal>Signup/Signin</button>
-      </li>
-    </ul>
-  </nav>
+  <div class="inner">
+    <h1><a ng-href="/" class="logo">Nations Auction</a></h1>
+    <nav>
+      <ul>
+        <li><input tabindex="-1" type="search" /></li>
+        <li ng-if="vm.isSignedIn()">
+          <i class="menu" tabindex="-1">Alerts</i>
+          <menu>
+            <ul>
+              <li>Notification Message</li>
+              <li>Notification Message</li>
+              <li>Notification Message</li>
+              <li>Notification Message</li>
+              <li>Notification Message</li>
+              <li>Notification Message</li>
+            </ul>
+          </menu>
+        </li>
+        <li ng-if="vm.isSignedIn()">
+          <i class="menu" tabindex="-1">Profile</i>
+          <menu>
+            <ul>
+              <li>Menu Item</li>
+              <li>Menu Item</li>
+              <li>Menu Item</li>
+              <li>Menu Item</li>
+              <li class="signout">Sign Out</li>
+            </ul>
+          </menu>
+        </li>
+        <li ng-if="!vm.isSignedIn()">
+          <button class="modal" toggle-modal>Signup / Signin</button>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </div>
 <nav>
   <ul>
