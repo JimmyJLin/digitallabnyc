@@ -1,0 +1,39 @@
+<div class="page form">
+      
+  <div ng-if='vm.message' class='alert success' role='alert'>
+    <p>{{ vm.message }}</p>
+  </div>
+  <div ng-if='vm.error' class='alert error' role='alert'>
+    <p>{{ vm.error }}</p>
+  </div>
+
+  <!-- signin form -->
+  <form ng-if="!vm.isSignedIn()" ng-hide="vm.message" name="signin" ng-submit="vm.signin()">
+    <ul>
+      <li>
+        <label>Email</label>
+        <input type="email" class="" id="dealer-email" ng-model="vm.email" placeholder="yourname@email.com" required />
+      </li>
+      <li>
+        <label>Password <a class="forgot" href="">Forgot Password?</a></label>
+        <input type="password" class="" id="dealer-password" ng-model="vm.password" placeholder="Enter your password" required />
+        
+      </li>
+      <li>
+        <button class="" id="btnLogIn" type="submit" value="Sign In">Sign In</button>
+      </li>
+      <li>
+        <p>New to Nations Auction? <a href="#/public/dealer/dealerSignup">Create an Account</a></p>
+      </li>
+    </ul>
+  </form>
+  
+  <!-- signin success -->
+  <form ng-submit="vm.signout()" ng-if="vm.isSignedIn()">
+    <ul>
+      <li><h2>You successfully signed in.</h2></li>
+      <li><button class="btn btn-danger">Sign Out</button></li>
+    </ul>
+  </form>
+      
+</div>

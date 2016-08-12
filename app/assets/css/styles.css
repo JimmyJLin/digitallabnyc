@@ -10,12 +10,11 @@ i {
 }
 
 *:focus {
-  border: none;
   outline: 0;
 }
 
 .flex, .inline,
-header.main .toolbar,
+header.main .toolbar .inner,
 header.main nav > ul {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -30,10 +29,17 @@ header.main nav > ul {
   align-items: center;
 }
 
-.nowrap {
+.nowrap,
+header.main .toolbar .inner {
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
+}
+
+.inner, .page, .page-head, footer.main, header.main > nav ul {
+  max-width: 980px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 
@@ -41,15 +47,33 @@ main {
   position: relative;
 }
 
+main > section {
+  padding: 2rem 1.5rem;
+  min-height: 80vh;
+}
+
+/* @group header.main */
+
 header.main {
   background-color: #21295f;
 }
 
 header.main .toolbar {
+  padding: 1rem 1.5rem;
 }
 
 header.main .toolbar nav {
   margin-left: auto;
+}
+
+header.main .toolbar nav button {
+  background-color: #ec2625;
+  color: white;
+  padding: .5rem 1em;
+  font-size: .9em;
+  border-radius: 3px;
+  font-weight: 600;
+  margin-right: -.5em;
 }
 
 header.main .toolbar nav li {
@@ -61,15 +85,22 @@ header.main .toolbar nav i {
 }
 
 header.main > nav {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+header.main > nav li {
+  margin-right: 1.5rem;
 }
 
 header.main > nav li a {
-  padding: 1rem;
+  padding: 1rem 0;
   display: block;
 }
 
 header.main > nav li:last-child {
   margin-left: auto;
+  margin-right: 0;
 }
 
 header.main .logo {
@@ -77,16 +108,17 @@ header.main .logo {
   overflow: hidden;
   line-height: 4em;
   font-size: 2em;
-  background: url(../img/logo-white@2x.png) left center no-repeat;
+  background: url(../images/logo-white@2x.png) left center no-repeat;
   background-size: contain;
   letter-spacing: -3px;
   display: block;
-  margin: 1rem;
 }
 
 header.main > nav {
   background-color: white;
 }
+
+/* @end */
 
 /* @group dropdown menu */
 
@@ -143,6 +175,139 @@ li:last-child .menu + menu:before {
 
 /* @end */
 
-footer.main {
+.page {
+  background-color: white;
+  padding: 3rem;
+}
 
+.page-head {
+  
+}
+
+.page-head h1 {
+  font-size: 2em;
+  margin-bottom: 1.5rem;
+  font-weight: 200;
+}
+
+form li {
+  margin-bottom: 1.5em;
+}
+
+form li:last-child {
+  margin-bottom: 0;
+}
+
+form label {
+  display: block;
+  font-size: .9em;
+  margin-bottom: .25rem;
+}
+
+form label a {
+  display: inline-block;
+  float: right;
+/*  text-decoration: underline;*/
+  font-size: .9em;
+}
+
+form input {
+  padding: .5rem 0;
+  margin: 0 0 .5rem;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+}
+
+form button {
+  background-color: #ed2726;
+  display: block;
+  width: 100%;
+  padding: 1em 0;
+  color: white;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+.form p {
+  text-align: center;
+  font-size: .9em;
+}
+
+.form a {
+  color: #21295e;
+  text-decoration: underline;
+}
+
+section.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+body.modal section.modal {
+  visibility: visible;
+}
+
+section.modal .logo {
+  background: url(../images/logo@2x.png) center center no-repeat #efefef;
+  background-size: 50%;
+  line-height: 99rem;
+  overflow: hidden;
+  height: 7rem;
+}
+
+section.modal .panel {
+  background-color: white;
+  width: 100%;
+  max-width: 500px;
+  
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  z-index: 2;
+  border-radius: 5px;
+  overflow: hidden;
+  -moz-box-shadow: 0 3px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.3);
+
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  opacity: 0;
+}
+
+body.modal section.modal > .panel {
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+section.modal > .panel > div {
+/*  padding: 2.5rem 3rem 3rem;*/
+}
+
+section.modal h2 {
+  margin-bottom: 2rem;
+}
+
+section.modal .mask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+footer.main {
+  padding: 1.5rem;
+}
+
+footer.main p {
+  font-size: .8em;
+  text-align: center;
 }
