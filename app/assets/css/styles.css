@@ -29,7 +29,8 @@ header.main nav > ul {
   align-items: center;
 }
 
-.nowrap {
+.nowrap,
+header.main .toolbar .inner {
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
@@ -47,7 +48,7 @@ main {
 }
 
 main > section {
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   min-height: 80vh;
 }
 
@@ -72,6 +73,7 @@ header.main .toolbar nav button {
   font-size: .9em;
   border-radius: 3px;
   font-weight: 600;
+  margin-right: -.5em;
 }
 
 header.main .toolbar nav li {
