@@ -7,10 +7,9 @@ naBaseApp.config(function ($httpProvider, $routeProvider) {
 
     /* Landing Page */
     .when( "/",{
-			redirectTo: "/public/index"
+			redirectTo: "/index"
 		})
-    .when("/public/index", {
-			//redirectTo: "/home"
+    .when("/index", {
 			controller: "PublicController",
 			templateUrl: "/angular-app/main/index.html",
       access:{
@@ -20,13 +19,13 @@ naBaseApp.config(function ($httpProvider, $routeProvider) {
 
 
   /* Dealer */
-  .when("/public/dealer/dealerSignup",{
+  .when("/dealer/dealersignup",{
     controller: "DealerSignupController",
     templateUrl: "/angular-app/dealer/dealer_signup/dealerSignup.html",
     controllerAs: 'vm'
 
   })
-  .when("/public/dealer/dealerSignin",{
+  .when("/dealer/dealersignin",{
     controller: "DealerSigninController",
     templateUrl: "/angular-app/dealer/dealer_signin/dealerSignin.html",
     controllerAs: 'vm'
@@ -34,9 +33,14 @@ naBaseApp.config(function ($httpProvider, $routeProvider) {
 
 
   /* Vehicle */
-  .when('/public/vehicle/addvehicle', {
+  .when('/vehicle/addvehicle', {
     controller: "VehiclesAddController",
     templateUrl: "/angular-app/vehicle/vehicle_add/addVehicle.html",
+    controllerAs: 'vm'
+  })
+  .when('/vehicle/listvehicles', {
+    controller: "VehiclesListController",
+    templateUrl: "/angular-app/vehicle/vehicle_list/vehicleslist.html",
     controllerAs: 'vm'
   })
 
