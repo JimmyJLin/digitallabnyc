@@ -1,73 +1,31 @@
-<div class="page-head">
-  <h1>{{ vm.title }} <small>({{vehicles.length}})</small></h1>
-  <a type="button" href="/#/vehicle/addvehicle">Add a Vehicle</a>
-</div>
-<div class="page list">
-  <div class="tableview">
-    <ul>
-      <li ng-repeat="vehicle in vehicles  track by $index">
-        <div class="item vehicle">
-          <header class="nowrap">
-<!--              <div class="toolbar inline">
-                <h1></h1>
-                <button class="close">Close</button>
-              </div>-->
-              <figure>
-                <i class="image" style="background-image: url('http://placehold.it/350x250?text=Vehicle+Photo');"></i>
-              </figure>
-              
-              <div class="content">
-                <div class="details">
-                  <h1 class="title"><a href="" class="modal">{{ vehicle.Year }} {{ vehicle.Make }} {{ vehicle.Model }} {{ vehicle.Type }}</a></h1>
-                  <h2>VIN {{ vehicle.VIN }} &middot; {{ vehicle.Description }}</h2>
-                </div>
-                <div class="action no-wrap">
-                  <div class="price">
-                    <label>Current Price:</label> 
-                    {{ vehicle.Price }}
-                  </div>      
-                  <div class="expires disabled">
-                    <label>Ends</label>
-                    <time></time>
-                  </div>      
-                  <div class="bids">
-                    <label>Bids</label>
-                    
-                  </div>
-                  <div class="buttons no-wrap">
-                    <button class="bid">Bid</button>
-                    <button class="watch watching">Watching</button>
-                  </div>
-                </div>
-              </div>
-            </header>
-        </div>
-      </li>
-    </ul>
+<div id="panel">
+  <div id="stage">
+      <div>
+        <h1>{{ vm.title }} ({{vehicles.length}})</h1>
+
+        <table>
+          <tr>
+            <th>Number</th>
+            <th>Vin</th>
+            <th>Year</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Price</th>
+          </tr>
+          <tr ng-repeat="vehicle in vehicles  track by $index">
+            <td> {{ vehicle.ID }}</td>
+            <td> {{ vehicle.VIN }} </td>
+            <td> {{ vehicle.Year }} </td>
+            <td> {{ vehicle.Make }} </td>
+            <td> {{ vehicle.Model }} </td>
+            <td> {{ vehicle.Type }} </td>
+            <td> {{ vehicle.Price }} </td>
+            <td> {{ vehicle.Description }} </td>
+          </tr>
+        </table>
+
+      </div>
   </div>
-<!--        <table>
-  <tr>
-    <th>Number</th>
-    <th>Vin</th>
-    <th>Year</th>
-    <th>Make</th>
-    <th>Model</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Price</th>
-  </tr>
-  <tr ng-repeat="vehicle in vehicles  track by $index">
-    <td> {{ vehicle.ID }}</td>
-    <td> {{ vehicle.VIN }} </td>
-    <td> {{ vehicle.Year }} </td>
-    <td> {{ vehicle.Make }} </td>
-    <td> {{ vehicle.Model }} </td>
-    <td> {{ vehicle.Type }} </td>
-    <td> {{ vehicle.Price }} </td>
-    <td> {{ vehicle.Description }} </td>
-  </tr>
-</table>-->
-
-
-
 </div>

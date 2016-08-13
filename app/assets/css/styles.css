@@ -13,17 +13,17 @@ i {
   outline: 0;
 }
 
-.flex, .inline, .item header, .item header .content, 
+.flex, .inline, .item header, .item header .content,
 header.main .toolbar .inner,
 header.main nav > ul, .page-head {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  
+
   -webkit-flex-flow: row wrap;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
-  
+
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
@@ -150,11 +150,11 @@ li:last-child .menu + menu {
 
 .menu + menu:before {
   content: "";
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  
+
   border-bottom: 10px solid white;
   position: absolute;
   top: -10px;
@@ -272,7 +272,7 @@ section.modal .panel {
   background-color: white;
   width: 100%;
   max-width: 500px;
-  
+
   position: absolute;
   top: 100%;
   left: 50%;
@@ -343,7 +343,7 @@ footer.main p {
   border-bottom: 1px solid #efefef;
   height: 0px;
   overflow: hidden;
-  
+
 }
 
 .item.active > header {
@@ -388,7 +388,7 @@ footer.main p {
 
 .item.active > header > .toolbar {
 
-  
+
   height: 50px;
 }
 
@@ -450,7 +450,7 @@ footer.main p {
 }
 
 .item figure {
-  
+
 /*  width: 200px;
 /*  height: 150px;*!/
   margin-right: 1.5rem;
@@ -459,7 +459,7 @@ footer.main p {
 /*  min-width: 150px;
   min-height: 100px;
   height: 15vw;*/
-  
+
   position: relative;
   margin: 1rem;
   width: 150px;
@@ -511,7 +511,7 @@ footer.main p {
 
 .item p.price {
   line-height: 1.3em;
-	  
+
 /*  color: #ca2b11;*/
   font-size: 1.1em;
   font-weight: bold;
@@ -531,7 +531,7 @@ footer.main p {
 }
 
 .tableview.grid ul {
-  
+
 }
 
 .tableview.grid.carousel > ul {
@@ -636,7 +636,7 @@ footer.main p {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  
+
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
@@ -699,7 +699,7 @@ footer.main p {
   border-left: 1px solid #efefef;
   padding: .25em 1rem .5rem 1.5rem;
 /*  flex: .7;  */
-  width: 275px;  
+  width: 275px;
 }
 
 .action button {
