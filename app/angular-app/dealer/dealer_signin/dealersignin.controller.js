@@ -2,6 +2,7 @@ angular.module('naBaseApp').controller('DealerSigninController',DealerSigninCont
 
 
     function DealerSigninController ($http, $location, $window, AuthFactory) {
+      console.log("hello from DealerSigninController")
       var vm = this;
 
       vm.isSignedIn =  function(){
