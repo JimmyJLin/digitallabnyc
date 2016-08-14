@@ -23,13 +23,18 @@ naBaseApp.config(function ($httpProvider, $routeProvider) {
     controller: "DealerSignupController",
     templateUrl: "/angular-app/dealer/dealer_signup/dealerSignup.html",
     controllerAs: 'vm'
-
   })
   .when("/dealer/dealersignin",{
     controller: "DealerSigninController",
     templateUrl: "/angular-app/dealer/dealer_signin/dealerSignin.html",
     controllerAs: 'vm'
   })
+  .when("/dealer/resetpassword",{
+    controller: "ResetPasswordController",
+    templateUrl: "/angular-app/partials/reset_password/reset_password.html",
+    controllerAs: 'vm'
+  })
+
 
 
   /* Vehicle */
