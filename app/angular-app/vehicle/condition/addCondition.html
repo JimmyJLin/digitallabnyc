@@ -1,0 +1,34 @@
+<div id="panel">
+  <div id="stage">
+    <main id="main">
+      <div class="row" >
+
+        <form ng-submit="vm.addCond()" >
+
+          <!-- <div class="row" ng-controller="VehiclesVinController">
+            <label>Vin:</label>
+            <div class="large-6 columns">
+              <select class="na-select" >
+                <option value="0" selected></option>
+                <option value="{{vehicle.VIN}}" ng-repeat="vehicle in vehicles  track by $index" ng-model="vin">{{ vehicle.VIN }}</option>
+              </select>
+            </div>
+          </div> -->
+
+          <!-- Vin -->
+          <div class="row">
+            <Label>Vin:</Label>
+            <div class="large-6 columns">
+              <input type="text" ng-model="vm.vin" placeholder="Vehicle Vin Number" required />
+            </div>
+          </div>
+
+
+          <input type="text" class="na-input-text" placeholder="Please input condition" ng-model="vm.condition" required>
+          <button class="na-input-submit blue" type="submit" >Add</button>
+        </form>
+      </div>
+    </main>
+
+  </div><!--end of stage-->
+</div>

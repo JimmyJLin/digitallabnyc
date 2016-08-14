@@ -10,7 +10,7 @@ var app = express();
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
-app.use(express.static(__dirname + "/../public"));
+app.use(express.static(__dirname + "/../app"));
 
 
 var profiles = [ { profile_id: "mark_01",

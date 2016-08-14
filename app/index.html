@@ -1,0 +1,67 @@
+<html ng-app="naBaseApp">
+<head>
+  <title>Nations Auction</title>
+	<meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
+
+	<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+
+  <main role="main">
+    <header class="main" ng-include src="'angular-app/partials/header.html'"></header>
+    <section ng-view>
+    </section>
+    <footer class="main" ng-include src="'angular-app/partials/footer.html'"></footer>
+    <section class="modal" ng-include src="'angular-app/partials/modals/login.html'"></section>
+  </main>
+
+  <!-- Script libraries -->
+  <script type='text/javascript' src="library/angular.min.js"></script>
+  <script type='text/javascript' src="library/angular-route.min.js"></script>
+  <script type='text/javascript' src="library/jQuery.min.js"></script>
+  <script type='text/javascript' src="library/bootstrap.min.js"></script>
+
+
+
+  <!-- controllers -->
+  <script type='text/javascript' src="angular-app/app.js"></script>
+  <script type='text/javascript' src="angular-app/main/public.controller.js"></script>
+
+  <!-- Dealer Controllers -->
+  <script type='text/javascript' src="angular-app/dealer/dealer_signup/dealersignup.controller.js"></script>
+  <script type='text/javascript' src="angular-app/dealer/dealer_signin/dealersignin.controller.js"></script>
+  <script type='text/javascript' src="angular-app/partials/reset_password/resetpassword.controller.js"></script>
+
+  <!-- Vehicle Controllers -->
+  <script type='text/javascript' src="angular-app/vehicle/vehicle_add/vehicle_add.controller.js"></script>
+  <script type='text/javascript' src="angular-app/vehicle/vehicle_list/vehicles_list.controller.js"></script>
+  <script type='text/javascript' src="angular-app/vehicle/condition/addcondition.controller.js"></script>
+  <script type='text/javascript' src="angular-app/vehicle/condition/vehicle_vin.controller.js"></script>
+
+
+
+  <!-- providers -->
+  <script type='text/javascript' src="angular-app/main/publicProvider.js"></script>
+
+  <!-- Dealer Providers -->
+  <script type='text/javascript' src="angular-app/dealer/dealerProvider.js"></script>
+  <script type='text/javascript' src="angular-app/partials/reset_password/resetPasswordProvider.js"></script>
+
+  <!-- Vehicle Providers -->
+  <script type='text/javascript' src="angular-app/vehicle/vehicle_add/vehicleProvider.js"></script>
+  <script type='text/javascript' src="angular-app/vehicle/vehicle_list/vehicleListProvider.js"></script>
+  <script type='text/javascript' src="angular-app/vehicle/condition/addConditionProvider.js"></script>
+  <script type='text/javascript' src="angular-app/vehicle/condition/vehicleVinProvider.js"></script>
+
+  resetPasswordProvider
+
+
+  <!-- factories -->
+  <script type='text/javascript' src="angular-app/dealer/auth/auth-factory.js"></script>
+  <script type='text/javascript' src="angular-app/dealer/auth/auth-intecepter.js"></script>
+
+  <script type='text/javascript' src="assets/scripts/scripts.js"></script>
+
+
+</body>
+</html>
