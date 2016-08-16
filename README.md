@@ -49,7 +49,7 @@ na.leanweb/
   |   |   |   |-  footer.html
   |   |   |   |-  header.html
   |   |   |-  vehicle/
-  |   |   |   |-  condition/
+  |   |   |   |-  vehicle_condition/
   |   |   |   |-  vehicle_add/
   |   |   |   |-  vehicle_inventory/
   |   |   |-  app.js
