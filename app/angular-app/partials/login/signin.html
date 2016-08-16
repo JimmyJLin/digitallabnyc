@@ -1,5 +1,5 @@
 <div class="page form">
-      
+
   <div ng-if='vm.message' class='alert success' role='alert'>
     <p>{{ vm.message }}</p>
   </div>
@@ -15,9 +15,9 @@
         <input type="email" class="" id="dealer-email" ng-model="vm.email" placeholder="yourname@email.com" required />
       </li>
       <li>
-        <label>Password <a class="forgot" href="">Forgot Password?</a></label>
+        <label>Password <a class="forgot" href="/#/dealer/resetpassword">Forgot Password?</a></label>
         <input type="password" class="" id="dealer-password" ng-model="vm.password" placeholder="Enter your password" required />
-        
+
       </li>
       <li>
         <button class="" id="btnLogIn" type="submit" value="Sign In">Sign In</button>
@@ -27,7 +27,7 @@
       </li>
     </ul>
   </form>
-  
+
   <!-- signin success -->
   <form ng-submit="vm.signout()" ng-if="vm.isSignedIn()">
     <ul>
@@ -35,5 +35,5 @@
       <li><button class="btn btn-danger">Sign Out</button></li>
     </ul>
   </form>
-      
+
 </div>
