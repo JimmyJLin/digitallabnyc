@@ -53,6 +53,23 @@ naBaseApp.config(function ($httpProvider, $routeProvider) {
     controllerAs: 'vm'
   })
 
+  /* Add Vehicle by Vin */
+  .when('/vehicle/addvehiclebyvin', {
+    controller: "AddConditionController",
+    templateUrl: "/angular-app/vehicle/vehicle_add_by_vin/vehicle_add_by_vin.html",
+    controllerAs: 'vm'
+  })
+  .when('/vehicle/addvehiclebyvin_step2', {
+    controller: "VehiclesAddController",
+    templateUrl: "/angular-app/vehicle/vehicle_add_by_vin/vehicle_add_by_vin_step2.html",
+    controllerAs: 'vm'
+  })
+  .when('/vehicle/addvehiclebyvin_step3', {
+    controller: "VehiclesAddController",
+    templateUrl: "/angular-app/vehicle/vehicle_add_by_vin/vehicle_add_by_vin_step3.html",
+    controllerAs: 'vm'
+  })
+
   /* Inventory */
   .when('/inventory/vehicles', {
     controller: "VehiclesInventoryController",

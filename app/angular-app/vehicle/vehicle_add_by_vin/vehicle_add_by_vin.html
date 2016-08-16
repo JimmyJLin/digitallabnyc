@@ -1,0 +1,20 @@
+<header class="page-head">
+  <h1>Add Vehicle by Vin</h1>
+</header>
+<div class="page form">
+  <form ng-submit="vm.addCond()" >
+    <ul >
+      <li>
+        <Label>Vin:</Label>
+        <div class="large-6 columns">
+          <input type="text" ng-model="vm.vin" placeholder="Vehicle Vin Number" />
+        </div>
+      </li>
+      <li>
+        <!-- <button class="na-input-submit blue" type="submit" >Next</button> -->
+        <a ng-href="#/vehicle/addvehiclebyvin_step2">Next</button>
+      </li>
+    </ul>
+  </form>
+
+</div>
