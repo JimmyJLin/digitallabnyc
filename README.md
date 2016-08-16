@@ -44,9 +44,12 @@ na.leanweb/
   |   |   |-  partials/
   |   |   |   |-  login/
   |   |   |   |-  modals/
+  |   |   |   |-  reset_password/
+  |   |   |   |-  vehicle/
   |   |   |   |-  footer.html
   |   |   |   |-  header.html
   |   |   |-  vehicle/
+  |   |   |   |-  condition/
   |   |   |   |-  vehicle_add/
   |   |   |   |-  vehicle_list/
   |   |   |-  app.js
@@ -64,3 +67,53 @@ na.leanweb/
   |-  README.md
 
 ```
+
+###### RESTful Routes
+
+| Routes | Description |
+| ------ | ----------- |
+| Vehicle Routes |   |
+| /vehicles |  view all vehicles |
+| /vehicles/new |  add a vehicle |
+| /vehicles/{id} |  view a specific vehicle |
+| /vehicles/{id}/edit |  edit a specific vehicle |
+| /vehicles/{id}/delete |  delete a specific vehicle |
+|  |   |
+| Marketplace Routes |   |
+| /marketplaces |  view all marketplaces |
+| /marketplace/new |  create a new marketplace |
+| /{marketplace-id} |  view a specific marketplace |
+| /{marketplace-id}/edit |  edit a specific marketplace |
+| /{marketplace-id}/delete |  delete a specific marketplace |
+|  |   |
+| Dealer Routes |   |
+| /dealers |  view all dealers |
+| /dealers/new |  create a new dealer |
+| /{dealer-id} |  view a specific dealer |
+| /{dealer-id}/edit |  edit a specific dealer |
+| /{dealer-id}/delete |  delete a specific dealer |
+| /{dealer-id}/users |  list all users for a dealer |
+| /{dealer-id}/marketplaces |  list all marketplaces for a dealer |
+|  |   |
+| Users Routes |   |
+| /users |  visible only to superusers |
+| /users/new |  create new user |
+| /user/:id |  view a specific user |
+| /user/:id/edit |  edit a specific user |
+|  |   |
+| Search Routes |   |
+| /search |  search page |
+| /search/{query} |  search results |
+|  |   |
+| Watchlist Routes |   |
+| /watchlist |  my watchlist |
+| /inventory |  my inventory |
+| /inventory |  my account settings |
+|  |   |
+| Messages Routes |   |
+| /messages |  view all my messages |
+| /messages/{id} |  view a message detail |
+|  |   |
+| Transaction Routes |   |
+| /transactions |  view all my transactions |
+| /transaction/{id} |  view a specific transaction |
