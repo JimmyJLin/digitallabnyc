@@ -30,7 +30,11 @@ naBaseApp.config(function ($httpProvider, $routeProvider) {
     templateUrl: "/angular-app/dealer/dealer_signin/dealerSignin.html",
     controllerAs: 'vm'
   })
-
+  .when("/dealer/resetpassword",{
+    controller: "ResetPasswordController",
+    templateUrl: "/angular-app/partials/reset_password/reset_password.html",
+    controllerAs: 'vm'
+  })
 
   /* Vehicle */
   .when('/vehicle/addvehicle', {
