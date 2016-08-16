@@ -42,17 +42,18 @@ naBaseApp.config(function ($httpProvider, $routeProvider) {
     templateUrl: "/angular-app/vehicle/vehicle_add/addVehicle.html",
     controllerAs: 'vm'
   })
-  .when('/vehicle/listvehicles', {
-    controller: "VehiclesListController",
-    templateUrl: "/angular-app/vehicle/vehicle_list/vehicleslist.html",
-    controllerAs: 'vm'
-  })
   .when('/vehicle/addvehiclecondition', {
     controller: "AddConditionController",
     templateUrl: "/angular-app/vehicle/condition/addCondition.html",
     controllerAs: 'vm'
   })
 
+  /* Inventory */
+  .when('/inventory/vehicles', {
+    controller: "VehiclesInventoryController",
+    templateUrl: "/angular-app/vehicle/vehicle_inventory/vehicles_inventory.html",
+    controllerAs: 'vm'
+  })
 
 	// Redirect to 404
   .otherwise({

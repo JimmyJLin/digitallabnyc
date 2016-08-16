@@ -51,7 +51,7 @@ na.leanweb/
   |   |   |-  vehicle/
   |   |   |   |-  condition/
   |   |   |   |-  vehicle_add/
-  |   |   |   |-  vehicle_list/
+  |   |   |   |-  vehicle_inventory/
   |   |   |-  app.js
   |   |-  assets/
   |   |   |-  css/
@@ -107,7 +107,7 @@ na.leanweb/
 |  |   |
 | Watchlist Routes |   |
 | /watchlist |  my watchlist |
-| /inventory |  my inventory |
+| /inventory/vehicles |  my inventory |
 | /inventory |  my account settings |
 |  |   |
 | Messages Routes |   |
