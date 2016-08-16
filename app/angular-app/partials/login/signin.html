@@ -16,7 +16,7 @@
 
         <div role="alert">
           <span class="error" ng-show="signin.email.$invalid && !signin.email.$pristine">
-             Please check your email address!
+             Please enter a valid email address
           </span>
         </div>
 
@@ -26,7 +26,7 @@
 
         <label>Password <a class="forgot" href="/#/dealer/resetpassword">Forgot Password?</a></label>
 
-        <input type="text" name = "password" class="form-control" placeholder="Enter your password" id="password" ng-model="vm.password" validate-password  ng-minlength="6" ng-maxlength="12" required />
+        <input type="text" validate-password  name = "password" class="form-control" placeholder="Enter your password" id="password" ng-model="vm.password"  ng-minlength="6" ng-maxlength="16" required />
         <div role="alert">
           <span class="error" ng-show="signin.password.$invalid && !signin.password.$pristine">
             Password should contain at least one number and one special character
