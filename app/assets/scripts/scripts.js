@@ -1,9 +1,9 @@
 jQuery(document).ready(function() {
-    
+
   $('.modal').click( function(e) {
-    $('body').addClass('modal');    
+    $('body').addClass('modal');
   });
-  
+
 });
 
 

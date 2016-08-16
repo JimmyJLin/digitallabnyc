@@ -8,24 +8,43 @@
   </div>
 
   <!-- signin form -->
-  <form ng-if="!vm.isSignedIn()" ng-hide="vm.message" name="signin" ng-submit="vm.signin()">
+  <form name="signin" ng-if="!vm.isSignedIn()" ng-hide="vm.message"  ng-submit="vm.signin()" novalidate>
     <ul>
-      <li>
+      <li ng-class="{ 'has-error' : signin.email.$invalid && !signin.email.$pristine }">
         <label>Email</label>
-        <input type="email" class="" id="dealer-email" ng-model="vm.email" placeholder="yourname@email.com" required />
-      </li>
-      <li>
-        <label>Password <a class="forgot" href="/#/dealer/resetpassword">Forgot Password?</a></label>
-        <input type="password" class="" id="dealer-password" ng-model="vm.password" placeholder="Enter your password" required />
+        <input type="email"  validate-email  name="email" class="form-control" id="dealer-email" ng-model="vm.email" placeholder="yourname@email.com" required />
+
+        <div role="alert">
+          <span class="error" ng-show="signin.email.$invalid && !signin.email.$pristine">
+             Please check your email address!
+          </span>
+        </div>
 
       </li>
+
+      <li ng-class="{ 'has-error' : signin.password.$invalid && !signin.password.$pristine }">
+
+        <label>Password <a class="forgot" href="/#/dealer/resetpassword">Forgot Password?</a></label>
+
+        <input type="text" name = "password" class="form-control" placeholder="Enter your password" id="password" ng-model="vm.password" validate-password  ng-minlength="6" ng-maxlength="12" required />
+        <div role="alert">
+          <span class="error" ng-show="signin.password.$invalid && !signin.password.$pristine">
+            Password should contain at least one number and one special character
+          </span>
+          <span class="error" ng-show="signin.password.$error.minlength">
+            Too short!</span>
+          <span class="error" ng-show="signin.password.$error.maxlength">
+            Too long!</span>
+        </div>
+      </li>
       <li>
-        <button class="" id="btnLogIn" type="submit" value="Sign In">Sign In</button>
+        <button class="" id="btnLogIn" type="submit" value="Sign In" ng-disabled="signin.$invalid">Sign In</button>
       </li>
       <li>
         <p>New to Nations Auction? <a href="/#/dealer/dealersignup">Create an Account</a></p>
       </li>
     </ul>
+
   </form>
 
   <!-- signin success -->
@@ -34,6 +53,7 @@
       <li><h2>You successfully signed in.</h2></li>
       <li><button class="btn btn-danger">Sign Out</button></li>
     </ul>
+
   </form>
 
 </div>

@@ -9,8 +9,13 @@
 
   <main role="main">
     <header class="main" ng-include src="'angular-app/partials/header.html'"></header>
+
+
+
     <section ng-view>
     </section>
+
+
     <footer class="main" ng-include src="'angular-app/partials/footer.html'"></footer>
     <section class="modal" ng-include src="'angular-app/partials/modals/login.html'"></section>
   </main>
@@ -20,8 +25,7 @@
   <script type='text/javascript' src="library/angular-route.min.js"></script>
   <script type='text/javascript' src="library/jQuery.min.js"></script>
   <script type='text/javascript' src="library/bootstrap.min.js"></script>
-
-
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
 
   <!-- controllers -->
   <script type='text/javascript' src="angular-app/app.js"></script>
@@ -53,7 +57,8 @@
   <script type='text/javascript' src="angular-app/vehicle/condition/addConditionProvider.js"></script>
   <script type='text/javascript' src="angular-app/vehicle/condition/vehicleVinProvider.js"></script>
 
-
+  <!-- directives -->
+  <script type='text/javascript' src="angular-app/dealer/authDirectives.js"></script>
 
   <!-- factories -->
   <script type='text/javascript' src="angular-app/dealer/auth/auth-factory.js"></script>
