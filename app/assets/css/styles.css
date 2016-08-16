@@ -15,7 +15,7 @@ i {
 
 .flex, .inline, .item header, .item header .content,
 header.main .toolbar .inner,
-header.main nav > ul, .page-head {
+header.main nav > ul, .page-head, .cols-2 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -199,6 +199,37 @@ li:last-child .menu + menu:before {
   margin-left: auto;
 }
 
+form .cols-2 li {
+  width: 50%;
+}
+
+form .cols-2 li:nth-child(odd) {
+  padding-right: 1rem;
+}
+
+form .cols-2 li:nth-child(even) {
+  padding-left: 1rem;
+}
+
+form .cols-2 li.full {
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+form textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: .5rem;
+  border: 1px solid #ccc;
+}
+
+form textarea,
+form select,
+form input {
+  font-size: 1em;
+}
+
 form li {
   margin-bottom: 1.5em;
 }
@@ -220,9 +251,12 @@ form label a {
   font-size: .9em;
 }
 
-form input {
+form input,
+form select {
   padding: .5rem 0;
   margin: 0 0 .5rem;
+  border: 0;
+  border-radius: 0;
   border-bottom: 1px solid #ccc;
   width: 100%;
 }
@@ -468,11 +502,13 @@ footer.main p {
 
 .item figure i {
   background-size: contain;
+  background-position: center center;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  background-repeat: no-repeat;
 }
 
 /*.grid .item.auto figure {
