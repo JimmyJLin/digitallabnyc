@@ -44,7 +44,7 @@ naBaseApp.config(function ($httpProvider, $routeProvider) {
   })
   .when('/vehicle/addvehiclecondition', {
     controller: "AddConditionController",
-    templateUrl: "/angular-app/vehicle/condition/addCondition.html",
+    templateUrl: "/angular-app/vehicle/vehicle_condition/addCondition.html",
     controllerAs: 'vm'
   })
 
