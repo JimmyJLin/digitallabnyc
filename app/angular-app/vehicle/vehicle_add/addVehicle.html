@@ -1,115 +1,82 @@
-<div id="panel">
-  <div id="stage">
+<header class="page-head">
+  <h1>Add Vehicle</h1>
+</header>
+<div class="page form">
 
+  <!-- Add Vehicle -->
+  <form ng-submit="vm.addVehicle()" >
+    <ul class="cols-2">
+      <li class="input">
+        <label>VIN</label>
+        <input type="text" ng-model="vin" placeholder="VIN Number" required />
+      </li>
+      <li class="input">
+        <label>Price:</label>
+        <input type="number" ng-model="vm.price" placeholder="Price" required />
+      </li>
+      <li class="dropdown">
+        <label>Year</label>
+        <select class="na-select" ng-model="vm.year" id="select_year_min">
+          <option value="0" selected>Year</option>
+          <option value="1">2017</option>
+          <option value="2">2016</option>
+          <option value="3">2015</option>
+          <option value="4">2014</option>
+          <option value="5">2013</option>
+          <option value="6">2012</option>
+          <option value="7">2011</option>
+          <option value="8">2010</option>
+        </select>
+      </li>  
+      <li class="dropdown">
+        <label>Make</label>
+        <select class="na-select" ng-model="vm.make">
+          <option value="0" selected>Make</option>
+          <option value="1">Make 1</option>
+          <option value="2">Make 2</option>
+          <option value="3">Make 3</option>
+          <option value="4">Make 4</option>
+          <option value="5">Make 5</option>
+          <option value="6">Make 6</option>
+          <option value="7">Make 7</option>
+          <option value="8">Make 8</option>
+        </select>
+      </li>
+      <li class="dropdown">
+        <label>Model</label>
+        <select class="na-select" ng-model="vm.model">
+          <option value="0" selected>Model</option>
+          <option value="1">Model 1</option>
+          <option value="2">Model 2</option>
+          <option value="3">Model 3</option>
+          <option value="4">Model 4</option>
+          <option value="5">Model 5</option>
+          <option value="6">Model 6</option>
+          <option value="7">Model 7</option>
+          <option value="8">Model 8</option>
+        </select>
+      </li>
+      <li class="dropdown">
+        <label>Type</label>
+        <select class="na-select" ng-model="vm.type">
+          <option value="0" selected>Type</option>
+          <option value="1">Type 1</option>
+          <option value="2">Type 2</option>
+          <option value="3">Type 3</option>
+          <option value="4">Type 4</option>
+          <option value="5">Type 5</option>
+          <option value="6">Type 6</option>
+          <option value="7">Type 7</option>
+          <option value="8">Type 8</option>
+        </select>
+      </li>
+      <li class="full text">
+        <label>Description:</label>
+        <textarea ng-model="vm.description"></textarea>
+      </li>
+      <li class="full btn">
+        <button class="btn btn-danger"  type="submit" >Add Vehicle</button>
+      </li>
+  </form>
 
-    <main id="main" >
-
-      <!-- Add Vehicle -->
-      <form ng-submit="vm.addVehicle()" >
-        <h3>Add Vehicle</h3>
-
-        <!-- Vin -->
-        <div class="row">
-          <Label>Vin:</Label>
-          <div class="large-6 columns">
-            <input type="text" ng-model="vin" placeholder="Vehicle Vin Number" required />
-          </div>
-        </div>
-
-        <!-- Year -->
-        <div class="row">
-          <label>Year:</label>
-          <div class="large-6 columns">
-              <select class="na-select" ng-model="vm.year" id="select_year_min">
-                <option value="0" selected>Year</option>
-                <option value="1">2017</option>
-                <option value="2">2016</option>
-                <option value="3">2015</option>
-                <option value="4">2014</option>
-                <option value="5">2013</option>
-                <option value="6">2012</option>
-                <option value="7">2011</option>
-                <option value="8">2010</option>
-              </select>
-          </div>
-        </div>
-
-        <!-- Make -->
-        <div class="row">
-          <label>Make:</label>
-          <div class="large-6 columns">
-              <select class="na-select" ng-model="vm.make">
-                <option value="0" selected>Make</option>
-                <option value="1">Make 1</option>
-                <option value="2">Make 2</option>
-                <option value="3">Make 3</option>
-                <option value="4">Make 4</option>
-                <option value="5">Make 5</option>
-                <option value="6">Make 6</option>
-                <option value="7">Make 7</option>
-                <option value="8">Make 8</option>
-              </select>
-          </div>
-        </div>
-
-        <!-- Model -->
-        <div class="row">
-          <label>Model:</label>
-          <div class="large-6 columns">
-              <select class="na-select" ng-model="vm.model">
-                <option value="0" selected>Model</option>
-                <option value="1">Model 1</option>
-                <option value="2">Model 2</option>
-                <option value="3">Model 3</option>
-                <option value="4">Model 4</option>
-                <option value="5">Model 5</option>
-                <option value="6">Model 6</option>
-                <option value="7">Model 7</option>
-                <option value="8">Model 8</option>
-              </select>
-          </div>
-        </div>
-
-        <!-- Type -->
-        <div class="row">
-          <label>Type:</label>
-          <div class="large-6 columns">
-              <select class="na-select" ng-model="vm.type">
-                <option value="0" selected>Type</option>
-                <option value="1">Type 1</option>
-                <option value="2">Type 2</option>
-                <option value="3">Type 3</option>
-                <option value="4">Type 4</option>
-                <option value="5">Type 5</option>
-                <option value="6">Type 6</option>
-                <option value="7">Type 7</option>
-                <option value="8">Type 8</option>
-              </select>
-          </div>
-        </div>
-        <!-- Description -->
-        <div class="row">
-          <label>Description:</label>
-          <div class="large-6 columns">
-            <textarea ng-model="vm.description" rows="8" cols="40"></textarea>
-          </div>
-        </div>
-
-        <!-- Price -->
-        <div class="row">
-          <Label>Price:</Label>
-          <div class="large-6 columns">
-            <input type="number" ng-model="vm.price" required />
-          </div>
-        </div>
-
-        <!-- Submit -->
-            <button class="btn btn-danger"  type="submit" >Add Vehicle</button>
-      </form>
-
-    </main>
-
-
-
-    </div><!--end of stage-->
 </div>

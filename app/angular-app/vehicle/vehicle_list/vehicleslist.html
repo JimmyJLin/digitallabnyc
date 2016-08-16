@@ -1,9 +1,13 @@
-<div id="panel">
-  <div id="stage">
-      <div>
-        <h1>{{ vm.title }} ({{vehicles.length}})</h1>
-
-        <table>
+<header class="page-head">
+  <h1>Inventory <!-- {{ vm.title }}--> <small>({{vehicles.length}})</small></h1>
+</header>
+<div class="page">
+  <ul>
+    <li ng-repeat="vehicle in vehicles  track by $index">
+      <div class="item vehicle" ng-include src="'angular-app/partials/vehicle/item.html'"></div>
+    </li>
+  </ul>
+<!--        <table>
           <tr>
             <th>Number</th>
             <th>Vin</th>
@@ -24,8 +28,6 @@
             <td> {{ vehicle.Price }} </td>
             <td> {{ vehicle.Description }} </td>
           </tr>
-        </table>
+        </table>-->
 
-      </div>
-  </div>
 </div>
