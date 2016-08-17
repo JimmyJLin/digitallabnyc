@@ -16,7 +16,7 @@ naBaseApp.directive("toggleModal", function() {
   }
 });
 
-naBaseApp.directive("changeModal", function() {
+naBaseApp.directive("signUp", function() {
   return {
     link: function($scope, element, attr) {
       element.on("click", function() {
