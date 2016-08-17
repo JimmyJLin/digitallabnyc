@@ -47,9 +47,21 @@ naBaseApp.config(function ($httpProvider, $routeProvider) {
     templateUrl: "/angular-app/vehicle/vehicle_add/addVehicle.html",
     controllerAs: 'vm'
   })
+
+  /* Vehicle Condition Report */
   .when('/vehicle/addvehiclecondition', {
     controller: "AddConditionController",
-    templateUrl: "/angular-app/vehicle/vehicle_condition/addCondition.html",
+    templateUrl: "/angular-app/vehicle/vehicle_condition/addcondition.html",
+    controllerAs: 'vm'
+  })
+  .when('/vehicle/addcondition_step2', {
+    controller: "AddConditionController",
+    templateUrl: "/angular-app/vehicle/vehicle_condition/addcondition_step2.html",
+    controllerAs: 'vm'
+  })
+  .when('/vehicle/addcondition_step3', {
+    controller: "AddConditionController",
+    templateUrl: "/angular-app/vehicle/vehicle_condition/addcondition_step3.html",
     controllerAs: 'vm'
   })
 
