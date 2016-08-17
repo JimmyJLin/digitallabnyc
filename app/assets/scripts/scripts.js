@@ -1,10 +1,9 @@
-jQuery(document).ready(function() {
-    
-  $('.modal').click( function(e) {
-    $('body').addClass('modal');    
+(function() {
+  'use strict';
+  $(document).ready(function() {
+
   });
-  
-});
+}());
 
 
 naBaseApp.directive("toggleModal", function() {

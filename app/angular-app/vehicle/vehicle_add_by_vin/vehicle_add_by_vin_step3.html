@@ -117,21 +117,25 @@
 
       </li>
       <li>
-        <label>Standard Options</label>
-        <label ng-repeat="option in ['option-1', 'option-2', 'option-3', 'option-4']">
-            <input type="checkbox" ng-model="selectedOptions" ng-value="option"> {{option}} <br>
-        </label>
+        <dl>
+          <dt>Standard Options</dt>
+          <dd ng-repeat="option in ['option-1', 'option-2', 'option-3', 'option-4']">
+            <input type="checkbox" ng-model="selectedOptions" ng-value="option" /> <label for="">{{option}}</label>
+          </dd>
+        </dl>
       </li>
       <li>
-        <label>Premium Options</label>
-        <label ng-repeat="option in ['option-1', 'option-2', 'option-3', 'option-4']">
-            <input  class="demo-fieldset" type="checkbox" ng-model="selectedOptions" ng-value="option"> {{option}} <br>
-        </label>
+        <dl>
+          <dt>Premium Options</dt>
+          <dd ng-repeat="option in ['option-1', 'option-2', 'option-3', 'option-4']">
+            <input type="checkbox" ng-model="selectedOptions" ng-value="option" /> <label for="">{{option}}</label>
+          </dd>
+        </dl>
       </li>
 
-      <li class="full btn">
+      <li class="full footer">
         <!-- <button class="btn btn-danger"  type="submit" >Add Vehicle</button> -->
-        <button class="btn btn-danger"  type="submit" >Add Vehicle</button>
+        <button class="" type="submit" >Add Vehicle</button>
 
       </li>
   </form>
