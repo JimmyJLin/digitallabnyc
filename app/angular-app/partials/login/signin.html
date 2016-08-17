@@ -21,7 +21,9 @@
       </li>
       <li>
         <label>Password <a class="forgot" href="/#/dealer/resetpassword">Forgot Password?</a></label>
-        <input type="password" name = "password" class="form-control" id="dealer-password" ng-model="vm.password" placeholder="Enter your password" ng-minlength="6" ng-maxlength="16" ng-pattern="vm.PASS_REGEXP" required />
+        <input type="password" name = "password" class="form-control" id="dealer-password" ng-model="vm.password" placeholder="Enter your password" ng-minlength="6" ng-maxlength="16" required />
+
+        <!-- <input type="password" name = "password" class="form-control" id="dealer-password" ng-model="vm.password" placeholder="Enter your password" ng-minlength="6" ng-maxlength="16" ng-pattern="vm.PASS_REGEXP" required /> -->
          <div role="alert">
              <span class="error" ng-show="signin.password.$error.minlength">
                Your password should have minimum of 6 digits.
@@ -29,9 +31,9 @@
              <span class="error" ng-show="signin.password.$error.maxlength">
                Your password can have maximum of 16 digits.
              </span>
-             <span class="error" ng-show="signin.password.$error.pattern">
+             <!-- <span class="error" ng-show="signin.password.$error.pattern">
                Password should contain at least one number and one UpperCase character
-             </span>
+             </span> -->
          </div>
 
       </li>

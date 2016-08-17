@@ -4,8 +4,15 @@
 
 
     this.getVehicleByOwnerID = function (callback){
+      if(localStorage.userId){
+         var ownerGuid = localStorage.userId
+         console.log('this is coming from public controller', ownerGuid)
+       }
 
-      var ownerGuid = "617a69c3-bd34-445c-a762-1bbcf228f7bb"
+      console.log("owner id", ownerGuid)
+
+      // var ownerGuid = "617a69c3-bd34-445c-a762-1bbcf228f7bb"
+      // var ownerGuid = "5de6dd75-2957-407d-b024-216ab34cfc68"
 
         var vehicleListData = JSON.stringify({
           'submitter': "submitter",
