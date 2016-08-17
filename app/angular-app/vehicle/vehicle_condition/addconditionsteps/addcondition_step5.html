@@ -1,0 +1,110 @@
+<header class="page-head">
+  <h1>Add Title & Warranty Details</h1>
+</header>
+<div class="page form">
+  <form ng-submit="vm.addCond()" >
+    <ul class="cols-2">
+      <li class="dropdown">
+        <label>Title Status</label>
+        <select class="na-select" ng-model="vm.title_status" id="select_year_min">
+          <option value="0" selected>Title Status</option>
+          <option value="1">Title Status 1</option>
+          <option value="2">Title Status 2</option>
+          <option value="3">Title Status 3</option>
+          <option value="4">Title Status 4</option>
+          <option value="5">Title Status 5</option>
+          <option value="6">Title Status 6</option>
+          <option value="7">Title Status 7</option>
+          <option value="8">Title Status 8</option>
+        </select>
+      </li>
+
+      <li class="dropdown">
+        <label>Title State</label>
+        <select class="na-select" ng-model="vm.title_state" id="select_year_min">
+          <option value="0" selected>Title State</option>
+          <option value="1">Title State 1</option>
+          <option value="2">Title State 2</option>
+          <option value="3">Title State 3</option>
+          <option value="4">Title State 4</option>
+          <option value="5">Title State 5</option>
+          <option value="6">Title State 6</option>
+          <option value="7">Title State 7</option>
+          <option value="8">Title State 8</option>
+        </select>
+      </li>
+
+      <li class="dropdown">
+        <label>Full Warranty</label>
+        <select class="na-select" ng-model="vm.full_warranty" id="select_year_min">
+          <option value="0" selected>Full Warranty</option>
+          <option value="1">Full Warranty 1</option>
+          <option value="2">Full Warranty 2</option>
+          <option value="3">Full Warranty 3</option>
+          <option value="4">Full Warranty 4</option>
+          <option value="5">Full Warranty 5</option>
+          <option value="6">Full Warranty 6</option>
+          <option value="7">Full Warranty 7</option>
+          <option value="8">Full Warranty 8</option>
+        </select>
+      </li>
+
+      <li class="dropdown">
+        <label>Drivetrain Warranty</label>
+        <select class="na-select" ng-model="vm.drivetrain_warranty" id="select_year_min">
+          <option value="0" selected>Drivetrain Warranty</option>
+          <option value="1">Drivetrain Warranty 1</option>
+          <option value="2">Drivetrain Warranty 2</option>
+          <option value="3">Drivetrain Warranty 3</option>
+          <option value="4">Drivetrain Warranty 4</option>
+          <option value="5">Drivetrain Warranty 5</option>
+          <option value="6">Drivetrain Warranty 6</option>
+          <option value="7">Drivetrain Warranty 7</option>
+          <option value="8">Drivetrain Warranty 8</option>
+        </select>
+      </li>
+
+      <li class="dropdown">
+        <label>Drivetrain Warranty</label>
+        <select class="na-select" ng-model="vm.drivetrain_warranty" id="select_year_min">
+          <option value="0" selected>Drivetrain Warranty</option>
+          <option value="1">Drivetrain Warranty 1</option>
+          <option value="2">Drivetrain Warranty 2</option>
+          <option value="3">Drivetrain Warranty 3</option>
+          <option value="4">Drivetrain Warranty 4</option>
+          <option value="5">Drivetrain Warranty 5</option>
+          <option value="6">Drivetrain Warranty 6</option>
+          <option value="7">Drivetrain Warranty 7</option>
+          <option value="8">Drivetrain Warranty 8</option>
+        </select>
+      </li>
+
+      <li class="full text">
+        <label>Additional Warranty:</label>
+        <textarea ng-model="vm.warranty"></textarea>
+      </li>
+
+      <li class="dropdown">
+        <label>Pending Payoff</label>
+        <select class="na-select" ng-model="vm.pending_payoff" id="select_year_min">
+          <option value="0" selected>Pending Payoff</option>
+          <option value="1">Pending Payoff 1</option>
+          <option value="2">Pending Payoff 2</option>
+          <option value="3">Pending Payoff 3</option>
+          <option value="4">Pending Payoff 4</option>
+          <option value="5">Pending Payoff 5</option>
+          <option value="6">Pending Payoff 6</option>
+          <option value="7">Pending Payoff 7</option>
+          <option value="8">Pending Payoff 8</option>
+        </select>
+      </li>
+
+      <li class="full footer">
+        <!-- <button class="na-input-submit blue" type="submit" >Add</button> -->
+        <a class="btn" ng-href="#/vehicle/addcondition_step6">Next</button>
+
+      </li>
+    </ul>
+  </form>
+
+</div>
