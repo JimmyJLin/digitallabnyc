@@ -1,5 +1,4 @@
-(function () {
-
+angular.module('naBaseApp').controller('VehiclesVinController', VehiclesVinController);
 
 function VehiclesVinController($scope, vehicleVinProvider){
 
@@ -22,6 +21,3 @@ function get_vehicles_vin(){
 get_vehicles_vin();
 
 }
-  naBaseApp.controller("VehiclesVinController", ['$scope', 'vehicleVinProvider', VehiclesVinController]);
-
-})();

@@ -1,0 +1,11 @@
+<header class="page-head">
+  <h1>All Vehicles <!-- {{ vm.title }}--> <small>({{vehicles.length}})</small></h1>
+</header>
+<div class="page">
+  <ul>
+    <li ng-repeat="vehicle in vehicles  track by $index">
+      <div class="item vehicle" ng-include src="'angular-app/partials/vehicle/item.html'"></div>
+    </li>
+  </ul>
+
+</div>

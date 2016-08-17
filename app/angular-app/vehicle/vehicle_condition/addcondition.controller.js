@@ -1,5 +1,4 @@
-(function () {
-
+angular.module('naBaseApp').controller('AddConditionController', AddConditionController);
 
 function AddConditionController($scope, addConditionProvider){
 
@@ -21,7 +20,3 @@ function AddConditionController($scope, addConditionProvider){
   }
 
 }
-
-naBaseApp.controller("AddConditionController", ['$scope', 'addConditionProvider', AddConditionController]);
-
-})();

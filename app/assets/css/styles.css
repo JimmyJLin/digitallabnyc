@@ -15,7 +15,7 @@ i {
 
 .flex, .inline, .item header, .item header .content,
 header.main .toolbar .inner,
-header.main nav > ul, .page-head, .cols-2 {
+header.main nav > ul, .page-head, .cols-2, .form .footer {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -180,10 +180,11 @@ li:last-child .menu + menu:before {
   border-radius: 3px;
   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .page.form {
-  padding: 2rem;
+/*  padding: 2rem;*/
 }
 
 .page-head {
@@ -230,8 +231,13 @@ form input {
   font-size: 1em;
 }
 
+form {
+  padding-top: 1rem;
+}
+
 form li {
-  margin-bottom: 1.5em;
+/*  margin-bottom: 1.5em;*/
+  padding: .5rem 1.5rem;
 }
 
 form li:last-child {
@@ -241,7 +247,11 @@ form li:last-child {
 form label {
   display: block;
   font-size: .9em;
-  margin-bottom: .25rem;
+  margin-bottom: .5rem;
+}
+
+form dd label {
+  display: inline;
 }
 
 form label a {
@@ -251,14 +261,42 @@ form label a {
   font-size: .9em;
 }
 
-form input,
+form input[type="text"],
 form select {
-  padding: .5rem 0;
   margin: 0 0 .5rem;
-  border: 0;
-  border-radius: 0;
-  border-bottom: 1px solid #ccc;
+  border: 1px solid #dedfde;
+  border-radius: 3px;
+/*  border-bottom: 1px solid #ddd;*/
+  padding: 1rem;
   width: 100%;
+}
+
+form select {
+  background-image:
+      linear-gradient(45deg, transparent 50%, #ccc 50%),
+      linear-gradient(135deg, #ccc 50%, transparent 50%),
+      linear-gradient(to right, #efefef, #efefef);
+    background-position:
+      calc(100% - 20px) calc(1.25rem + 2px),
+      calc(100% - 15px) calc(1.25rem + 2px),
+      calc(100% - 2.5em) 0.75rem;
+    background-size:
+      5px 5px,
+      5px 5px,
+      1px 1.5em;
+    background-repeat: no-repeat;
+}
+
+form input[type="text"].large {
+  font-size: 3em;
+  text-align: center;
+}
+
+form input[type="text"]:focus,
+form select:focus {
+  border-color: #525fb8;
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
 form button {
@@ -279,6 +317,30 @@ form button {
 .form a {
   color: #21295e;
   text-decoration: underline;
+}
+
+form dt {
+  margin-bottom: 1rem;
+}
+
+form dd {
+  margin-bottom: .75rem;
+}
+
+li.footer {
+  border-top: 1px solid #efefef;
+  background-color: white;
+  padding: 1rem 1.5rem !important;
+  margin-top: 1rem;
+}
+
+li.footer .btn {
+  background-color: #f0f2f0;
+  border: 1px solid #f0f2f0;
+  text-decoration: none;
+  padding: .75em 1.5em;
+  margin-left: auto;
+  border-radius: 3px;
 }
 
 section.modal {
@@ -1123,6 +1185,7 @@ footer.main p {
 .spectrum .cur {
   position: absolute;
 }
+
 
 /* @end */
 

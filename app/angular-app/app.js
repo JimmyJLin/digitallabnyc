@@ -37,22 +37,45 @@ naBaseApp.config(function ($httpProvider, $routeProvider) {
   })
 
   /* Vehicle */
+  .when('/vehicles', {
+    controller: "VehiclesAllController",
+    templateUrl: "/angular-app/vehicle/vehicle_all/vehicles_all.html",
+    controllerAs: 'vm'
+  })
   .when('/vehicle/addvehicle', {
     controller: "VehiclesAddController",
     templateUrl: "/angular-app/vehicle/vehicle_add/addVehicle.html",
     controllerAs: 'vm'
   })
-  .when('/vehicle/listvehicles', {
-    controller: "VehiclesListController",
-    templateUrl: "/angular-app/vehicle/vehicle_list/vehicleslist.html",
-    controllerAs: 'vm'
-  })
   .when('/vehicle/addvehiclecondition', {
     controller: "AddConditionController",
-    templateUrl: "/angular-app/vehicle/condition/addCondition.html",
+    templateUrl: "/angular-app/vehicle/vehicle_condition/addCondition.html",
     controllerAs: 'vm'
   })
 
+  /* Add Vehicle by Vin */
+  .when('/vehicle/addvehiclebyvin', {
+    controller: "AddConditionController",
+    templateUrl: "/angular-app/vehicle/vehicle_add_by_vin/vehicle_add_by_vin.html",
+    controllerAs: 'vm'
+  })
+  .when('/vehicle/addvehiclebyvin_step2', {
+    controller: "VehiclesAddController",
+    templateUrl: "/angular-app/vehicle/vehicle_add_by_vin/vehicle_add_by_vin_step2.html",
+    controllerAs: 'vm'
+  })
+  .when('/vehicle/addvehiclebyvin_step3', {
+    controller: "VehiclesAddController",
+    templateUrl: "/angular-app/vehicle/vehicle_add_by_vin/vehicle_add_by_vin_step3.html",
+    controllerAs: 'vm'
+  })
+
+  /* Inventory */
+  .when('/inventory/vehicles', {
+    controller: "VehiclesInventoryController",
+    templateUrl: "/angular-app/vehicle/vehicle_inventory/vehicles_inventory.html",
+    controllerAs: 'vm'
+  })
 
 	// Redirect to 404
   .otherwise({

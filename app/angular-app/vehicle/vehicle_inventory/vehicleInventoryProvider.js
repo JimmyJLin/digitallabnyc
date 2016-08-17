@@ -1,6 +1,6 @@
 (function () {
 
-    function vehicleListProvider ($http) {
+    function vehicleInventoryProvider ($http) {
 
 
     this.getVehicleByOwnerID = function (callback){
@@ -35,6 +35,6 @@
 
     }
 
-    naBaseApp.service("vehicleListProvider", [ "$http", vehicleListProvider]);
+    naBaseApp.service("vehicleInventoryProvider", [ "$http", vehicleInventoryProvider]);
 
 })();

@@ -1,8 +1,15 @@
 <div class="panel">
-  
+
   <h1 class="logo">Nations Auction</h1>
-  <div class="signin" ng-include src="'angular-app/partials/login/signin.html'"></div>
-  <div class="signup" ng-show='Signup' ng-include src="'angular-app/partials/login/signup.html'"></div>
+
+  <div ng-controller="DealerSigninController as vm">
+    <div class="signin" ng-include src="'angular-app/partials/login/signin.html'"></div>
+  </div>
+
+  <div ng-controller="DealerSignupController as vm">
+    <div class="signup" ng-show='Signup' ng-include src="'angular-app/partials/login/signup.html'"></div>
+  </div>
+
 </div>
 
 <div class="mask" toggle-modal></div>
