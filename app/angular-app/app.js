@@ -1,4 +1,4 @@
-var naBaseApp = angular.module("naBaseApp", [ "ngRoute" ])
+var naBaseApp = angular.module("naBaseApp", [ "ngRoute", 'ngDialog' ])
 
 naBaseApp.config(function ($httpProvider, $routeProvider) {
    $httpProvider.interceptors.push('AuthInterceptor')
