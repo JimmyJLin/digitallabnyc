@@ -5,19 +5,26 @@
 
     this.getVehicleByOwnerID = function (callback){
 
-      var ownerGuid = "617a69c3-bd34-445c-a762-1bbcf228f7bb"
+      if(localStorage.userId){
+           var ownerGuid = localStorage.userId
+           console.log('this is coming from public controller', ownerGuid)
+         }
+      console.log("owner id", ownerGuid)
+      // var ownerGuid = "617a69c3-bd34-445c-a762-1bbcf228f7bb"
+      // var ownerGuid = "5de6dd75-2957-407d-b024-216ab34cfc68"
 
-        var vehicleListData = JSON.stringify({
+        var vehicleInventoryData = JSON.stringify({
           'submitter': "submitter",
           'ownerGuid': ownerGuid,
           'activity': 'getbyowner'
         })
 
+        console.log("vehicle data", vehicleInventoryData)
 
         $http({
 			    url: 'http://api.nationsauction.com/inventory/Vehicle/GetByOwner',
 			    method: "POST",
-			    data: vehicleListData,
+			    data: vehicleInventoryData,
 			    headers: {'Content-Type': 'application/json'}
   			})
           .success(function (data, status, headers, config) {

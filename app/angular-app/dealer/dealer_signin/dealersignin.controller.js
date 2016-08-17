@@ -24,6 +24,7 @@ angular.module('naBaseApp').controller('DealerSigninController', DealerSigninCon
         $http.post('http://api.nationsauction.com/auth/User/Authenticate', user).then(function(response){
           if(response.status === 200){
             $window.sessionStorage.token = response.data.token;
+            $window.localStorage.setItem('userId', JSON.parse(response.data).message);
             AuthFactory.isSignedIn = true;
             }
             console.log(response, response.status)
@@ -38,6 +39,7 @@ angular.module('naBaseApp').controller('DealerSigninController', DealerSigninCon
     vm.signout = function(){
       AuthFactory.isSignedIn = false;
       delete $window.sessionStorage.token
+      delete $window.localStorage.userId
       // $location.path('/#')
     }
 
