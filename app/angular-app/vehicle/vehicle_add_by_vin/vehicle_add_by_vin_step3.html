@@ -1,0 +1,139 @@
+<header class="page-head">
+  <h1>Confirm Exterior/Interior/Mechanical Info</h1>
+</header>
+<div class="page form">
+
+  <!-- Add Vehicle -->
+  <form ng-submit="vm.addVehicle()" >
+    <ul class="cols-2">
+      <li class="input">
+        <label>Exterior Color</label>
+        <input type="text" ng-model="exterior_color" placeholder="Exterior Color"/>
+      </li>
+      <li class="input">
+        <label>Interior Color</label>
+        <input type="text" ng-model="Interior_color" placeholder="Interior Color"/>
+      </li>
+
+      <li class="dropdown">
+        <label>Search Color</label>
+        <select class="na-select" ng-model="vm.search_color" id="select_year_min">
+          <option value="0" selected>Color</option>
+          <option value="1">Color 1</option>
+          <option value="2">Color 2</option>
+          <option value="3">Color 3</option>
+          <option value="4">Color 4</option>
+          <option value="5">Color 5</option>
+          <option value="6">Color 6</option>
+          <option value="7">Color 7</option>
+          <option value="8">Color 8</option>
+        </select>
+      </li>
+      <li class="dropdown">
+        <label>Seats</label>
+        <select class="na-select" ng-model="vm.seat">
+          <option value="0" selected>Seats</option>
+          <option value="1">Seats 1</option>
+          <option value="2">Seats 2</option>
+          <option value="3">Seats 3</option>
+          <option value="4">Seats 4</option>
+          <option value="5">Seats 5</option>
+          <option value="6">Seats 6</option>
+          <option value="7">Seats 7</option>
+          <option value="8">Seats 8</option>
+        </select>
+      </li>
+      <li class="dropdown">
+        <label>Transmission</label>
+        <select class="na-select" ng-model="vm.transmission">
+          <option value="0" selected>Transmission</option>
+          <option value="1">Transmission 1</option>
+          <option value="2">Transmission 2</option>
+          <option value="3">Transmission 3</option>
+          <option value="4">Transmission 4</option>
+          <option value="5">Transmission 5</option>
+          <option value="6">Transmission 6</option>
+          <option value="7">Transmission 7</option>
+          <option value="8">Transmission 8</option>
+        </select>
+      </li>
+      <li class="dropdown">
+        <label>Engine</label>
+        <select class="na-select" ng-model="vm.engine">
+          <option value="0" selected>Engine</option>
+          <option value="1">Engine 1</option>
+          <option value="2">Engine 2</option>
+          <option value="3">Engine 3</option>
+          <option value="4">Engine 4</option>
+          <option value="5">Engine 5</option>
+          <option value="6">Engine 6</option>
+          <option value="7">Engine 7</option>
+          <option value="8">Engine 8</option>
+        </select>
+      </li>
+      <li class="dropdown">
+        <label>Drivetrain</label>
+        <select class="na-select" ng-model="vm.drivetrain">
+          <option value="0" selected>Drivetrain</option>
+          <option value="1">Drivetrain 1</option>
+          <option value="2">Drivetrain 2</option>
+          <option value="3">Drivetrain 3</option>
+          <option value="4">Drivetrain 4</option>
+          <option value="5">Drivetrain 5</option>
+          <option value="6">Drivetrain 6</option>
+          <option value="7">Drivetrain 7</option>
+          <option value="8">Drivetrain 8</option>
+        </select>
+      </li>
+      <li class="dropdown">
+        <label>Fuel</label>
+        <select class="na-select" ng-model="vm.fuel">
+          <option value="0" selected>Fuel</option>
+          <option value="1">Fuel 1</option>
+          <option value="2">Fuel 2</option>
+          <option value="3">Fuel 3</option>
+          <option value="4">Fuel 4</option>
+          <option value="5">Fuel 5</option>
+          <option value="6">Fuel 6</option>
+          <option value="7">Fuel 7</option>
+          <option value="8">Fuel 8</option>
+        </select>
+      </li>
+      <li class="dropdown">
+        <label>Brakes</label>
+        <select class="na-select" ng-model="vm.brakes">
+          <option value="0" selected>Brakes</option>
+          <option value="1">Brakes 1</option>
+          <option value="2">Brakes 2</option>
+          <option value="3">Brakes 3</option>
+          <option value="4">Brakes 4</option>
+          <option value="5">Brakes 5</option>
+          <option value="6">Brakes 6</option>
+          <option value="7">Brakes 7</option>
+          <option value="8">Brakes 8</option>
+        </select>
+      </li>
+      <li>
+
+      </li>
+      <li>
+        <label>Standard Options</label>
+        <label ng-repeat="option in ['option-1', 'option-2', 'option-3', 'option-4']">
+            <input type="checkbox" ng-model="selectedOptions" ng-value="option"> {{option}} <br>
+        </label>
+      </li>
+      <li>
+        <label>Premium Options</label>
+        <label ng-repeat="option in ['option-1', 'option-2', 'option-3', 'option-4']">
+            <input  class="demo-fieldset" type="checkbox" ng-model="selectedOptions" ng-value="option"> {{option}} <br>
+        </label>
+      </li>
+
+      <li class="full btn">
+        <!-- <button class="btn btn-danger"  type="submit" >Add Vehicle</button> -->
+        <button class="btn btn-danger"  type="submit" >Add Vehicle</button>
+
+      </li>
+  </form>
+
+</div>
