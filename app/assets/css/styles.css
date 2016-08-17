@@ -1186,6 +1186,9 @@ footer.main p {
   position: absolute;
 }
 
+.signup{
+ display:none;
+}
 
 /* @end */
 
