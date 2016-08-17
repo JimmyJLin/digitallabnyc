@@ -3,6 +3,8 @@ angular.module('naBaseApp').controller('DealerSigninController', DealerSigninCon
 
   function DealerSigninController ($http, $location, $window, AuthFactory) {
     var vm = this;
+    vm.EMAIL_REGEXP = /^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+    vm.PASS_REGEXP = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,16}$/;
 
     vm.isSignedIn =  function(){
       if(AuthFactory.isSignedIn){

@@ -4,6 +4,8 @@ angular.module('naBaseApp').controller('DealerSignupController', DealerSignupCon
   function DealerSignupController ($scope, dealerProvider) {
     var vm = this;
     vm.test = "test";
+    vm.EMAIL_REGEXP = /^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+    vm.PASS_REGEXP = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,16}$/;
 
     vm.register = function(){
       console.log('this is from the register function' ,vm)

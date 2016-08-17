@@ -70,6 +70,12 @@ naBaseApp.config(function ($httpProvider, $routeProvider) {
     controllerAs: 'vm'
   })
 
+  /* Marketplace */
+  .when('/marketplace', {
+    controller: "PublicController",
+    templateUrl: "/angular-app/marketplace/marketplace.html"
+  })
+
   /* Inventory */
   .when('/inventory/vehicles', {
     controller: "VehiclesInventoryController",
