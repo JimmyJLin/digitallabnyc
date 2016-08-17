@@ -1,5 +1,4 @@
-(function () {
-
+angular.module('naBaseApp').controller('VehiclesAddController', VehiclesAddController);
 
 function VehiclesAddController($scope, vehicleProvider){
   var vm = this;
@@ -25,6 +24,3 @@ function VehiclesAddController($scope, vehicleProvider){
 
       }
 }
-  naBaseApp.controller("VehiclesAddController", ['$scope', 'vehicleProvider', VehiclesAddController]);
-
-})();

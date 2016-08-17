@@ -1,5 +1,4 @@
-(function () {
-
+angular.module('naBaseApp').controller('VehiclesInventoryController', VehiclesInventoryController);
 
 function VehiclesInventoryController($scope, vehicleInventoryProvider){
 
@@ -22,6 +21,3 @@ function get_vehicles(){
 get_vehicles();
 
 }
-  naBaseApp.controller("VehiclesInventoryController", ['$scope', 'vehicleInventoryProvider', VehiclesInventoryController]);
-
-})();
