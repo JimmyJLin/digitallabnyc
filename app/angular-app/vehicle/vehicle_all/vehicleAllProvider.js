@@ -31,6 +31,10 @@
           });
   		};
 
+
+
+
+
     }
 
     naBaseApp.service("vehicleAllProvider", [ "$http", vehicleAllProvider]);

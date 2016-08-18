@@ -42,6 +42,11 @@ naBaseApp.config(function ($httpProvider, $routeProvider) {
     templateUrl: "/angular-app/vehicle/vehicle_all/vehicles_all.html",
     controllerAs: 'vm'
   })
+  .when('/vehicles/:vehicleID', {
+    controller: "VehicleDetailsController",
+    templateUrl: "/angular-app/vehicle/vehicle_details/vehicle_details.html",
+    controllerAs: 'vm'
+  })
   .when('/vehicle/addvehicle', {
     controller: "VehiclesAddController",
     templateUrl: "/angular-app/vehicle/vehicle_add/addVehicle.html",
