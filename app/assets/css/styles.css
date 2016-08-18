@@ -218,8 +218,12 @@ li:last-child .menu + menu:before {
   overflow: hidden;
 }
 
-.page.form {
-/*  padding: 2rem;*/
+.page.text {
+  padding: 2rem;
+}
+
+.page.text li {
+  margin-bottom: 1em;
 }
 
 .page-head {
@@ -229,6 +233,19 @@ li:last-child .menu + menu:before {
 .page-head h1 {
   font-size: 2em;
   font-weight: 200;
+}
+
+.page-head h1 small {
+  background-color: #ccc;
+  border-radius: 10em;
+  padding: .2em 1em;
+  font-size: .9rem;
+  font-weight: 600;
+/*  display: inline-block;*/
+  position: relative;
+  line-height: 1em;
+  top: -.21em;
+  color: white;
 }
 
 .page-head a[type="button"] {
@@ -249,15 +266,21 @@ form .cols-2 li:nth-child(even) {
 
 form .cols-2 li.full {
   width: 100%;
-  padding-right: 0;
-  padding-left: 0;
+/*  padding-right: 0;
+  padding-left: 0;*/
+  padding: 0 1.5rem;
+}
+
+form .cols-2 li.full > * {
+
 }
 
 form textarea {
   width: 100%;
   min-height: 200px;
-  padding: .5rem;
-  border: 1px solid #ccc;
+  padding: 1rem;
+  border: 1px solid #dedfde;
+  border-radius: 3px;
 }
 
 form textarea,
@@ -298,6 +321,7 @@ form .forgot  {
 }
 
 form input[type="text"],
+form input[type="number"],
 form input[type="email"],
 form input[type="password"],
 form select {
@@ -340,6 +364,22 @@ form select {
     background-repeat: no-repeat;
 }
 
+form select:focus {
+  background-image:
+      linear-gradient(45deg, transparent 50%, #525fb8 50%),
+      linear-gradient(135deg, #525fb8 50%, transparent 50%),
+      linear-gradient(to right, #efefef, #efefef);
+    background-position:
+      calc(100% - 20px) calc(1.25rem + 2px),
+      calc(100% - 15px) calc(1.25rem + 2px),
+      calc(100% - 2.5em) 0.75rem;
+    background-size:
+      5px 5px,
+      5px 5px,
+      1px 1.5em;
+    background-repeat: no-repeat;
+}
+
 form input[type="text"].large {
   font-size: 3em;
   text-align: center;
@@ -365,6 +405,7 @@ form button {
   font-weight: 600;
   border-radius: 3px;
   margin-bottom: .5rem;
+  margin-top: 1.5rem;
 }
 
 .form p {
@@ -389,7 +430,7 @@ form dd {
 li.footer {
   border-top: 1px solid #efefef;
   background-color: white;
-  padding: 1rem 1.5rem !important;
+  padding: 1rem 1.5rem 0 !important;
   margin-top: 1rem;
 }
 
