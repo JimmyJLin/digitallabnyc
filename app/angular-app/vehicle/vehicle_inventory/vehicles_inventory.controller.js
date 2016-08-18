@@ -3,7 +3,7 @@ angular.module('naBaseApp').controller('VehiclesInventoryController', VehiclesIn
 function VehiclesInventoryController($scope, vehicleInventoryProvider){
 
   var vm = this;
-  vm.title= "Vehicles List";
+  vm.title= "Inventory";
 
 function get_vehicles(){
 
