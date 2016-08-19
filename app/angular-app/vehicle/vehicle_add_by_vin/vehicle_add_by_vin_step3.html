@@ -252,7 +252,9 @@
         <dl>
           <dt>Truck Options</dt>
           <dd ng-repeat="option in ['Bed Liner', 'Custom Bed', 'Custom Bumper', 'Dual Rear Wheels', 'Dump Bed', 'Front Tow Hooks', 'Grille Guard', 'Hard Tonneau Cover', 'Hydraulic Lift', 'Lifted', 'Nerf Bars', 'Off-Road Package', 'Oversize Off-Road Tires', 'Pickup Shell Cover', 'Running Boards', 'Sliding Rear Window', 'Snow Plow', 'Stability Rack', 'Stepside Bed', 'Third Door', 'Towing Package', 'Trailer Brake', 'Underbody Hoist', 'Winch']" >
-            <input type="checkbox" ng-model="vm.truckOptions" ng-value="option" /> <label for="">{{option}}</label>
+            <label for="">
+              <input type="checkbox" ng-model="vm.truckOptions" ng-value="{{option}}" />{{option}}
+            </label>
           </dd>
         </dl>
       </li>
