@@ -1,27 +1,27 @@
 
-<div>
+<div ng-controller= "VehicleDetailsController as vm">
 
     <figure>
       <img src='http://placehold.it/300x250'>
     </figure>
     <h2>Vehicle Details</h2>
     <ul>
-    <li>Item Number : {{ vehicle.ItemGuid }} </li>
-    <li>Year :{{vehicle.Year}} </li>
-    <li>Make :{{vehicle.Make}} </li>
-    <li>Model :{{vehicle.Model}} </li>
-    <li>Trim :{{vehicle.Trim}} </li>
-    <li>Color :{{vehicle.Color}} </li>
-    <li>Mileage :{{vehicle.Milage}} </li>
-    <li>Location :{{vehicle.Location}} </li>
-    <li>Cost :{{vehicle.Cost}} </li>
-    <li>Age :{{vehicle.Age}} </li>
-    <li>Price :{{vehicle.Price}} </li>
-    <li>Description :{{vehicle.Description}} </li>
+    <li>Item Id: {{ vm.vehicle.ItemGuid }} </li>
+    <li>Year :{{vm.vehicle.Year}} </li>
+    <li>Make :{{vm.vehicle.Make}} </li>
+    <li>Model :{{vm.vehicle.Model}} </li>
+    <li>Trim :{{vm.vehicle.Trim}} </li>
+    <li>Color :{{vm.vehicle.Color}} </li>
+    <li>Mileage :{{vm.vehicle.Milage}} </li>
+    <li>Location :{{vm.vehicle.Location}} </li>
+    <li>Cost :{{vm.vehicle.Cost}} </li>
+    <li>Age :{{vm.vehicle.Age}} </li>
+    <li>Price :{{vm.vehicle.Price}} </li>
+    <li>Description :{{vm.vehicle.Description}} </li>
     </ul>
 </div>
 
-<!--
+<!-- as vm
 Vehicle Details Page
 
   l.	Price Icon – Modal Window
