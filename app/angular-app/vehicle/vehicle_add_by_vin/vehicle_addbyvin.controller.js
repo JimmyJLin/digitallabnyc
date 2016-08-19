@@ -3,7 +3,6 @@ angular.module('naBaseApp').controller('VehicleAddbyVinController', VehicleAddby
 function VehicleAddbyVinController($scope, addbyVinProvider){
   var vm = this;
   vm.finalvehicle = {};
-  vm.sampleVin = "1GNEK13Z34J221437"
 
 // 1GNEK13Z34J221437
   vm.addCond = function(){
