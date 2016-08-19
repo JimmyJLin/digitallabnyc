@@ -11,30 +11,15 @@
   <form ng-if="!vm.isSignedIn()" ng-hide="vm.message" name="signin" ng-submit="vm.signin()">
     <ul>
       <li>
-        <label>Email</label>
+        <label>Your Email</label>
+        <small class="error" ng-show="signin.email.$error.pattern">Please enter a valid email address</small>
         <input name="email" class="form-control" type="email" class="" id="dealer-email" ng-model="vm.email" placeholder="yourname@email.com"  ng-pattern="vm.EMAIL_REGEXP" required />
-        <div role="alert">
-           <span class="error" ng-show="signin.email.$error.pattern">
-              Please enter a valid email address
-           </span>
-       </div>
       </li>
       <li>
-        <label>Password <a class="forgot" href="/#/dealer/resetpassword">Forgot Password?</a></label>
+        <label>Your Password <a href="/#/dealer/resetpassword" class="forgot">Forgot Password?</a></label>
+        <small class="error" ng-show="signin.password.$error.minlength">Your password should have minimum of 6 digits.</small>
+        <small class="error" ng-show="signin.password.$error.maxlength">Your password can have maximum of 16 digits.</small>
         <input type="password" name = "password" class="form-control" id="dealer-password" ng-model="vm.password" placeholder="Enter your password" ng-minlength="6" ng-maxlength="16" required />
-
-        <!-- <input type="password" name = "password" class="form-control" id="dealer-password" ng-model="vm.password" placeholder="Enter your password" ng-minlength="6" ng-maxlength="16" ng-pattern="vm.PASS_REGEXP" required /> -->
-         <div role="alert">
-             <span class="error" ng-show="signin.password.$error.minlength">
-               Your password should have minimum of 6 digits.
-             </span>
-             <span class="error" ng-show="signin.password.$error.maxlength">
-               Your password can have maximum of 16 digits.
-             </span>
-             <!-- <span class="error" ng-show="signin.password.$error.pattern">
-               Password should contain at least one number and one UpperCase character
-             </span> -->
-         </div>
 
       </li>
       <li>

@@ -17,6 +17,7 @@ naBaseApp.config(function ($httpProvider, $routeProvider) {
       }
 		})
 
+
   /* Dealer */
   .when("/dealer/dealersignup",{
     controller: "DealerSignupController",
@@ -104,14 +105,24 @@ naBaseApp.config(function ($httpProvider, $routeProvider) {
   /* Marketplace */
   .when('/marketplace', {
     controller: "PublicController",
-    templateUrl: "/angular-app/marketplace/marketplace.html"
+    templateUrl: "/angular-app/marketplace/marketplace.html",
+    activetab: 'marketplace'
   })
 
   /* Inventory */
   .when('/inventory/vehicles', {
     controller: "VehiclesInventoryController",
     templateUrl: "/angular-app/vehicle/vehicle_inventory/vehicles_inventory.html",
-    controllerAs: 'vm'
+    controllerAs: 'vm',
+    activetab: 'inventory'
+  })
+
+  /* Watchlist */
+  .when('/watchlist', {
+    controller: "WatchlistController",
+    templateUrl: "/angular-app/watchlist/watchlist.html",
+    controllerAs: 'vm',
+    activetab: 'watchlist'
   })
 
 	// Redirect to 404

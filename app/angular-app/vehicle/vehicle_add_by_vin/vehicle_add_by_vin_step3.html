@@ -48,7 +48,7 @@
       <li class="dropdown">
         <label>Doors</label>
         <select class="na-select" ng-model="vm.door">
-          <option value="0" selected>Engine</option>
+          <option value="0" selected>Doors</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -64,7 +64,35 @@
       <h3>Mechanical Info</h3>
       <li class="input">
         <label>Engine</label>
-        <input type="text" ng-model="vm.engine" placeholder="Engine"/>
+        <ul>
+          <li>
+            <input type="text" ng-model="vm.engine" ng-value="vm.finalvehicle.engine.availability"/>
+          </li>
+          <li>
+            <input type="text" ng-model="vm.engine" ng-value="vm.finalvehicle.engine.cylinder"/>
+          </li>
+          <li>
+            <input type="text" ng-model="vm.engine" ng-value="vm.finalvehicle.engine.compressionRatio"/>
+          </li>
+          <li>
+            <input type="text" ng-model="vm.engine" ng-value="vm.finalvehicle.engine.size"/>
+          </li>
+          <li>
+            <input type="text" ng-model="vm.engine" ng-value="vm.finalvehicle.engine.displacement"/>
+          </li>
+          <li>
+            <input type="text" ng-model="vm.engine" ng-value="vm.finalvehicle.engine.fuelType"/>
+          </li>
+          <li>
+            <input type="text" ng-model="vm.engine" ng-value="vm.finalvehicle.engine.horsepower"/>
+          </li>
+          <li>
+            <input type="text" ng-model="vm.engine" ng-value="vm.finalvehicle.engine.torque"/>
+          </li>
+          <li>
+            <input type="text" ng-model="vm.engine" ng-value="vm.finalvehicle.engine.totalValves"/>
+          </li>
+        </ul>
       </li>
       <li class="dropdown">
         <label>Transmission</label>
@@ -178,16 +206,12 @@
             <input type="radio" ng-model="vm.yellowLight" value="Yes">Yes
             <input type="radio" ng-model="vm.yellowLight" value="No">No
       </li>
-<li>
+      <li>
         <dl>
           <dt>Interior Options</dt>
-          <dd ng-repeat="option in ['3rd Row Seating', 'Air Conditioning','AM/FM Radio','Cassette', 'CD Charger','CD Player','Child Safety Locks','Climate Control','Cruise Control', 'Driver Air Bag','Driver Heated Seats','Driver Front Air Bag','Dual Power Seats',
-          'Extra Keys','F and R Side Air Bags','Floor Mats','Front Side Air Bag','Integrated Phone',
-          'Leather Seats','Lumbar Support','Memory Seats','Power Door Locks','Power Mirrors',
-          'Power Seats','Power Windows','Premium Sound System','Rear Bucket Seats','Rear Heat Ducts',
-          'Telescoping Wheel ','Tilt Wheel','Trip Computer','Video System']">
+          <dd ng-repeat="option in ['3rd Row Seating', 'Air Conditioning','AM/FM Radio','Cassette', 'CD Charger','CD Player','Child Safety Locks','Climate Control','Cruise Control', 'Driver Air Bag','Driver Heated Seats','Driver Front Air Bag','Dual Power Seats','Extra Keys','F and R Side Air Bags','Floor Mats','Front Side Air Bag','Integrated Phone','Leather Seats','Lumbar Support','Memory Seats','Power Door Locks','Power Mirrors','Power Seats','Power Windows','Premium Sound System','Rear Bucket Seats','Rear Heat Ducts','Telescoping Wheel ','Tilt Wheel','Trip Computer','Video System']">
           <label>
-            <input type="checkbox" ng-model="vm.interiorOptions" ng-value="{{ option }}" /> {{option}}</label>
+            <input type="checkbox" ng-model="vm.interiorOptions" ng-value="option" /> {{option}}</label>
           </dd>
         </dl>
       </li>
@@ -200,7 +224,7 @@
           'Moon Roof','Power Steering','Premium Wheels','Privacy Glass','Rear Defrost',
           'Rear Spoiler','Rear Wiper','Remote Trunk Release', 'Roof Rack','Sliding Sun Roof',
           'Traction Control','Two-Tone Paint' ]">
-            <input type="checkbox" ng-model="vm.exteriorOptions" ng-value="{{ option }}" /> <label for="">{{option}}</label>
+            <input type="checkbox" ng-model="vm.exteriorOptions" ng-value="option" /> <label for="">{{option}}</label>
           </dd>
         </dl>
       </li>
@@ -220,21 +244,15 @@
           'Remote Start','lTire Monitoring' ,'Satellite Radio' ,'Side Airbags' ,
           'Steering Wheel Audio Controls',' System' ,'Turn Signal Mirrors' ,'Wireless Headphones'
           ,'Xenon Lights','XM Radio']">
-            <input type="checkbox" ng-model="vm.premiumOptions" ng-value="{{ option }}" /> <label for="">{{option}}</label>
+            <input type="checkbox" ng-model="vm.premiumOptions" ng-value="option" /> <label for="">{{option}}</label>
           </dd>
         </dl>
       </li>
       <li>
         <dl>
           <dt>Truck Options</dt>
-          <dd ng-repeat="option in
-          ['Bed Liner','Custom Bed','Custom Bumper','Dual Rear Wheels','Dump Bed','Front Tow Hooks',
-          'Grille Guard','Hard Tonneau Cover','Hydraulic Lift','Lifted','Nerf Bars',
-          'Off-Road Package','Oversize Off-Road Tires','Pickup Shell/Cover','Running Boards'
-          ,'Sliding Rear Window','Snow Plow','Stability Rack','Stepside Bed','Third Door',
-          'Towing Package','Third Door','Towing Package','Trailer Brake',
-          'Underbody Hoist','Winch']">
-          <input type="checkbox" ng-model="vm.truckOptions" ng-value="{{ option }}" /> <label for="">{{option}}</label>
+          <dd ng-repeat="option in ['Bed Liner', 'Custom Bed', 'Custom Bumper', 'Dual Rear Wheels', 'Dump Bed', 'Front Tow Hooks', 'Grille Guard', 'Hard Tonneau Cover', 'Hydraulic Lift', 'Lifted', 'Nerf Bars', 'Off-Road Package', 'Oversize Off-Road Tires', 'Pickup Shell Cover', 'Running Boards', 'Sliding Rear Window', 'Snow Plow', 'Stability Rack', 'Stepside Bed', 'Third Door', 'Towing Package', 'Trailer Brake', 'Underbody Hoist', 'Winch']" >
+            <input type="checkbox" ng-model="vm.truckOptions" ng-value="option" /> <label for="">{{option}}</label>
           </dd>
         </dl>
       </li>

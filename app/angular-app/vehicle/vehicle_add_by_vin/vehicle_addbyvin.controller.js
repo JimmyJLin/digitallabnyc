@@ -3,7 +3,7 @@ angular.module('naBaseApp').controller('VehicleAddbyVinController', VehicleAddby
 function VehicleAddbyVinController($scope, addbyVinProvider){
   var vm = this;
   vm.finalvehicle = {};
-  
+
 // 1GNEK13Z34J221437
   vm.addCond = function(){
       var vin = vm.vin;
@@ -20,10 +20,23 @@ function VehicleAddbyVinController($scope, addbyVinProvider){
             vm.finalvehicle.model = JSON.parse($scope.vehicle.DataBasic).model.name;
             vm.finalvehicle.trim = JSON.parse($scope.vehicle.DataBasic).trim.name;
             vm.finalvehicle.bodyStyle = JSON.parse($scope.vehicle.DataBasic).vehicleStyle;
-            vm.finalvehicle.vehicleType =JSON.parse($scope.vehicle.DataBasic).DataDetail
-            vm.finalvehicle.itemNo = $scope.vehicle.ItemGuid
-            vm.finalvehicle.addedsDate = $scope.vehicle.DateCreated
-            console.log( vm.finalvehicle.vin , $scope.vehicle)
+            vm.finalvehicle.vehicleType =JSON.parse($scope.vehicle.DataBasic).vehicleType;
+            vm.finalvehicle.itemNo = $scope.vehicle.ItemGuid;
+            vm.finalvehicle.addedsDate = $scope.vehicle.DateCreated;
+            vm.finalvehicle.engine = JSON.parse($scope.vehicle.DataSquishDetail).engine;
+            // vm.finalvehicle.engine.availability = JSON.parse($scope.vehicle.DataSquishDetail).engine.availability;
+            // vm.finalvehicle.engine.cylinder = JSON.parse($scope.vehicle.DataSquishDetail).engine.cylinder;
+            // vm.finalvehicle.engine.compressionRatio = JSON.parse($scope.vehicle.DataSquishDetail).engine.compressionRatio;
+            // vm.finalvehicle.engine.size = JSON.parse($scope.vehicle.DataSquishDetail).engine.size;
+            // vm.finalvehicle.engine.displacement = JSON.parse($scope.vehicle.DataSquishDetail).engine.displacement;
+            // vm.finalvehicle.engine.fuelType = JSON.parse($scope.vehicle.DataSquishDetail).engine.fuelType;
+            // vm.finalvehicle.engine.horsepower = JSON.parse($scope.vehicle.DataSquishDetail).engine.horsepower;
+            // vm.finalvehicle.engine.torque = JSON.parse($scope.vehicle.DataSquishDetail).engine.torque;
+            // vm.finalvehicle.engine.totalValves = JSON.parse($scope.vehicle.DataSquishDetail).engine.totalValves;
+            // vm.finalvehicle.engine.manufacturerEgineCode = JSON.parse($scope.vehicle.DataSquishDetail).engine.manufacturerEgineCode;
+            // vm.finalvehicle.engine.type = JSON.parse($scope.vehicle.DataSquishDetail).engine.type;
+            console.log( vm.finalvehicle.vin , $scope.vehicle);
+
         }
       });
   }

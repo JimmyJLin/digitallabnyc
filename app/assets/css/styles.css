@@ -1,6 +1,12 @@
+@import 'https://fonts.googleapis.com/css?family=Droid+Sans|Open+Sans';
+
+
 body {
   font-size: 16px;
   line-height: 1em;
+/*  font-family: 'Droid Sans', sans-serif;*/
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
   background-color: #f1f2f1;
 }
 
@@ -48,7 +54,7 @@ main {
 }
 
 main > section {
-  padding: 2rem 1.5rem;
+  padding: 10rem 1.5rem 2rem;
   min-height: 80vh;
 }
 
@@ -56,6 +62,24 @@ main > section {
 
 header.main {
   background-color: #21295f;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+}
+
+header.main:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 4px;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 100%);
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 100%);
+  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 100%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 100%);
+  bottom: -4px;
 }
 
 header.main .toolbar {
@@ -74,6 +98,7 @@ header.main .toolbar nav button {
   border-radius: 3px;
   font-weight: 600;
   margin-right: -.5em;
+  cursor: pointer;
 }
 
 header.main .toolbar nav li {
@@ -90,12 +115,22 @@ header.main > nav {
 }
 
 header.main > nav li {
+  position: relative;
   margin-right: 1.5rem;
 }
 
 header.main > nav li a {
-  padding: 1rem 0;
+  padding: 1.25rem .25rem;
   display: block;
+}
+
+header.main > nav li.active:after {
+  content: "";
+  border-bottom: 2px solid #ed2726;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 header.main > nav li:last-child {
@@ -183,8 +218,12 @@ li:last-child .menu + menu:before {
   overflow: hidden;
 }
 
-.page.form {
-/*  padding: 2rem;*/
+.page.text {
+  padding: 2rem;
+}
+
+.page.text li {
+  margin-bottom: 1em;
 }
 
 .page-head {
@@ -194,6 +233,19 @@ li:last-child .menu + menu:before {
 .page-head h1 {
   font-size: 2em;
   font-weight: 200;
+}
+
+.page-head h1 small {
+  background-color: #ccc;
+  border-radius: 10em;
+  padding: .2em 1em;
+  font-size: .9rem;
+  font-weight: 600;
+/*  display: inline-block;*/
+  position: relative;
+  line-height: 1em;
+  top: -.21em;
+  color: white;
 }
 
 .page-head a[type="button"] {
@@ -214,15 +266,21 @@ form .cols-2 li:nth-child(even) {
 
 form .cols-2 li.full {
   width: 100%;
-  padding-right: 0;
-  padding-left: 0;
+/*  padding-right: 0;
+  padding-left: 0;*/
+  padding: 0 1.5rem;
+}
+
+form .cols-2 li.full > * {
+
 }
 
 form textarea {
   width: 100%;
   min-height: 200px;
-  padding: .5rem;
-  border: 1px solid #ccc;
+  padding: 1rem;
+  border: 1px solid #dedfde;
+  border-radius: 3px;
 }
 
 form textarea,
@@ -233,6 +291,7 @@ form input {
 
 form {
   padding-top: 1rem;
+  padding-bottom: 1.5rem;
 }
 
 form li {
@@ -254,14 +313,17 @@ form dd label {
   display: inline;
 }
 
-form label a {
+form .forgot  {
   display: inline-block;
-  float: right;
 /*  text-decoration: underline;*/
   font-size: .9em;
+  float: right;
 }
 
 form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="password"],
 form select {
   margin: 0 0 .5rem;
   border: 1px solid #dedfde;
@@ -271,10 +333,41 @@ form select {
   width: 100%;
 }
 
+form .error {
+  color: #ed2726;
+  display: block;
+  font-size: .8em;
+  margin-bottom: .25rem;
+}
+
+form .error:last-of-type {
+  margin-bottom: .5rem;
+}
+
+form .error:not(.ng-hide) + input {
+  border-color: #ed2726;
+}
+
 form select {
   background-image:
       linear-gradient(45deg, transparent 50%, #ccc 50%),
       linear-gradient(135deg, #ccc 50%, transparent 50%),
+      linear-gradient(to right, #efefef, #efefef);
+    background-position:
+      calc(100% - 20px) calc(1.25rem + 2px),
+      calc(100% - 15px) calc(1.25rem + 2px),
+      calc(100% - 2.5em) 0.75rem;
+    background-size:
+      5px 5px,
+      5px 5px,
+      1px 1.5em;
+    background-repeat: no-repeat;
+}
+
+form select:focus {
+  background-image:
+      linear-gradient(45deg, transparent 50%, #525fb8 50%),
+      linear-gradient(135deg, #525fb8 50%, transparent 50%),
       linear-gradient(to right, #efefef, #efefef);
     background-position:
       calc(100% - 20px) calc(1.25rem + 2px),
@@ -299,6 +392,10 @@ form select:focus {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
+form input.ng-invalid + input {
+  display: none;
+}
+
 form button {
   background-color: #ed2726;
   display: block;
@@ -307,6 +404,8 @@ form button {
   color: white;
   font-weight: 600;
   border-radius: 3px;
+  margin-bottom: .5rem;
+  margin-top: 1.5rem;
 }
 
 .form p {
@@ -317,6 +416,7 @@ form button {
 .form a {
   color: #21295e;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 form dt {
@@ -330,7 +430,7 @@ form dd {
 li.footer {
   border-top: 1px solid #efefef;
   background-color: white;
-  padding: 1rem 1.5rem !important;
+  padding: 1rem 1.5rem 0 !important;
   margin-top: 1rem;
 }
 
@@ -350,6 +450,7 @@ section.modal {
   bottom: 0;
   left: 0;
   visibility: hidden;
+  z-index: 500;
 }
 
 body.modal section.modal {
