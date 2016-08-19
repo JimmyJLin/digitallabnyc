@@ -60,6 +60,7 @@ naBaseApp.directive("signUp", function() {
    link: function($scope, element, attr) {
      element.on("click", function() {
          $('.signin').css('display','none');
+          $('.reset').css('display','none');
          $('.signup').css('display','block')
      });
    }
@@ -72,6 +73,19 @@ naBaseApp.directive("signIn", function() {
      element.on("click", function() {
          $('.signup').css('display','none');
          $('.signin').css('display','block')
+         $('.reset').css('display','none')
+     });
+   }
+ }
+});
+
+naBaseApp.directive("resetPassword", function() {
+ return {
+   link: function($scope, element, attr) {
+     element.on("click", function() {
+         $('.signup').css('display','none');
+         $('.signin').css('display','none');
+         $('.reset').css('display','block')
      });
    }
  }

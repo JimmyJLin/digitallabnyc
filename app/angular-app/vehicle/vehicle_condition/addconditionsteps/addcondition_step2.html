@@ -8,14 +8,12 @@
         <label>Grade</label>
         <select class="na-select" ng-model="vm.grade" id="select_year_min">
           <option value="0" selected>Grade</option>
-          <option value="1">Grade 1</option>
-          <option value="2">Grade 2</option>
-          <option value="3">Grade 3</option>
-          <option value="4">Grade 4</option>
-          <option value="5">Grade 5</option>
-          <option value="6">Grade 6</option>
-          <option value="7">Grade 7</option>
-          <option value="8">Grade 8</option>
+          <option value="1">5 - Excellent</option>
+          <option value="2">4 - Very Good</option>
+          <option value="3">3 - Good</option>
+          <option value="4">2 - Fair</option>
+          <option value="5">1 - Poor</option>
+          <option value="6">0 - Heavy Damage</option>
         </select>
       </li>
 
@@ -23,14 +21,8 @@
         <label>Recondition</label>
         <select class="na-select" ng-model="vm.recondition" id="select_year_min">
           <option value="0" selected>Recondition</option>
-          <option value="1">Recondition 1</option>
-          <option value="2">Recondition 2</option>
-          <option value="3">Recondition 3</option>
-          <option value="4">Recondition 4</option>
-          <option value="5">Recondition 5</option>
-          <option value="6">Recondition 6</option>
-          <option value="7">Recondition 7</option>
-          <option value="8">Recondition 8</option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
         </select>
       </li>
 
@@ -38,14 +30,8 @@
         <label>Detailed</label>
         <select class="na-select" ng-model="vm.detail" id="select_year_min">
           <option value="0" selected>Detailed</option>
-          <option value="1">Detailed 1</option>
-          <option value="2">Detailed 2</option>
-          <option value="3">Detailed 3</option>
-          <option value="4">Detailed 4</option>
-          <option value="5">Detailed 5</option>
-          <option value="6">Detailed 6</option>
-          <option value="7">Detailed 7</option>
-          <option value="8">Detailed 8</option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
         </select>
       </li>
 
@@ -53,14 +39,17 @@
         <label>Frame Damage</label>
         <select class="na-select" ng-model="vm.frame_damage" id="select_year_min">
           <option value="0" selected>Frame Damage</option>
-          <option value="1">Frame Damage 1</option>
-          <option value="2">Frame Damage 2</option>
-          <option value="3">Frame Damage 3</option>
-          <option value="4">Frame Damage 4</option>
-          <option value="5">Frame Damage 5</option>
-          <option value="6">Frame Damage 6</option>
-          <option value="7">Frame Damage 7</option>
-          <option value="8">Frame Damage 8</option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
+        </select>
+      </li>
+
+      <li class="dropdown">
+        <label>Previously Repainted</label>
+        <select class="na-select" ng-model="vm.hail_damage" id="select_year_min">
+          <option value="0" selected>Previously Repainted</option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
         </select>
       </li>
 
@@ -68,44 +57,35 @@
         <label>Hail Damage</label>
         <select class="na-select" ng-model="vm.hail_damage" id="select_year_min">
           <option value="0" selected>Hail Damage</option>
-          <option value="1">Hail Damage 1</option>
-          <option value="2">Hail Damage 2</option>
-          <option value="3">Hail Damage 3</option>
-          <option value="4">Hail Damage 4</option>
-          <option value="5">Hail Damage 5</option>
-          <option value="6">Hail Damage 6</option>
-          <option value="7">Hail Damage 7</option>
-          <option value="8">Hail Damage 8</option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
         </select>
       </li>
 
-      <li class="dropdown">
-        <label>Dash Lights</label>
-        <select class="na-select" ng-model="vm.dash_lights" id="select_year_min">
-          <option value="0" selected>Dash Lights</option>
-          <option value="1">Dash Lights 1</option>
-          <option value="2">Dash Lights 2</option>
-          <option value="3">Dash Lights 3</option>
-          <option value="4">Dash Lights 4</option>
-          <option value="5">Dash Lights 5</option>
-          <option value="6">Dash Lights 6</option>
-          <option value="7">Dash Lights 7</option>
-          <option value="8">Dash Lights 8</option>
-        </select>
+      <li>
+        <dl>
+          <dt>Dash Lights</dt>
+          <dd ng-repeat="option in ['Check Engine', 'ABS Warning', 'Oil Pressure Warning', 'Battery Warning', 'Warning Light', 'Powertrain Malfunction', 'ESP BAS Light', 'Brake System Alert', 'Airbag Malfunction', 'Emissions Warning']" >
+            <input type="checkbox" ng-model="vm.dashLights" ng-value="option" /> <label for="">{{option}}</label>
+          </dd>
+        </dl>
       </li>
 
       <li class="dropdown">
         <label>Damage</label>
         <select class="na-select" ng-model="vm.damage" id="select_year_min">
           <option value="0" selected>Damage</option>
-          <option value="1">Damage 1</option>
-          <option value="2">Damage 2</option>
-          <option value="3">Damage 3</option>
-          <option value="4">Damage 4</option>
-          <option value="5">Damage 5</option>
-          <option value="6">Damage 6</option>
-          <option value="7">Damage 7</option>
-          <option value="8">Damage 8</option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
+        </select>
+      </li>
+
+      <li class="dropdown">
+        <label>Vehicle Drives</label>
+        <select class="na-select" ng-model="vm.vehicle_drive" id="select_year_min">
+          <option value="0" selected>Vehicle Drives</option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
         </select>
       </li>
 

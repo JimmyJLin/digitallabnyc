@@ -1287,7 +1287,7 @@ footer.main p {
   position: absolute;
 }
 
-.signup{
+.signup, .reset{
  display:none;
 }
 
