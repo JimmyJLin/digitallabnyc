@@ -17,7 +17,6 @@ naBaseApp.config(function ($httpProvider, $routeProvider) {
       }
 		})
 
-
   /* Dealer */
   .when("/dealer/dealersignup",{
     controller: "DealerSignupController",
@@ -87,20 +86,20 @@ naBaseApp.config(function ($httpProvider, $routeProvider) {
 
   /* Add Vehicle by Vin */
   .when('/vehicle/addvehiclebyvin', {
-    controller: "AddConditionController",
+    controller: "VehicleAddbyVinController",
     templateUrl: "/angular-app/vehicle/vehicle_add_by_vin/vehicle_add_by_vin.html",
     controllerAs: 'vm'
   })
-  .when('/vehicle/addvehiclebyvin_step2', {
-    controller: "VehiclesAddController",
-    templateUrl: "/angular-app/vehicle/vehicle_add_by_vin/vehicle_add_by_vin_step2.html",
-    controllerAs: 'vm'
-  })
-  .when('/vehicle/addvehiclebyvin_step3', {
-    controller: "VehiclesAddController",
-    templateUrl: "/angular-app/vehicle/vehicle_add_by_vin/vehicle_add_by_vin_step3.html",
-    controllerAs: 'vm'
-  })
+  // .when('/vehicle/addvehiclebyvin_step2', {
+  //   controller: "VehiclesAddController",
+  //   templateUrl: "/angular-app/vehicle/vehicle_add_by_vin/vehicle_add_by_vin_step2.html",
+  //   controllerAs: 'vm'
+  // })
+  // .when('/vehicle/addvehiclebyvin_step3', {
+  //   controller: "VehiclesAddController",
+  //   templateUrl: "/angular-app/vehicle/vehicle_add_by_vin/vehicle_add_by_vin_step3.html",
+  //   controllerAs: 'vm'
+  // })
 
   /* Marketplace */
   .when('/marketplace', {
