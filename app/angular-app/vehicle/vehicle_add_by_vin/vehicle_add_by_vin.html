@@ -1,17 +1,24 @@
 <header class="page-head">
   <h1>Add Vehicle by VIN</h1>
 </header>
-<div class="page form">
+<div class="page form" id="checkVin">
   <form ng-submit="vm.addCond()" >
-    <ul >
+    <ul>
       <li>
-        <input class="large" type="text" ng-model="vm.vin" placeholder="Vehicle VIN Number" />
+        <input class="large" type="text" ng-model="vm.vin" ng-value="vm.sampleVin"/>
       </li>
       <li class="footer">
         <!-- <button class="na-input-submit blue" type="submit" >Next</button> -->
-        <a class="btn" ng-href="#/vehicle/addvehiclebyvin_step2">Next</button>
+        <button type="submit" class="btn" id="checkVinButton">Next</button>
       </li>
     </ul>
   </form>
+</div>
 
+<div id="vehicle_basic">
+  <div ng-include src="'angular-app/vehicle/vehicle_add_by_vin/vehicle_add_by_vin_step2.html'"></div>
+</div>
+
+<div id="vehicle_details">
+  <div ng-include src="'angular-app/vehicle/vehicle_add_by_vin/vehicle_add_by_vin_step3.html'"></div>
 </div>

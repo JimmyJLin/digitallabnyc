@@ -1,7 +1,8 @@
 (function() {
   'use strict';
-  
+
   $(document).ready(function() {
+    console.log("Hello from scripts")
 
   });
 }());
@@ -9,7 +10,7 @@
 angular.module('naBaseApp')
 .directive('activeLink', ['$location', function ($location) {
 return {
-    restrict: 'A', //use as attribute 
+    restrict: 'A', //use as attribute
     replace: false,
     link: function (scope, elem) {
         //after the route has changed
@@ -22,9 +23,9 @@ return {
                 if (-1 !== hrefs.indexOf(a.attr('href'))) {
                     a.parent().addClass('active');
                 } else {
-                    a.parent().removeClass('active');   
+                    a.parent().removeClass('active');
                 };
-            });     
+            });
         });
     }
 }
@@ -45,11 +46,11 @@ naBaseApp.directive("activeNav", function() {
   return {
     link: function($scope, element, attr) {
       element.on("click", function() {
-      
+
 //        $('header.main nav a').removeClass("active");
 //        $(this).addClass("active");
       });
-      
+
     }
   }
 });

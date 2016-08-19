@@ -2,32 +2,31 @@
   <h1>Confirm Vehicle Basic Info</h1>
 </header>
 <div class="page form">
-
   <!-- Add Vehicle -->
   <form ng-submit="vm.addVehicle()" >
     <ul class="cols-2">
       <li class="input">
         <label>VIN</label>
-        <input type="text" ng-model="vin" placeholder="VIN Number"/>
+        <input type="text" ng-model="vm.vin" ng-value = "vm.finalvehicle.vin" placeholder="{{ vm.finalvehicle.vin }}"/>
       </li>
       <li class="dropdown">
         <label>Year</label>
         <select class="na-select" ng-model="vm.year" id="select_year_min">
-          <option value="0" selected>Year</option>
-          <option value="1">2017</option>
-          <option value="2">2016</option>
-          <option value="3">2015</option>
-          <option value="4">2014</option>
-          <option value="5">2013</option>
-          <option value="6">2012</option>
-          <option value="7">2011</option>
-          <option value="8">2010</option>
+          <option ng-value="{{ vm.finalvehicle.year }}" selected>{{ vm.finalvehicle.year }}</option>
+          <option ng-value="2017">2017</option>
+          <option ng-value="2016">2016</option>
+          <option ng-value="2015">2015</option>
+          <option ng-value="2014">2014</option>
+          <option ng-value="2013">2013</option>
+          <option ng-value="2012">2012</option>
+          <option ng-value="2011">2011</option>
+          <option ng-value="2010">2010</option>
         </select>
       </li>
       <li class="dropdown">
         <label>Make</label>
-        <select class="na-select" ng-model="vm.make">
-          <option value="0" selected>Make</option>
+        <select class="na-select"  ng-model="vm.make">
+          <option value="{{vm.finalvehicle.VehicleMake}}" selected>{{vm.finalvehicle.VehicleMake}}</option>
           <option value="1">Make 1</option>
           <option value="2">Make 2</option>
           <option value="3">Make 3</option>
@@ -41,7 +40,7 @@
       <li class="dropdown">
         <label>Model</label>
         <select class="na-select" ng-model="vm.model">
-          <option value="0" selected>Model</option>
+          <option value="{{vm.finalvehicle.model}}" selected>{{vm.finalvehicle.model}}</option>
           <option value="1">Model 1</option>
           <option value="2">Model 2</option>
           <option value="3">Model 3</option>
@@ -53,73 +52,84 @@
         </select>
       </li>
       <li class="dropdown">
-        <label>Body Style</label>
-        <select class="na-select" ng-model="vm.type">
-          <option value="0" selected>Body Style</option>
+        <label>Trim</label>
+        <select class="na-select" ng-model="vm.trim">
+          <option value="{{vm.finalvehicle.trim}}" selected>{{vm.finalvehicle.trim}}</option>
           <option value="1">Body Style 1</option>
           <option value="2">Body Style 2</option>
-          <option value="3">Body Style 3</option>
-          <option value="4">Body Style 4</option>
-          <option value="5">Body Style 5</option>
-          <option value="6">Body Style 6</option>
-          <option value="7">Body Style 7</option>
-          <option value="8">Body Style 8</option>
+        </select>
+      <li class="dropdown">
+        <label>Body Style</label>
+        <select class="na-select" ng-model="vm.bodystyle">
+          <option value="{{vm.finalvehicle.bodyStyle}}" selected>{{vm.finalvehicle.bodyStyle}}</option>
+          <option value="SUV">SUV</option>
+          <option value="Sedan">Sedan</option>
+          <option value="Regular Cab Pickup">Regular Cab Pickup</option>
+          <option value="Extended Cab Pickup">Extended Cab Pickup</option>
+          <option value="Crew Cab Pickup">Crew Cab Pickup</option>
+          <option value="Convertible">Convertible</option>
+          <option value="Coupe">Coupe</option>
+          <option value="Hatchback">Hatchback</option>
+          <option value="Wagon">Wagon</option>
+          <option value="Minivan">Minivan</option>
+          <option value="Passenger Van">Passenger Van</option>
+          <option value="Cargo Van">Cargo Van</option>
         </select>
       </li>
       <li class="dropdown">
         <label>Vehicle Type</label>
-        <select class="na-select" ng-model="vm.type">
-          <option value="0" selected>Vehicle Type</option>
-          <option value="1">Vehicle Type 1</option>
-          <option value="2">Vehicle Type 2</option>
-          <option value="3">Vehicle Type 3</option>
-          <option value="4">Vehicle Type 4</option>
-          <option value="5">Vehicle Type 5</option>
-          <option value="6">Vehicle Type 6</option>
-          <option value="7">Vehicle Type 7</option>
-          <option value="8">Vehicle Type 8</option>
+        <select class="na-select" ng-model="vm.vehicleType">
+          <option value={{vm.finalvehicle.vehicleType}} selected>{{vm.finalvehicle.vehicleType}}</option>
+          <option value="New">New</option>
+          <option value="Used">Used</option>
+          <option value="Certified Pre-Owned">Certified Pre-Owned</option>
+          <option value="Salvage">Salvage</option>
         </select>
       </li>
       <li class="input">
         <label>Item Number</label>
-        <input type="text" ng-model="vm.item" placeholder="Item Number"/>
+        <input type="text" ng-model="vm.item" ng-value="vm.finalvehicle.itemNo"/>
       </li>
       <li class="input">
         <label>Mileage</label>
-        <input type="text" ng-model="vm.mileage" placeholder="Mileage"/>
+        <input type="text" ng-model="vm.mileage" ng-value="vm.finalvehicle.milage" placeholder="Mileage"/>
       </li>
       <li class="dropdown">
-        <label>Condition</label>
-        <select class="na-select" ng-model="vm.type">
-          <option value="0" selected>Condition</option>
-          <option value="1">Condition 1</option>
-          <option value="2">Condition 2</option>
-          <option value="3">Condition 3</option>
-          <option value="4">Condition 4</option>
-          <option value="5">Condition 5</option>
-          <option value="6">Condition 6</option>
-          <option value="7">Condition 7</option>
-          <option value="8">Condition 8</option>
+        <label>Location ??</label>
+        <select class="na-select" ng-model="vm.lication">
+          <option value="0" selected>??</option>
         </select>
       </li>
       <li class="dropdown">
-        <label>Location</label>
-        <select class="na-select" ng-model="vm.type">
-          <option value="0" selected>Location</option>
-          <option value="1">Location 1</option>
-          <option value="2">Location 2</option>
-          <option value="3">Location 3</option>
-          <option value="4">Location 4</option>
-          <option value="5">Location 5</option>
-          <option value="6">Location 6</option>
-          <option value="7">Location 7</option>
-          <option value="8">Location 8</option>
+        <label>Inventory Status </label>
+        <select class="na-select" ng-model="vm.inventoryStatus">
+          <option value="{{vm.finalvehicle.inventoryStatus}}" selected>{{vm.finalvehicle.inventoryStatus}}</option>
+          <option value="Not Ready to List">Not Ready to List</option>
+          <option value="Reconditioning">Reconditioning</option>
+          <option value="In Detail">In Detail</option>
+          <option value="Needs Photos">Needs Photos</option>
+          <option value="Needs Condition Report">Needs Condition Report</option>
+          <option value="Needs Pricing">Needs Pricing</option>
+          <option value="Ready to List">Ready to List</option>
+          <option value="In Marketplace">In Marketplace</option>
+          <option value="Sold">Sold</option>
+          <option value="Unsold">Unsold</option>
+          <option value="Loaner/Dealership Vehicle">Loaner/Dealership Vehicle</option>
+          <option value="Off Site">Off Site</option>
         </select>
       </li>
-      <li class="full footer">
-        <!-- <button class="btn btn-danger"  type="submit" >Add Vehicle</button> -->
-        <a class="btn" ng-href="#/vehicle/addvehiclebyvin_step3">Next</button>
+      <li class="input">
+        <label>Date Added</label>
+        <input type="date" ng-model="vm.date" ng-value="vm.finalvehicle.addedDate"/>
+      </li>
+      <li class="input">
+        <label>Description</label>
+        <textarea type="textbox" ng-model="vm.description" ng-value="vm.finalvehicle.description"/></textarea>
+      </li>
 
+      <li>
+        <button type="submit" class="btn" id="addVehicleBasics">Next</button>
+        <!-- <button class="btn" ng-href="#/vehicle/addvehiclebyvin_step3">Next</button> -->
       </li>
     </ul>
   </form>
