@@ -14,31 +14,63 @@ function VehicleAddbyVinController($scope, addbyVinProvider){
         } else {
             // console.log('DEBUG controller ' + JSON.stringify(data) );
             $scope.vehicle = data;
-            vm.finalvehicle.vin = $scope.vehicle.VIN;
-            vm.finalvehicle.VehicleMake = $scope.vehicle.VehicleMake;
-            vm.finalvehicle.year = JSON.parse($scope.vehicle.DataBasic).year;
-            vm.finalvehicle.model = JSON.parse($scope.vehicle.DataBasic).model.name;
-            vm.finalvehicle.trim = JSON.parse($scope.vehicle.DataBasic).trim.name;
-            vm.finalvehicle.bodyStyle = JSON.parse($scope.vehicle.DataBasic).vehicleStyle;
-            vm.finalvehicle.vehicleType =JSON.parse($scope.vehicle.DataBasic).vehicleType;
-            vm.finalvehicle.itemNo = $scope.vehicle.ItemGuid;
-            vm.finalvehicle.addedsDate = $scope.vehicle.DateCreated;
-            vm.finalvehicle.engine = JSON.parse($scope.vehicle.DataSquishDetail).engine;
-            // vm.finalvehicle.engine.availability = JSON.parse($scope.vehicle.DataSquishDetail).engine.availability;
-            // vm.finalvehicle.engine.cylinder = JSON.parse($scope.vehicle.DataSquishDetail).engine.cylinder;
-            // vm.finalvehicle.engine.compressionRatio = JSON.parse($scope.vehicle.DataSquishDetail).engine.compressionRatio;
-            // vm.finalvehicle.engine.size = JSON.parse($scope.vehicle.DataSquishDetail).engine.size;
-            // vm.finalvehicle.engine.displacement = JSON.parse($scope.vehicle.DataSquishDetail).engine.displacement;
-            // vm.finalvehicle.engine.fuelType = JSON.parse($scope.vehicle.DataSquishDetail).engine.fuelType;
-            // vm.finalvehicle.engine.horsepower = JSON.parse($scope.vehicle.DataSquishDetail).engine.horsepower;
-            // vm.finalvehicle.engine.torque = JSON.parse($scope.vehicle.DataSquishDetail).engine.torque;
-            // vm.finalvehicle.engine.totalValves = JSON.parse($scope.vehicle.DataSquishDetail).engine.totalValves;
-            // vm.finalvehicle.engine.manufacturerEgineCode = JSON.parse($scope.vehicle.DataSquishDetail).engine.manufacturerEgineCode;
-            // vm.finalvehicle.engine.type = JSON.parse($scope.vehicle.DataSquishDetail).engine.type;
-            console.log( vm.finalvehicle.vin , $scope.vehicle);
+            vm.vin = $scope.vehicle.VIN;
+            vm.make = $scope.vehicle.VehicleMake;
+            vm.year = JSON.parse($scope.vehicle.DataBasic).year;
+            vm.model = JSON.parse($scope.vehicle.DataBasic).model.name;
+            vm.trim = JSON.parse($scope.vehicle.DataBasic).trim.name;
+            vm.bodystyle = JSON.parse($scope.vehicle.DataBasic).vehicleStyle;
+            vm.vehicleType =JSON.parse($scope.vehicle.DataBasic).vehicleType;
+            vm.itemNo = $scope.vehicle.ItemGuid;
+            vm.addedsDate = $scope.vehicle.DateCreated;
+            vm.engine = JSON.parse($scope.vehicle.DataSquishDetail).engine;
+
+            console.log( vm.vin , $scope.vehicle);
 
         }
       });
+  }
+
+  vm.addVehicle = function(){
+    var vehicleAdd = {
+      VIN: vm.vin,
+      Year:vm.year,
+      Make:vm.make,
+      Model:vm.model,
+      Trim:vm.trim,
+      bodystyle:vm.bodystyle,
+      vehicleType:vm.vehicleType,
+      itemNo:vm.itemNo,
+      mileage:vm.mileage,
+      location:vm.location,
+      inventoryStatus:vm.inventoryStatus,
+      date:vm.date,
+      description: vm.description,
+      exteriorColor: vm.exterior_color,
+      interiorColor: vm.interior_color,
+      searchColor: vm.search_color,
+      seat:vm.seat,
+      door:vm.door,
+      engine:vm.engine,
+      transmission:vm.transmission,
+      drivetrain:vm.drivetrain,
+      fuel:vm.fuel,
+      brakes:vm.brakes,
+      titleStatus:vm.titleStatus,
+      titleState:vm.titleState,
+      warranty:vm.warranty,
+      drivetrainWarranty: vm.drivetrainWarranty,
+      additionalWarranty: vm.additionalWarranty,
+      certifiedPreOwned:vm.certifiedPreOwned,
+      guaranteedFinancing: vm.guaranteedFinancing,
+      sellerGuarantee : vm.sellerGuarantee,
+      yellowLight : vm.yellowLigh,
+      interiorOptions : vm.interirOptions,
+      exteriorOptions : vm.exteriorOptions,
+      premiumOptions: vm.premiumOptions,
+      truckOptions: vm.truckOptions
+    };
+    console.log(vehicleAdd)
   }
 
 

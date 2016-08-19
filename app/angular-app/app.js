@@ -1,4 +1,4 @@
-var naBaseApp = angular.module("naBaseApp", [ "ngRoute", "checklist-model" ])
+var naBaseApp = angular.module("naBaseApp", [ "ngRoute" ])
 
 naBaseApp.config(function ($httpProvider, $routeProvider) {
    $httpProvider.interceptors.push('AuthInterceptor')
