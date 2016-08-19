@@ -8,11 +8,11 @@
     <ul class="cols-2">
       <li class="input">
         <label>Exterior Color</label>
-        <input type="text" ng-model="exterior_color" placeholder="Exterior Color"/>
+        <input type="text" ng-model="vm.exterior_color" ng-value="vm.exterior_color"/>
       </li>
       <li class="input">
         <label>Interior Color</label>
-        <input type="text" ng-model="Interior_color" placeholder="Interior Color"/>
+        <input type="text" ng-model="vm.interior_color" ng-value="vm.interior_color" placeholder="Interior Color"/>
       </li>
 
       <li class="dropdown">
@@ -66,31 +66,31 @@
         <label>Engine</label>
         <ul>
           <li>
-            <input type="text" ng-model="vm.engine" ng-value="vm.finalvehicle.engine.availability"/>
+            <input type="text" ng-model="vm.engine" ng-value="vm.engine.availability"/>
           </li>
           <li>
-            <input type="text" ng-model="vm.engine" ng-value="vm.finalvehicle.engine.cylinder"/>
+            <input type="text" ng-model="vm.engine" ng-value="vm.engine.cylinder"/>
           </li>
           <li>
-            <input type="text" ng-model="vm.engine" ng-value="vm.finalvehicle.engine.compressionRatio"/>
+            <input type="text" ng-model="vm.engine" ng-value="vm.engine.compressionRatio"/>
           </li>
           <li>
-            <input type="text" ng-model="vm.engine" ng-value="vm.finalvehicle.engine.size"/>
+            <input type="text" ng-model="vm.engine" ng-value="vm.engine.size"/>
           </li>
           <li>
-            <input type="text" ng-model="vm.engine" ng-value="vm.finalvehicle.engine.displacement"/>
+            <input type="text" ng-model="vm.engine" ng-value="vm.engine.displacement"/>
           </li>
           <li>
-            <input type="text" ng-model="vm.engine" ng-value="vm.finalvehicle.engine.fuelType"/>
+            <input type="text" ng-model="vm.engine" ng-value="vm.engine.fuelType"/>
           </li>
           <li>
-            <input type="text" ng-model="vm.engine" ng-value="vm.finalvehicle.engine.horsepower"/>
+            <input type="text" ng-model="vm.engine" ng-value="vm.engine.horsepower"/>
           </li>
           <li>
-            <input type="text" ng-model="vm.engine" ng-value="vm.finalvehicle.engine.torque"/>
+            <input type="text" ng-model="vm.engine" ng-value="vm.engine.torque"/>
           </li>
           <li>
-            <input type="text" ng-model="vm.engine" ng-value="vm.finalvehicle.engine.totalValves"/>
+            <input type="text" ng-model="vm.engine" ng-value="vm.engine.totalValves"/>
           </li>
         </ul>
       </li>
@@ -243,8 +243,9 @@
           ' Rear Audio Control','Rear Heat/AC Controls','Rear Heated Seat','Rear Parking Sensors',
           'Remote Start','lTire Monitoring' ,'Satellite Radio' ,'Side Airbags' ,
           'Steering Wheel Audio Controls',' System' ,'Turn Signal Mirrors' ,'Wireless Headphones'
-          ,'Xenon Lights','XM Radio']">
-            <input type="checkbox" ng-model="vm.premiumOptions" ng-value="option" /> <label for="">{{option}}</label>
+          ,'Xenon Lights','XM Radio']"><label>
+            <input type="checkbox" />
+            {{option}}</label>
           </dd>
         </dl>
       </li>

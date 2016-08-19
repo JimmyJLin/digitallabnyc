@@ -4,6 +4,7 @@
     function ResetPasswordController ($scope, resetPasswordProvider) {
       var vm = this;
       vm.test = "test";
+      vm.PASS_REGEXP = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,16}$/;
 
       vm.resetPass = function(){
         console.log('this is from the register function' ,vm)
