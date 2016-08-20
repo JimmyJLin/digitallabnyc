@@ -1,0 +1,257 @@
+<header class="page-head">
+  <h1>Confirm Exterior/Interior/Mechanical Info</h1>
+</header>
+<div class="page form">
+
+  <!-- Add Vehicle -->
+  <form ng-submit="vm.addVehicle()" >
+    <ul class="cols-2">
+      <li class="input">
+        <label>Exterior Color</label>
+        <input type="text" ng-model="vm.exterior_color" ng-value="vm.exterior_color"/>
+      </li>
+      <li class="input">
+        <label>Interior Color</label>
+        <input type="text" ng-model="vm.interior_color" ng-value="vm.interior_color" placeholder="Interior Color"/>
+      </li>
+
+      <li class="dropdown">
+        <label>Search Color</label>
+        <select class="na-select" ng-model="vm.search_color">
+          <option value="0" selected>Color</option>
+          <option value="Black">Black</option>
+          <option value="Blue">Blue</option>
+          <option value="Brown">Brown</option>
+          <option value="Copper">Copper</option>
+          <option value="Gold">Gold</option>
+          <option value="Grey">Grey</option>
+          <option value="Maroon">Maroon</option>
+          <option value="Orange">Orange</option>
+          <option value="Purple">Purple</option>
+          <option value="Red">Red</option>
+          <option value="Silver">Silver</option>
+          <option value="Tan">Tan</option>
+          <option value="Teal">Teal</option>
+          <option value="White">White</option>
+          <option value="Yellow">Yellow</option>
+        </select>
+      </li>
+      <li class="dropdown">
+        <label>Seats</label>
+        <select class="na-select" ng-model="vm.seat">
+          <option value="0" selected>Seats</option>
+          <option value="Leather">Leather</option>
+          <option value="Cloth">Cloth</option>
+          <option value="Vinyl">Vinyl</option>
+        </select>
+      </li>
+      <li class="dropdown">
+        <label>Doors</label>
+        <select class="na-select" ng-model="vm.door">
+          <option value="0" selected>Doors</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </li>
+      <h3>Mechanical Info</h3>
+      <li class="input">
+        <label>Engine</label>
+        <ul>
+          <li>
+            <label>Availability</label>
+            <input type="text" ng-model="vm.availability" ng-value="vm.availability"/>
+          </li>
+          <li>
+            <label>Cylinder</label>
+            <input type="text" ng-model="vm.cylinder" ng-value="vm.cylinder"/>
+          </li>
+          <li>
+            <label>Compression Ratio</label>
+            <input type="text" ng-model="vm.compressionRatio" ng-value="vm.compressionRatio"/>
+          </li>
+          <li>
+            <label>Size</label>
+            <input type="text" ng-model="vm.size" ng-value="vm.size"/>
+          </li>
+          <li>
+            <label>Displacement</label>
+            <input type="text" ng-model="vm.displacement" ng-value="vm.displacement"/>
+          </li>
+          <li>
+            <label>Fuel Type</label>
+            <input type="text" ng-model="vm.fuelType" ng-value="vm.fuelType"/>
+          </li>
+          <li>
+            <label>Horsepower</label>
+            <input type="text" ng-model="vm.horsepower" ng-value="vm.horsepower"/>
+          </li>
+          <li>
+            <label>Torque</label>
+            <input type="text" ng-model="vm.torque" ng-value="vm.torque"/>
+          </li>
+          <li>
+            <label>Total Valves</label>
+            <input type="text" ng-model="vm.totalValves" ng-value="vm.totalValves"/>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <label>Transmission</label>
+        <select class="na-select" ng-model="vm.transmission">
+          <option value="0" selected>Transmission</option>
+          <option value="Automatic">Automatic</option>
+          <option value="Automatic 3-Speed">Automatic 3-Speed</option>
+          <option value="Automatic 4-Speed">Automatic 4-Speed</option>
+          <option value="Automatic 5-Speed">Automatic 5-Speed</option>
+          <option value="Automatic 6-Speed">Automatic 6-Speed</option>
+          <option value="Automatic 7-Speed">Automatic 7-Speed</option>
+          <option value="Automatic 8-Speed">Automatic 8-Speed</option>
+          <option value="Automatic 8-Speed">Automatic 9-Speed</option>
+          <option value="Manual">Manual</option>
+          <option value="Manual 4-Speed">Manual 4-Speed</option>
+          <option value="Manual 5-Speed">Manual 5-Speed</option>
+          <option value="Manual 6-Speed">Manual 6-Speed</option>
+          <option value="Manual 7-Speed">Manual 7-Speed</option>
+          <option value="Shiftable Automatic">Shiftable Automatic</option>
+          <option value="Continuously Variable/CVT">Continuously Variable/CVT</option>
+
+        </select>
+      </li>
+      <li class="dropdown">
+        <label>Drivetrain</label>
+        <select class="na-select" ng-model="vm.drivetrain">
+          <option value="0" selected>Drivetrain</option>
+          <option value="Front Wheel Drive">Front Wheel Drive</option>
+          <option value="Rear Wheel Drive">Rear Wheel Drive</option>
+          <option value="All Wheel Drive">All Wheel Drive</option>
+          <option value="4 Wheel Drive">4 Wheel Drive</option>
+        </select>
+      </li>
+      <li class="dropdown">
+        <label>Fuel</label>
+        <select class="na-select" ng-model="vm.fuel">
+          <option value="0" selected>Fuel</option>
+          <option value="Gasoline">Gasoline</option>
+          <option value="Diesel">Diesel</option>
+          <option value="Gasoline/E85">Gasoline/E85</option>
+          <option value="Hybrid Electric">Hybrid Electric</option>
+          <option value="CNG">CNG</option>
+          <option value="Hydrogen">Hydrogen</option>
+          <option value="LPG">LPG</option>
+        </select>
+      </li>
+      <li class="input">
+        <label>Brakes</label>
+        <input type="text" ng-model="vm.brakes" placeholder="Brakes"/>
+      </li>
+        <li class="input">
+          <label>Title Status</label>
+          <input type="text" ng-model="vm.titleStatus" placeholder="Title Status"/>
+        </li>
+        <li class="input">
+          <label>Title State</label>
+          <input type="text" ng-model="vm.titleState" placeholder="Title State"/>
+        </li>
+        <li class="dropdown">
+        <label>Full Warranty</label>
+        <select class="na-select" ng-model="vm.warranty">
+          <option value="No Warranty">No Warranty</option>
+          <option value="Manufacturer Warranty Active">Manufacturer Warranty Active</option>
+          <option value="Aftermarket Warranty Available">Aftermarket Warranty Available</option>
+          <option value="36 Months/36,000 Miles">36 Months/36,000 Miles</option>
+          <option value="48 Months/48,000 Miles">48 Months/48,000 Miles</option>
+          <option value="48 Months/50,000 Miles">48 Months/50,000 Miles</option>
+          <option value="48 Months/60,000 Miles">48 Months/60,000 Miles</option>
+          <option value="48 Months/75,000 Miles">48 Months/75,000 Miles</option>
+          <option value="48 Months/100,000 Miles">48 Months/100,000 Miles</option>
+          <option value="60 Months/50,000 Miles">60 Months/50,000 Miles</option>
+          <option value="60 Months/60,000 Miles">60 Months/60,000 Miles</option>
+          <option value="60 Months/75,000 Miles">60 Months/75,000 Miles</option>
+          <option value="60 Months/100,000 Miles">60 Months/100,000 Miles</option>
+          <option value="72 Months/60,000 Miles">72 Months/60,000 Miles</option>
+          <option value="72 Months/75,000 Miles">72 Months/75,000 Miles</option>
+          <option value="72 Months/100,000 Miles">72 Months/100,000 Miles</option>
+          <option value="AUL 36 Month/36,000 Miles Service Contract">AUL 36 Month/36,000 Miles Service Contract</option>
+          </select>
+        </li>
+        <li class="dropdown">
+        <label>Drivetrain Warranty</label>
+        <select class="na-select" ng-model="vm.drivetrainWarranty">
+          <option value="0" selected>Driven Warranty</option>
+          <option value="3 Month/3,000 Miles">3 Month/3,000 Miles</option>
+          <option value="12 Month/12,000 Miles">12 Month/12,000 Miles</option>
+          <option value="18 Month/18,000 Miles">18 Month/18,000 Miles</option>
+          <option value="24 Month/24,000 Miles">24 Month/24,000 Miles</option>
+          <option value="60 Month/100,000 Miles">v.	60 Month/100,000 Miles</option>
+        </select>
+      </li>
+      <li class="input">
+        <label>Additional Warranty</label>
+        <input type="text" ng-model="vm.additionalWarranty" placeholder="Additional Warranty"/>
+      </li>
+      <li class="input">
+        <label>Certified Pre-Owned</label>
+        <input type="text" ng-model="vm.certifiedPreOwned" placeholder="Certified Pre-Owned"/>
+      </li>
+      <li class="input">
+        <label>Guaranteed Financing</label>
+        <input type="text" ng-model="vm.guaranteedFinancing" placeholder="Guaranteed Financing"/>
+      </li>
+      <li class="input">
+          <label>Seller Guarantee</label>
+            <input type="radio" ng-model="vm.sellerGuarantee" value="Guarantee">Guarantee
+            <input type="radio" ng-model="vm.sellerGuarantee" value="As It is">As It is
+      </li>
+      <li class="input">
+          <label>Yellow Light</label>
+            <input type="radio" ng-model="vm.yellowLight" value="Yes">Yes
+            <input type="radio" ng-model="vm.yellowLight" value="No">No
+      </li>
+      <li>
+        <dl>
+          <dt>Interior Options</dt>
+          <dd ng-repeat="interiorOption in interiorOptions">
+            <input type="checkbox" checklist-model="vm.interiorOptions" checklist-value="interiorOption"/><label for="">{{interiorOption}}</label>
+          </dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt>Exterior Options</dt>
+          <dd ng-repeat="exteriorOption in exteriorOptions">
+            <input type="checkbox" checklist-model="vm.exteriorOptions" checklist-value="exteriorOption" /> <label for="">{{exteriorOption}}</label>
+          </dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt>Premium Options</dt>
+          <dd ng-repeat="premiumOption in premiumOptions" >
+            <input type="checkbox" checklist-model="vm.premiumOptions" checklist-value="premiumOption" /> <label for="">{{premiumOption}}</label>
+          </dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt>Truck Options</dt>
+          <dd ng-repeat="truckOption in truckOptions" >
+            <input type="checkbox" checklist-model="vm.truckOptions" checklist-value="truckOption" /> <label for="">{{truckOption}}</label>
+          </dd>
+        </dl>
+      </li>
+      <li class="full footer">
+        <!-- <button class="btn btn-danger"  type="submit" >Add Vehicle</button> -->
+        <button class="" type="submit" >Add Vehicle</button>
+
+      </li>
+  </form>
+
+</div>

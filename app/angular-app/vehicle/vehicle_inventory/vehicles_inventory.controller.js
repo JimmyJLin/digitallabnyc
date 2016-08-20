@@ -1,14 +1,13 @@
-(function () {
+angular.module('naBaseApp').controller('VehiclesInventoryController', VehiclesInventoryController);
 
-
-function VehiclesListController($scope, vehicleListProvider){
+function VehiclesInventoryController($scope, vehicleInventoryProvider){
 
   var vm = this;
-  vm.title= "Vehicles List";
+  vm.title= "Inventory";
 
 function get_vehicles(){
 
-  $scope.vehicles =   vehicleListProvider.getVehicleByOwnerID( function(err, vehicles){
+  $scope.vehicles =   vehicleInventoryProvider.getVehicleByOwnerID( function(err, vehicles){
         $scope.finished_loading = true;
         if (err) {
             $scope.page_load_error = err.message;
@@ -22,6 +21,3 @@ function get_vehicles(){
 get_vehicles();
 
 }
-  naBaseApp.controller("VehiclesListController", ['$scope', 'vehicleListProvider', VehiclesListController]);
-
-})();

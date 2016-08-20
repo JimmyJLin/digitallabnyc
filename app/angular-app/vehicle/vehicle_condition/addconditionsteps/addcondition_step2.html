@@ -1,0 +1,100 @@
+<header class="page-head">
+  <h1>Add Condition Details</h1>
+</header>
+<div class="page form">
+  <form ng-submit="vm.addCond()" >
+    <ul class="cols-2">
+      <li class="dropdown">
+        <label>Grade</label>
+        <select class="na-select" ng-model="vm.grade" id="select_year_min">
+          <option value="0" selected>Grade</option>
+          <option value="1">5 - Excellent</option>
+          <option value="2">4 - Very Good</option>
+          <option value="3">3 - Good</option>
+          <option value="4">2 - Fair</option>
+          <option value="5">1 - Poor</option>
+          <option value="6">0 - Heavy Damage</option>
+        </select>
+      </li>
+
+      <li class="dropdown">
+        <label>Recondition</label>
+        <select class="na-select" ng-model="vm.recondition" id="select_year_min">
+          <option value="0" selected>Recondition</option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
+        </select>
+      </li>
+
+      <li class="dropdown">
+        <label>Detailed</label>
+        <select class="na-select" ng-model="vm.detail" id="select_year_min">
+          <option value="0" selected>Detailed</option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
+        </select>
+      </li>
+
+      <li class="dropdown">
+        <label>Frame Damage</label>
+        <select class="na-select" ng-model="vm.frame_damage" id="select_year_min">
+          <option value="0" selected>Frame Damage</option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
+        </select>
+      </li>
+
+      <li class="dropdown">
+        <label>Previously Repainted</label>
+        <select class="na-select" ng-model="vm.hail_damage" id="select_year_min">
+          <option value="0" selected>Previously Repainted</option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
+        </select>
+      </li>
+
+      <li class="dropdown">
+        <label>Hail Damage</label>
+        <select class="na-select" ng-model="vm.hail_damage" id="select_year_min">
+          <option value="0" selected>Hail Damage</option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
+        </select>
+      </li>
+
+      <li>
+        <dl>
+          <dt>Dash Lights</dt>
+          <dd ng-repeat="option in ['Check Engine', 'ABS Warning', 'Oil Pressure Warning', 'Battery Warning', 'Warning Light', 'Powertrain Malfunction', 'ESP BAS Light', 'Brake System Alert', 'Airbag Malfunction', 'Emissions Warning']" >
+            <input type="checkbox" ng-model="vm.dashLights" ng-value="option" /> <label for="">{{option}}</label>
+          </dd>
+        </dl>
+      </li>
+
+      <li class="dropdown">
+        <label>Damage</label>
+        <select class="na-select" ng-model="vm.damage" id="select_year_min">
+          <option value="0" selected>Damage</option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
+        </select>
+      </li>
+
+      <li class="dropdown">
+        <label>Vehicle Drives</label>
+        <select class="na-select" ng-model="vm.vehicle_drive" id="select_year_min">
+          <option value="0" selected>Vehicle Drives</option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
+        </select>
+      </li>
+
+      <li class="full footer">
+        <!-- <button class="na-input-submit blue" type="submit" >Add</button> -->
+        <a class="btn" ng-href="#/vehicle/addcondition_step3">Next</button>
+
+      </li>
+    </ul>
+  </form>
+
+</div>

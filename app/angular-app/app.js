@@ -1,4 +1,4 @@
-var naBaseApp = angular.module("naBaseApp", [ "ngRoute" ])
+var naBaseApp = angular.module("naBaseApp", [ "ngRoute", "checklist-model" ])
 
 naBaseApp.config(function ($httpProvider, $routeProvider) {
    $httpProvider.interceptors.push('AuthInterceptor')
@@ -37,22 +37,98 @@ naBaseApp.config(function ($httpProvider, $routeProvider) {
   })
 
   /* Vehicle */
+  .when('/vehicles', {
+    controller: "VehiclesAllController",
+    templateUrl: "/angular-app/vehicle/vehicle_all/vehicles_all.html",
+    controllerAs: 'vm'
+  })
+  .when('/vehicles/:vehicleID', {
+    controller: "VehicleDetailsController",
+    templateUrl: "/angular-app/vehicle/vehicle_details/vehicle_details.html",
+    controllerAs: 'vm'
+  })
   .when('/vehicle/addvehicle', {
     controller: "VehiclesAddController",
     templateUrl: "/angular-app/vehicle/vehicle_add/addVehicle.html",
     controllerAs: 'vm'
   })
-  .when('/vehicle/listvehicles', {
-    controller: "VehiclesListController",
-    templateUrl: "/angular-app/vehicle/vehicle_list/vehicleslist.html",
+
+  /* Vehicle Condition Report */
+  .when('/vehicle/addvehicleconditions_step1', {
+    controller: "AddConditionController",
+    templateUrl: "/angular-app/vehicle/vehicle_condition/addconditionsteps/addcondition_step1.html",
     controllerAs: 'vm'
   })
-  .when('/vehicle/addvehiclecondition', {
+  .when('/vehicle/addcondition_step2', {
     controller: "AddConditionController",
-    templateUrl: "/angular-app/vehicle/condition/addCondition.html",
+    templateUrl: "/angular-app/vehicle/vehicle_condition/addconditionsteps/addcondition_step2.html",
+    controllerAs: 'vm'
+  })
+  .when('/vehicle/addcondition_step3', {
+    controller: "AddConditionController",
+    templateUrl: "/angular-app/vehicle/vehicle_condition/addconditionsteps/addcondition_step3.html",
+    controllerAs: 'vm'
+  })
+  .when('/vehicle/addcondition_step4', {
+    controller: "AddConditionController",
+    templateUrl: "/angular-app/vehicle/vehicle_condition/addconditionsteps/addcondition_step4.html",
+    controllerAs: 'vm'
+  })
+  .when('/vehicle/addcondition_step5', {
+    controller: "AddConditionController",
+    templateUrl: "/angular-app/vehicle/vehicle_condition/addconditionsteps/addcondition_step5.html",
+    controllerAs: 'vm'
+  })
+  .when('/vehicle/addcondition_step6', {
+    controller: "AddConditionController",
+    templateUrl: "/angular-app/vehicle/vehicle_condition/addconditionsteps/addcondition_step6.html",
+    controllerAs: 'vm'
+  })
+  .when('/vehicle/addcondition_step7', {
+    controller: "AddConditionController",
+    templateUrl: "/angular-app/vehicle/vehicle_condition/addconditionsteps/addcondition_step7.html",
     controllerAs: 'vm'
   })
 
+  /* Add Vehicle by Vin */
+  .when('/vehicle/addvehiclebyvin', {
+    controller: "VehicleAddbyVinController",
+    templateUrl: "/angular-app/vehicle/vehicle_add_by_vin/vehicle_add_by_vin.html",
+    controllerAs: 'vm'
+  })
+  // .when('/vehicle/addvehiclebyvin_step2', {
+  //   controller: "VehiclesAddController",
+  //   templateUrl: "/angular-app/vehicle/vehicle_add_by_vin/vehicle_add_by_vin_step2.html",
+  //   controllerAs: 'vm'
+  // })
+  // .when('/vehicle/addvehiclebyvin_step3', {
+  //   controller: "VehiclesAddController",
+  //   templateUrl: "/angular-app/vehicle/vehicle_add_by_vin/vehicle_add_by_vin_step3.html",
+  //   controllerAs: 'vm'
+  // })
+
+  /* Marketplace */
+  .when('/marketplace', {
+    controller: "PublicController",
+    templateUrl: "/angular-app/marketplace/marketplace.html",
+    activetab: 'marketplace'
+  })
+
+  /* Inventory */
+  .when('/inventory/vehicles', {
+    controller: "VehiclesInventoryController",
+    templateUrl: "/angular-app/vehicle/vehicle_inventory/vehicles_inventory.html",
+    controllerAs: 'vm',
+    activetab: 'inventory'
+  })
+
+  /* Watchlist */
+  .when('/watchlist', {
+    controller: "WatchlistController",
+    templateUrl: "/angular-app/watchlist/watchlist.html",
+    controllerAs: 'vm',
+    activetab: 'watchlist'
+  })
 
 	// Redirect to 404
   .otherwise({
