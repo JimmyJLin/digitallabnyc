@@ -41,6 +41,7 @@ na.leanweb/
   |   |   |   |-  public.controller.js
   |   |   |   |-  publicProvider.js
   |   |   |-  main/
+  |   |   |-  marketplace/
   |   |   |-  partials/
   |   |   |   |-  login/
   |   |   |   |-  modals/
@@ -53,7 +54,9 @@ na.leanweb/
   |   |   |   |-  vehicle_add_by_vin/
   |   |   |   |-  vehicle_all/
   |   |   |   |-  vehicle_condition/
+  |   |   |   |-  vehicle_details/
   |   |   |   |-  vehicle_inventory/
+  |   |   |-  watchlist/
   |   |   |-  app.js
   |   |-  assets/
   |   |   |-  css/
