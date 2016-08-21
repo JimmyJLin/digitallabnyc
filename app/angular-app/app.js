@@ -47,16 +47,16 @@ naBaseApp.config(function ($httpProvider, $routeProvider) {
     templateUrl: "/angular-app/vehicle/vehicle_details/vehicle_details.html",
     controllerAs: 'vm'
   })
-  .when('/vehicle/addvehicle', {
+  .when('/vehicle/new', {
     controller: "VehiclesAddController",
     templateUrl: "/angular-app/vehicle/vehicle_add/addVehicle.html",
     controllerAs: 'vm'
   })
 
   /* Vehicle Condition Report */
-  .when('/vehicle/addvehicleconditions', {
+  .when('/vehicle/condition/new', {
     controller: "AddConditionController",
-    templateUrl: "/angular-app/vehicle/vehicle_condition/addconditionsteps/addcondition.html",
+    templateUrl: "/angular-app/vehicle/vehicle_condition/addcondition.html",
     controllerAs: 'vm'
   })
   // .when('/vehicle/addcondition_step2', {
@@ -91,7 +91,7 @@ naBaseApp.config(function ($httpProvider, $routeProvider) {
   // })
 
   /* Add Vehicle by Vin */
-  .when('/vehicle/addvehiclebyvin', {
+  .when('/vehicle/byvin/new', {
     controller: "VehicleAddbyVinController",
     templateUrl: "/angular-app/vehicle/vehicle_add_by_vin/vehicle_add_by_vin.html",
     controllerAs: 'vm'
