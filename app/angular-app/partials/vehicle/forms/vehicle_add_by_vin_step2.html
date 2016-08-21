@@ -58,10 +58,29 @@
           <option value="1">Body Style 1</option>
           <option value="2">Body Style 2</option>
         </select>
+      </li>
       <li class="dropdown">
         <label>Body Style</label>
-        <select class="na-select" ng-model="vm.bodystyle">
-          <option value="{{vm.bodystyle}}" selected>{{vm.bodystyle}}</option>
+        <select class="na-select" ng-model="vm.bodyStyle">
+          <option value="bodyStyle0" selected>bodyStyle0</option>
+          <option value="bodyStyle1">bodyStyle1</option>
+          <option value="bodyStyle2">bodyStyle2</option>
+          <option value="bodyStyle3">bodyStyle3</option>
+        </select>
+      </li>
+      <li class="dropdown">
+        <label>Body Type</label>
+        <select class="na-select" ng-model="vm.bodyType">
+          <option value="bodyType0" selected>bodyType0</option>
+          <option value="bodyType1">bodyType1</option>
+          <option value="bodyType2">bodyType2</option>
+          <option value="bodyType3">bodyType3</option>
+        </select>
+      </li>
+      <li class="dropdown">
+        <label>Vehicle Style</label>
+        <select class="na-select" ng-model="vm.vehicleStyle">
+          <option value="{{vm.bodystyle}}" selected>{{vm.vehicleStyle}}</option>
           <option value="SUV">SUV</option>
           <option value="Sedan">Sedan</option>
           <option value="Regular Cab Pickup">Regular Cab Pickup</option>
@@ -95,9 +114,9 @@
         <input type="text" ng-model="vm.mileage" ng-value="vm.mileage" placeholder="Mileage"/>
       </li>
       <li class="dropdown">
-        <label>Location ??</label>
-        <select class="na-select" ng-model="vm.lication" ng-value="vm.lication">
-          <option value="0" selected>??</option>
+        <label>Location</label>
+        <select class="na-select" ng-model="vm.location" ng-value="vm.lication">
+          <option value="0" selected>Company Address</option>
         </select>
       </li>
       <li class="dropdown">
@@ -120,7 +139,7 @@
       </li>
       <li class="input">
         <label>Date Added</label>
-        <input type="date" ng-model="vm.date" ng-value="vm.addedDate"/>
+        <input type="date" ng-model="vm.dateAdded" ng-value="vm.addedDate"/>
       </li>
       <li class="input">
         <label>Description</label>
