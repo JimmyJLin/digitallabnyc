@@ -37,7 +37,7 @@
 
       <li class="dropdown">
         <label>Frame Damage</label>
-        <select class="na-select" ng-model="vm.frame_damage" id="select_year_min">
+        <select class="na-select" ng-model="vm.frameDamage" id="select_year_min">
           <option value="0" selected>Frame Damage</option>
           <option value="1">Yes</option>
           <option value="2">No</option>
@@ -46,7 +46,7 @@
 
       <li class="dropdown">
         <label>Previously Repainted</label>
-        <select class="na-select" ng-model="vm.hail_damage" id="select_year_min">
+        <select class="na-select" ng-model="vm.hailDamage" id="select_year_min">
           <option value="0" selected>Previously Repainted</option>
           <option value="1">Yes</option>
           <option value="2">No</option>
@@ -55,7 +55,7 @@
 
       <li class="dropdown">
         <label>Hail Damage</label>
-        <select class="na-select" ng-model="vm.hail_damage" id="select_year_min">
+        <select class="na-select" ng-model="vm.hailDamage" id="select_year_min">
           <option value="0" selected>Hail Damage</option>
           <option value="1">Yes</option>
           <option value="2">No</option>
@@ -65,8 +65,8 @@
       <li>
         <dl>
           <dt>Dash Lights</dt>
-          <dd ng-repeat="option in ['Check Engine', 'ABS Warning', 'Oil Pressure Warning', 'Battery Warning', 'Warning Light', 'Powertrain Malfunction', 'ESP BAS Light', 'Brake System Alert', 'Airbag Malfunction', 'Emissions Warning']" >
-            <input type="checkbox" ng-model="vm.dashLights" ng-value="option" /> <label for="">{{option}}</label>
+          <dd ng-repeat="dashLightOption in dashLightOptions" >
+            <input type="checkbox" checklist-model="vm.dashLightOptions" checklist-value="dashLightOption" /> <label for="">{{dashLightOption}}</label>
           </dd>
         </dl>
       </li>
@@ -74,7 +74,7 @@
       <li class="dropdown">
         <label>Damage</label>
         <select class="na-select" ng-model="vm.damage" id="select_year_min">
-          <option value="0" selected>Damage</option>
+          <option value="0" selected></option>
           <option value="1">Yes</option>
           <option value="2">No</option>
         </select>
@@ -82,8 +82,8 @@
 
       <li class="dropdown">
         <label>Vehicle Drives</label>
-        <select class="na-select" ng-model="vm.vehicle_drive" id="select_year_min">
-          <option value="0" selected>Vehicle Drives</option>
+        <select class="na-select" ng-model="vm.vehicleDrive" id="select_year_min">
+          <option value="0" selected></option>
           <option value="1">Yes</option>
           <option value="2">No</option>
         </select>

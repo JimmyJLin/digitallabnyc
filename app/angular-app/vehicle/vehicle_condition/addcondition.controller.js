@@ -4,6 +4,23 @@ function AddConditionController($scope, addConditionProvider){
 
   var vm = this;
 
+  // Truck Option Checkbox
+  $scope.dashLightOptions = [
+    'Bed Liner',
+    'Custom Bed',
+    'Custom Bumper',
+    'Dual Rear Wheels',
+    'Dump Bed',
+    'Front Tow Hooks',
+    'Grille Guard',
+    'Hard Tonneau Cover',
+    'Hydraulic Lift',
+    'Lifted'
+  ];
+  $scope.dashLightOption = {
+    options: ['dashLightOption']
+  };
+
   vm.addCond = function(){
 
   var conditionData = JSON.stringify({
