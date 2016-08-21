@@ -197,9 +197,13 @@
         <label>Additional Warranty</label>
         <input type="text" ng-model="vm.additionalWarranty" placeholder="Additional Warranty"/>
       </li>
-      <li class="input">
+      <li class="dropdown">
         <label>Certified Pre-Owned</label>
-        <input type="text" ng-model="vm.certifiedPreOwned" placeholder="Certified Pre-Owned"/>
+        <select class="na-select" ng-model="vm.certifiedPreOwned" id="select_year_min">
+          <option value="0" selected></option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
+        </select>
       </li>
       <li class="input">
         <label>Guaranteed Financing</label>
