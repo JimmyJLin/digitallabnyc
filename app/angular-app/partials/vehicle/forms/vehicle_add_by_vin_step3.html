@@ -8,16 +8,16 @@
     <ul class="cols-2">
       <li class="input">
         <label>Exterior Color</label>
-        <input type="text" ng-model="vm.exterior_color" ng-value="vm.exterior_color"/>
+        <input type="text" ng-model="vm.exteriorColor" ng-value="vm.exteriorColor"/>
       </li>
       <li class="input">
         <label>Interior Color</label>
-        <input type="text" ng-model="vm.interior_color" ng-value="vm.interior_color" placeholder="Interior Color"/>
+        <input type="text" ng-model="vm.interiorColor" ng-value="vm.interiorColor" placeholder="Interior Color"/>
       </li>
 
       <li class="dropdown">
         <label>Search Color</label>
-        <select class="na-select" ng-model="vm.search_color">
+        <select class="na-select" ng-model="vm.searchColor">
           <option value="0" selected>Color</option>
           <option value="Black">Black</option>
           <option value="Blue">Blue</option>
@@ -38,7 +38,7 @@
       </li>
       <li class="dropdown">
         <label>Seats</label>
-        <select class="na-select" ng-model="vm.seat">
+        <select class="na-select" ng-model="vm.seatCovering">
           <option value="0" selected>Seats</option>
           <option value="Leather">Leather</option>
           <option value="Cloth">Cloth</option>
@@ -47,7 +47,7 @@
       </li>
       <li class="dropdown">
         <label>Doors</label>
-        <select class="na-select" ng-model="vm.door">
+        <select class="na-select" ng-model="vm.doorCount">
           <option value="0" selected>Doors</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -137,7 +137,7 @@
       </li>
       <li class="dropdown">
         <label>Fuel</label>
-        <select class="na-select" ng-model="vm.fuel">
+        <select class="na-select" ng-model="vm.fueltype">
           <option value="0" selected>Fuel</option>
           <option value="Gasoline">Gasoline</option>
           <option value="Diesel">Diesel</option>
@@ -162,7 +162,7 @@
         </li>
         <li class="dropdown">
         <label>Full Warranty</label>
-        <select class="na-select" ng-model="vm.warranty">
+        <select class="na-select" ng-model="vm.fullWarranty">
           <option value="No Warranty">No Warranty</option>
           <option value="Manufacturer Warranty Active">Manufacturer Warranty Active</option>
           <option value="Aftermarket Warranty Available">Aftermarket Warranty Available</option>
@@ -205,16 +205,16 @@
         <label>Guaranteed Financing</label>
         <input type="text" ng-model="vm.guaranteedFinancing" placeholder="Guaranteed Financing"/>
       </li>
-      <li class="input">
+      <!-- <li class="input">
           <label>Seller Guarantee</label>
             <input type="radio" ng-model="vm.sellerGuarantee" value="Guarantee">Guarantee
             <input type="radio" ng-model="vm.sellerGuarantee" value="As It is">As It is
-      </li>
-      <li class="input">
+      </li> -->
+      <!-- <li class="input">
           <label>Yellow Light</label>
             <input type="radio" ng-model="vm.yellowLight" value="Yes">Yes
             <input type="radio" ng-model="vm.yellowLight" value="No">No
-      </li>
+      </li> -->
       <li>
         <dl>
           <dt>Interior Options</dt>
@@ -246,6 +246,10 @@
             <input type="checkbox" checklist-model="vm.truckOptions" checklist-value="truckOption" /> <label for="">{{truckOption}}</label>
           </dd>
         </dl>
+      </li>
+      <li class="input">
+        <label>Custom Options</label>
+        <textarea type="textbox" ng-model="vm.customOptions" ng-value="vm.customOptions"/></textarea>
       </li>
       <li class="full footer">
         <!-- <button class="btn btn-danger"  type="submit" >Add Vehicle</button> -->
