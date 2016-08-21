@@ -209,9 +209,9 @@ function VehicleAddbyVinController($scope, addbyVinProvider){
         'bodyType':vm.bodyType,
         'vehicleStyle':vm.vehicleStyle,
         'vehicleType':vm.vehicleType,
-        'itemNo':vm.itemNo,
+        'itemNumber':vm.itemNo,
         'mileage':vm.mileage,
-        'location':vm.location,
+        'location':vm.location, // need to pass in location guid 32 digits + 4 dashes similar to owner
         'inventoryStatus':vm.inventoryStatus,
         'dateAdded':vm.dateAdded,
         'description': vm.description,
