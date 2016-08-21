@@ -205,8 +205,8 @@ function VehicleAddbyVinController($scope, addbyVinProvider){
         'make':vm.make,
         'model':vm.model,
         'trim':vm.trim,
-        'bodyStyle':vm.bodyStyle, // need to add this field
-        'bodyType':vm.bodyType, // need to add this field
+        'bodyStyle':vm.bodyStyle,
+        'bodyType':vm.bodyType,
         'vehicleStyle':vm.vehicleStyle,
         'vehicleType':vm.vehicleType,
         'itemNo':vm.itemNo,
@@ -246,7 +246,7 @@ function VehicleAddbyVinController($scope, addbyVinProvider){
         'exteriorOptions' : vm.exteriorOptions,
         'premiumOptions': vm.premiumOptions,
         'truckOptions': vm.truckOptions,
-        'customOptions': vm.customOptions, //need to add this field
+        'customOptions': vm.customOptions,
         'owner': owner,
         'activity': 'add'
       })
