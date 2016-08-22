@@ -91,7 +91,10 @@ input, textarea, select, button {
 
 input[type="checkbox"] {
   -webkit-appearance: checkbox;
+}
 
+input[type="radio"] {
+  -webkit-appearance: radio;
 }
 
 [role="button"],
