@@ -1,9 +1,9 @@
 (function() {
   'use strict';
-  
+
   $(document).ready(function() {
     console.log("Hello from scripts")
-        
+
     // tab control
     jQuery(function() {
       $('*[data-tabset]').each(function() {
@@ -27,21 +27,21 @@
         })
       })
     })
-    
+
     $(document).on("click", ".item .title", function() {
       $(this).closest('.item').addClass('active');
     });
-    
+
     $(document).on("click", ".item .toolbar .close", function() {
       $(this).closest('.item').removeClass('active');
     });
-    
+
 //    $('.item .title').click(function(e) {
 //      e.preventDefault();
 //      $(this).closest('li').addClass('selected');
 //      return false;
 //    });
-    
+
 //    $('.item .title').click( function(e) {
 //        e.preventDefault();
 //    //    $('.item.active').removeClass('active');
@@ -49,10 +49,10 @@
 //        $('.item.active .extended').load(this.href + ' .page');
 //    //    $('.item .extended.active').removeClass('active');
 //    //    $('.item.active .extended').addClass('active');
-//    
-//        
+//
+//
 //      });
-    
+
   });
 }());
 
@@ -138,4 +138,45 @@ naBaseApp.directive("resetPassword", function() {
      });
    }
  }
+});
+
+naBaseApp.directive('myTabs', function() {
+  return {
+    restrict: 'E',
+    transclude: true,
+    scope: {},
+    controller: ['$scope', function MyTabsController($scope) {
+      var panes = $scope.panes = [];
+
+      $scope.select = function(pane) {
+        angular.forEach(panes, function(pane) {
+          pane.selected = false;
+        });
+        pane.selected = true;
+      };
+
+      this.addPane = function(pane) {
+        if (panes.length === 0) {
+          $scope.select(pane);
+        }
+        panes.push(pane);
+      };
+    }],
+    templateUrl: '/angular-app/partials/vehicle/my-tabs.html'
+  };
+})
+
+naBaseApp.directive('myPane', function() {
+  return {
+    require: '^^myTabs',
+    restrict: 'E',
+    transclude: true,
+    scope: {
+      title: '@'
+    },
+    link: function(scope, element, attrs, tabsCtrl) {
+      tabsCtrl.addPane(scope);
+    },
+    templateUrl: '/angular-app/partials/vehicle/my-pane.html'
+  };
 });
