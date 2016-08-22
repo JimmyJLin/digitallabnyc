@@ -7,18 +7,13 @@
       <li>
         <input class="large" type="text" ng-model="vm.vin" placeholder="Vehicle VIN Number" />
       </li>
-      <li class="footer">
+      <!-- <li class="footer"> -->
         <!-- <button class="na-input-submit blue" type="submit" >Next</button> -->
-        <button type="submit" class="btn" id="checkVinButton">Next</button>
-      </li>
+        <!-- <button type="submit" class="btn" id="checkVinButton">Next</button> -->
+      <!-- </li> -->
     </ul>
   </form>
-</div>
+  <div ng-include src="'angular-app/partials/forms/add_vehicle_vin/vehicle_add_by_vin_basic.html'"></div>
+  <div ng-include src="'angular-app/partials/forms/add_vehicle_vin/vehicle_add_by_vin_details.html'"></div>
 
-<div id="vehicle_basic">
-  <div ng-include src="'angular-app/vehicle/vehicle_add_by_vin/vehicle_add_by_vin_step2.html'"></div>
-</div>
-
-<div id="vehicle_details">
-  <div ng-include src="'angular-app/vehicle/vehicle_add_by_vin/vehicle_add_by_vin_step3.html'"></div>
 </div>

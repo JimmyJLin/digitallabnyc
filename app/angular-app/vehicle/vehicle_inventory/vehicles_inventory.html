@@ -1,33 +1,22 @@
 <header class="page-head">
   <h1>{{ vm.title }} <small>{{vehicles.length}}</small></h1>
 </header>
-<div class="page">
+<div class="list">
   <ul>
-    <li ng-repeat="vehicle in vehicles  track by $index">
+    <h1>Vehicles Listed in Marketplace <small>{{activeList.length}}</small></h1>
+    <li ng-repeat="vehicle in vehicles | filter: {IsActive:true} as activeList">
       <div class="item vehicle" ng-include src="'angular-app/partials/vehicle/item.html'"></div>
     </li>
   </ul>
-<!--        <table>
-          <tr>
-            <th>Number</th>
-            <th>Vin</th>
-            <th>Year</th>
-            <th>Make</th>
-            <th>Model</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Price</th>
-          </tr>
-          <tr ng-repeat="vehicle in vehicles  track by $index">
-            <td> {{ vehicle.ID }}</td>
-            <td> {{ vehicle.VIN }} </td>
-            <td> {{ vehicle.Year }} </td>
-            <td> {{ vehicle.Make }} </td>
-            <td> {{ vehicle.Model }} </td>
-            <td> {{ vehicle.Type }} </td>
-            <td> {{ vehicle.Price }} </td>
-            <td> {{ vehicle.Description }} </td>
-          </tr>
-        </table>-->
+
+</div>
+
+<div class="list">
+  <ul>
+    <h1>Vehicles NOT Listed in Marketplace<small>{{notActiveList.length}}</small></h1>
+    <li ng-repeat="vehicle in vehicles | filter: {IsActive:false} as notActiveList">
+      <div class="item vehicle" ng-include src="'angular-app/partials/vehicle/item.html'"></div>
+    </li>
+  </ul>
 
 </div>

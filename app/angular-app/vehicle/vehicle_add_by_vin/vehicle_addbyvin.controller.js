@@ -178,17 +178,18 @@ function VehicleAddbyVinController($scope, addbyVinProvider){
             vm.itemNo = $scope.vehicle.ItemGuid;
             vm.addedsDate = $scope.vehicle.DateCreated;
             // vm.engine = JSON.parse($scope.vehicle.DataSquishDetail).engine;
-            vm.availability = JSON.parse($scope.vehicle.DataSquishDetail).engine.availability;
+            // vm.availability = JSON.parse($scope.vehicle.DataSquishDetail).engine.availability;
             vm.cylinder = JSON.parse($scope.vehicle.DataSquishDetail).engine.cylinder;
-            vm.compressionRatio = JSON.parse($scope.vehicle.DataSquishDetail).engine.compressionRatio;
+            // vm.compressionRatio = JSON.parse($scope.vehicle.DataSquishDetail).engine.compressionRatio;
             vm.size = JSON.parse($scope.vehicle.DataSquishDetail).engine.size;
-            vm.displacement = JSON.parse($scope.vehicle.DataSquishDetail).engine.displacement;
+            vm.configuration = JSON.parse($scope.vehicle.DataSquishDetail).engine.configuration;
+            // vm.displacement = JSON.parse($scope.vehicle.DataSquishDetail).engine.displacement;
             vm.fuelType = JSON.parse($scope.vehicle.DataSquishDetail).engine.fuelType;
-            vm.horsepower = JSON.parse($scope.vehicle.DataSquishDetail).engine.horsepower;
-            vm.torque = JSON.parse($scope.vehicle.DataSquishDetail).engine.torque;
-            vm.totalValves = JSON.parse($scope.vehicle.DataSquishDetail).engine.totalValves;
-            vm.manufacturerEgineCode = JSON.parse($scope.vehicle.DataSquishDetail).engine.manufacturerEgineCode;
-            vm.type = JSON.parse($scope.vehicle.DataSquishDetail).engine.type;
+            // vm.horsepower = JSON.parse($scope.vehicle.DataSquishDetail).engine.horsepower;
+            // vm.torque = JSON.parse($scope.vehicle.DataSquishDetail).engine.torque;
+            // vm.totalValves = JSON.parse($scope.vehicle.DataSquishDetail).engine.totalValves;
+            // vm.manufacturerEgineCode = JSON.parse($scope.vehicle.DataSquishDetail).engine.manufacturerEgineCode;
+            // vm.type = JSON.parse($scope.vehicle.DataSquishDetail).engine.type;
             console.log( vm.vin , $scope.vehicle);
 
         }
@@ -196,56 +197,113 @@ function VehicleAddbyVinController($scope, addbyVinProvider){
   }
 
   vm.addVehicle = function(){
-    var vehicleAdd = {
-      VIN: vm.vin,
-      Year:vm.year,
-      Make:vm.make,
-      Model:vm.model,
-      Trim:vm.trim,
-      bodystyle:vm.bodystyle,
-      vehicleType:vm.vehicleType,
-      itemNo:vm.itemNo,
-      mileage:vm.mileage,
-      location:vm.location,
-      inventoryStatus:vm.inventoryStatus,
-      date:vm.date,
-      description: vm.description,
-      exteriorColor: vm.exterior_color,
-      interiorColor: vm.interior_color,
-      searchColor: vm.search_color,
-      seat:vm.seat,
-      door:vm.door,
-      engine:{
-        'availability': vm.availability,
-        'cylinder': vm.cylinder,
-        'compressionRatio': vm.compressionRatio,
-        'size': vm.size,
-        'displacement': vm.displacement,
-        'fuelType': vm.fuelType,
-        'horsepower': vm.horsepower,
-        'torque': vm.torque,
-        'totalValves': vm.totalValves,
-      },
-      transmission:vm.transmission,
-      drivetrain:vm.drivetrain,
-      fuel:vm.fuel,
-      brakes:vm.brakes,
-      titleStatus:vm.titleStatus,
-      titleState:vm.titleState,
-      warranty:vm.warranty,
-      drivetrainWarranty: vm.drivetrainWarranty,
-      additionalWarranty: vm.additionalWarranty,
-      certifiedPreOwned:vm.certifiedPreOwned,
-      guaranteedFinancing: vm.guaranteedFinancing,
-      sellerGuarantee : vm.sellerGuarantee,
-      yellowLight : vm.yellowLigh,
-      interiorOptions : vm.interirOptions,
-      exteriorOptions : vm.exteriorOptions,
-      premiumOptions: vm.premiumOptions,
-      truckOptions: vm.truckOptions
-    };
-    console.log(JSON.stringify(vehicleAdd))
+    var owner = "617a69c3-bd34-445c-a762-1bbcf228f7bb"
+
+      var addVehicleData = JSON.stringify({
+        'submitter': "submitter",
+        'vin': vm.vin,
+        'year':vm.year,
+        'make':vm.make,
+        'model':vm.model,
+        'trim':vm.trim,
+        'bodyStyle':vm.bodyStyle,
+        'bodyType':vm.bodyType,
+        'vehicleStyle':vm.vehicleStyle,
+        'vehicleType':vm.vehicleType,
+        'itemNumber':vm.itemNo,
+        'mileage':vm.mileage,
+        'location':vm.location, // need to pass in location guid 32 digits + 4 dashes similar to owner
+        'inventoryStatus':vm.inventoryStatus,
+        'dateAdded':vm.dateAdded,
+        'description': vm.description,
+        'exteriorColor': vm.exteriorColor,
+        'interiorColor': vm.interiorColor,
+        'searchColor': vm.searchColor,
+        'seatCovering':vm.seatCovering,
+        'doorCount':vm.doorCount,
+        'engine':{
+          'cylinder': vm.cylinder,
+          'size': vm.size,
+          'configuration': vm.configuration,
+        },
+        'transmission':vm.transmission,
+        'drivetrain':vm.drivetrain,
+        'fuelType':vm.fuelType,
+        'brakes':vm.brakes,
+        'titleStatus':vm.titleStatus,
+        'titleState':vm.titleState,
+        'fullWarranty':vm.fullWarranty,
+        'drivetrainWarranty': vm.drivetrainWarranty,
+        'additionalWarranty': vm.additionalWarranty,
+        'certifiedPreOwned':vm.certifiedPreOwned,
+        'guaranteedFinancing': vm.guaranteedFinancing,
+        'interiorOptions' : vm.interiorOptions,
+        'exteriorOptions' : vm.exteriorOptions,
+        'premiumOptions': vm.premiumOptions,
+        'truckOptions': vm.truckOptions,
+        'customOptions': vm.customOptions,
+        'owner': owner,
+        'activity': 'add'
+      })
+
+
+  addbyVinProvider.addVehicle(addVehicleData);
+
   }
+
+  // vm.addVehicle = function(){
+  //   var vehicleAdd = {
+  //     'vin': vm.vin,
+  //     'year':vm.year,
+  //     'make':vm.make,
+  //     'model':vm.model,
+  //     'trim':vm.trim,
+  //     'bodyStyle':vm.bodyStyle, // need to add this field
+  //     'bodyType':vm.bodyType, // need to add this field
+  //     'vehicleStyle':vm.vehicleStyle,
+  //     'vehicleType':vm.vehicleType,
+  //     'itemNo':vm.itemNo,
+  //     'mileage':vm.mileage,
+  //     'location':vm.location,
+  //     'inventoryStatus':vm.inventoryStatus,
+  //     'dateAdded':vm.dateAdded,
+  //     'description': vm.description,
+  //     'exteriorColor': vm.exteriorColor,
+  //     'interiorColor': vm.interiorColor,
+  //     'searchColor': vm.searchColor,
+  //     'seatCovering':vm.seatCovering,
+  //     'doorCount':vm.doorCount,
+  //     'engine':{
+  //       'availability': vm.availability,
+  //       'cylinder': vm.cylinder,
+  //       'compressionRatio': vm.compressionRatio,
+  //       'size': vm.size,
+  //       'displacement': vm.displacement,
+  //       'fuelType': vm.fuelType,
+  //       'horsepower': vm.horsepower,
+  //       'torque': vm.torque,
+  //       'totalValves': vm.totalValves,
+  //     },
+  //     'transmission':vm.transmission,
+  //     'drivetrain':vm.drivetrain,
+  //     'fuelType':vm.fueltype,
+  //     'brakes':vm.brakes,
+  //     'titleStatus':vm.titleStatus,
+  //     'titleState':vm.titleState,
+  //     'fullWarranty':vm.fullWarranty,
+  //     'drivetrainWarranty': vm.drivetrainWarranty,
+  //     'additionalWarranty': vm.additionalWarranty,
+  //     'certifiedPreOwned':vm.certifiedPreOwned,
+  //     'guaranteedFinancing': vm.guaranteedFinancing,
+  //     'interiorOptions' : vm.interirOptions,
+  //     'exteriorOptions' : vm.exteriorOptions,
+  //     'premiumOptions': vm.premiumOptions,
+  //     'truckOptions': vm.truckOptions,
+  //     'customOptions': vm.customOptions //need to add this field
+  //   };
+  //   console.log(vehicleAdd)
+  //   // console.log(JSON.stringify(vehicleAdd))
+  // }
 
 
 }

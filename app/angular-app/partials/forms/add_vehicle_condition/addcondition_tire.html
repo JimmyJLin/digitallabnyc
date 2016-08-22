@@ -1,0 +1,107 @@
+<header class="page-head">
+  <h1>Add Tire Details</h1>
+</header>
+<div class="page form">
+  <form ng-submit="vm.addCond()" >
+    <ul class="cols-2">
+      <li class="dropdown">
+        <label>Tire Match</label>
+        <select class="na-select" ng-model="vm.tireMatch" id="select_year_min">
+          <option value="0" selected></option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
+        </select>
+      </li>
+
+      <li class="dropdown">
+        <label>Weather Checked</label>
+        <select class="na-select" ng-model="vm.weatherChecked" id="select_year_min">
+          <option value="0" selected></option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
+        </select>
+      </li>
+
+      <li class="dropdown">
+        <label>Left Front</label>
+        <select class="na-select" ng-model="vm.leftFront" id="select_year_min">
+          <option value="0" selected></option>
+          <option value="New">New</option>
+          <option value="More than 7/32">More than 7/32</option>
+          <option value="4/32 to 7/32">4/32 to 7/32</option>
+          <option value="Less than 4/32">Less than 4/32</option>
+          <option value="Flat">Flat</option>
+          <option value="Missing">Missing</option>
+        </select>
+      </li>
+
+      <li class="dropdown">
+        <label>Right Front</label>
+        <select class="na-select" ng-model="vm.rightFront" id="select_year_min">
+          <option value="0" selected></option>
+          <option value="New">New</option>
+          <option value="More than 7/32">More than 7/32</option>
+          <option value="4/32 to 7/32">4/32 to 7/32</option>
+          <option value="Less than 4/32">Less than 4/32</option>
+          <option value="Flat">Flat</option>
+          <option value="Missing">Missing</option>
+        </select>
+      </li>
+
+      <li class="dropdown">
+        <label>Left Rear</label>
+        <select class="na-select" ng-model="vm.leftRear" id="select_year_min">
+          <option value="0" selected></option>
+          <option value="New">New</option>
+          <option value="More than 7/32">More than 7/32</option>
+          <option value="4/32 to 7/32">4/32 to 7/32</option>
+          <option value="Less than 4/32">Less than 4/32</option>
+          <option value="Flat">Flat</option>
+          <option value="Missing">Missing</option>
+        </select>
+      </li>
+
+      <li class="dropdown">
+        <label>Right Rear</label>
+        <select class="na-select" ng-model="vm.rightRear" id="select_year_min">
+          <option value="0" selected></option>
+          <option value="New">New</option>
+          <option value="More than 7/32">More than 7/32</option>
+          <option value="4/32 to 7/32">4/32 to 7/32</option>
+          <option value="Less than 4/32">Less than 4/32</option>
+          <option value="Flat">Flat</option>
+          <option value="Missing">Missing</option>
+        </select>
+      </li>
+
+      <li class="dropdown">
+        <label>Spare</label>
+        <select class="na-select" ng-model="vm.spare" id="select_year_min">
+          <option value="0" selected></option>
+          <option value="New">New</option>
+          <option value="More than 7/32">More than 7/32</option>
+          <option value="4/32 to 7/32">4/32 to 7/32</option>
+          <option value="Less than 4/32">Less than 4/32</option>
+          <option value="Flat">Flat</option>
+          <option value="Missing">Missing</option>
+        </select>
+      </li>
+
+      <li class="dropdown">
+        <label>Jack</label>
+        <select class="na-select" ng-model="vm.jack" id="select_year_min">
+          <option value="0" selected></option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
+        </select>
+      </li>
+
+      <li class="full footer">
+        <!-- <a class="btn" ng-href="#/vehicle/addcondition_step5">Next</button> -->
+        <button type="submit" class="btn" id="addConditionTires">Next</button>
+
+      </li>
+    </ul>
+  </form>
+
+</div>

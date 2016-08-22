@@ -1,6 +1,3 @@
-@import 'https://fonts.googleapis.com/css?family=Droid+Sans|Open+Sans';
-
-
 body {
   font-size: 16px;
   line-height: 1em;
@@ -9,6 +6,8 @@ body {
   font-weight: 400;
   background-color: #f1f2f1;
 }
+
+.no-flick{-webkit-transform:translate3d(0,0,0);}
 
 i {
   font-weight: normal;
@@ -21,7 +20,7 @@ i {
 
 .flex, .inline, .item header, .item header .content,
 header.main .toolbar .inner,
-header.main nav > ul, .page-head, .cols-2, .form .footer {
+header.main nav > ul, .page-head, .cols-2, .cols-3, .form .footer {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -42,7 +41,7 @@ header.main .toolbar .inner {
   flex-flow: row nowrap;
 }
 
-.inner, .page, .page-head, footer.main, header.main > nav ul {
+.inner, .list, .page, .page-head, footer.main, header.main > nav ul {
   max-width: 980px;
   margin-right: auto;
   margin-left: auto;
@@ -233,6 +232,17 @@ li:last-child .menu + menu:before {
 .page-head h1 {
   font-size: 2em;
   font-weight: 200;
+  margin-right: 1.5rem;
+}
+
+.modal .page-head {
+  margin: 0;
+  padding: 1.5rem 1.5rem 0;
+}
+
+.modal .page-head h1 {
+  font-weight: 200;
+  font-size: 1.3em;
 }
 
 .page-head h1 small {
@@ -252,30 +262,62 @@ li:last-child .menu + menu:before {
   margin-left: auto;
 }
 
-form .cols-2 li {
+.page.form section {
+  border-top: 1px solid #efefef;
+  padding-bottom: 1rem;
+}
+
+.page.form section h2 {
+  padding: 3rem 1.5rem 1.5rem;
+  font-size: 1.5em;
+  font-weight: 200;
+}
+
+.page.form section h3 {
+  padding: 1rem 1.5rem;
+  font-weight: 200;
+  font-size: .9em;
+}
+
+.form .cols-2 li {
   width: 50%;
 }
 
-form .cols-2 li:nth-child(odd) {
+.form .cols-3 li {
+  width: 33.33%;
+}
+
+.form .cols-4 li {
+  width: 25%;
+}
+
+.form .cols-3 li,
+.form .cols-4 li {
+  font-size: .9em;
+  padding-top: 0;
+  padding-bottom: .25em;
+}
+
+.form .cols-2 li:nth-child(odd) {
   padding-right: 1rem;
 }
 
-form .cols-2 li:nth-child(even) {
+.form .cols-2 li:nth-child(even) {
   padding-left: 1rem;
 }
 
-form .cols-2 li.full {
+.form .cols-2 li.full {
   width: 100%;
 /*  padding-right: 0;
   padding-left: 0;*/
   padding: 0 1.5rem;
 }
 
-form .cols-2 li.full > * {
+.form .cols-2 li.full > * {
 
 }
 
-form textarea {
+.form textarea {
   width: 100%;
   min-height: 200px;
   padding: 1rem;
@@ -283,48 +325,50 @@ form textarea {
   border-radius: 3px;
 }
 
-form textarea,
-form select,
-form input {
+.form textarea,
+.form select,
+.form input {
   font-size: 1em;
 }
 
 form {
-  padding-top: 1rem;
-  padding-bottom: 1.5rem;
+/*  padding-top: 1rem;
+  padding-bottom: 1.5rem;*/
 }
 
-form li {
+.form li {
 /*  margin-bottom: 1.5em;*/
   padding: .5rem 1.5rem;
 }
 
-form li:last-child {
+.form li:last-child {
   margin-bottom: 0;
 }
 
-form label {
-  display: block;
+.form label {
+  display: inline-block;
   font-size: .9em;
+  font-weight: 200;
   margin-bottom: .5rem;
 }
 
-form dd label {
+.form dd label {
   display: inline;
 }
 
-form .forgot  {
+.form #forgot  {
   display: inline-block;
 /*  text-decoration: underline;*/
   font-size: .9em;
   float: right;
 }
 
-form input[type="text"],
-form input[type="number"],
-form input[type="email"],
-form input[type="password"],
-form select {
+.form input[type="text"],
+.form input[type="number"],
+.form input[type="email"],
+.form input[type="password"],
+.form input[type="date"],
+.form select {
   margin: 0 0 .5rem;
   border: 1px solid #dedfde;
   border-radius: 3px;
@@ -333,22 +377,22 @@ form select {
   width: 100%;
 }
 
-form .error {
+.form .error {
   color: #ed2726;
   display: block;
   font-size: .8em;
   margin-bottom: .25rem;
 }
 
-form .error:last-of-type {
+.form .error:last-of-type {
   margin-bottom: .5rem;
 }
 
-form .error:not(.ng-hide) + input {
+.form .error:not(.ng-hide) + input {
   border-color: #ed2726;
 }
 
-form select {
+.form select {
   background-image:
       linear-gradient(45deg, transparent 50%, #ccc 50%),
       linear-gradient(135deg, #ccc 50%, transparent 50%),
@@ -364,7 +408,7 @@ form select {
     background-repeat: no-repeat;
 }
 
-form select:focus {
+.form select:focus {
   background-image:
       linear-gradient(45deg, transparent 50%, #525fb8 50%),
       linear-gradient(135deg, #525fb8 50%, transparent 50%),
@@ -380,23 +424,23 @@ form select:focus {
     background-repeat: no-repeat;
 }
 
-form input[type="text"].large {
+.form input[type="text"].large {
   font-size: 3em;
   text-align: center;
 }
 
-form input[type="text"]:focus,
-form select:focus {
+.form input[type="text"]:focus,
+.form select:focus {
   border-color: #525fb8;
   -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
-form input.ng-invalid + input {
+.form input.ng-invalid + input {
   display: none;
 }
 
-form button {
+.form button {
   background-color: #ed2726;
   display: block;
   width: 100%;
@@ -522,6 +566,8 @@ footer.main p {
 
 .item {
   background-color: white;
+/*  margin-right: .5rem;
+  margin-left: .5rem;*/
   -webkit-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out;
   position: relative;
@@ -591,7 +637,7 @@ footer.main p {
 
 
 .item.active {
-  margin: 1rem 0 2rem;
+  margin: 1rem -.5rem 2rem;
   -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
   z-index: 80;
@@ -614,6 +660,7 @@ footer.main p {
   transition: all 350ms ease-in-out;
   overflow: hidden;
   position: relative;
+  visibility: hidden;
 }
 
 .item.active > .extended {
@@ -622,6 +669,7 @@ footer.main p {
   /*min-height: 50vh;*/
   height: auto;
 /*  overflow: auto;*/
+  visibility: visible;
 }
 
 .group > .item.active > .extended {
@@ -1292,5 +1340,97 @@ footer.main p {
 }
 
 /* @end */
+
+.htabs {
+  padding: 0 1rem;
+  background-color: white;
+  border-bottom: 1px solid #efefef;
+}
+
+.htabs li {
+  font-size: .9em;
+}
+
+.htabs li a {
+  display: block;
+  padding: 1rem .5rem .9rem;
+  margin-right: 1.5rem;
+  position: relative;
+}
+
+.htabs li.selected a:after {
+  content: "";
+  color: #21295f;
+  border-bottom: 2px solid #ea2523;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.pane {
+  padding: 1.5rem;
+}
+
+.pane p {
+  font-size: .9em;
+  font-weight: 200;
+  line-height: 1.3em;
+  width: 80%;
+}
+
+.pane h3 {
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}
+
+.pane h3:first-of-type {
+  margin-top: 0;
+}
+
+.pane ul {
+  -webkit-column-count: 3;
+  column-count: 3;
+}
+
+.pane li {
+  font-size: .9em;
+  line-height: 1.3em;
+  font-weight: 200;
+  margin-bottom: .5rem;
+}
+
+.pane li label {
+  color: #666;
+
+  width: 130px;
+  display: inline-block;
+  font-size: .9em;
+}
+
+.pane.hide {
+  display: none;
+}
+
+.pane .overview {
+  padding: 2rem;
+}
+
+.pane .details li {
+  margin-bottom: .5rem;
+  font-weight: 400;
+}
+
+.pane .details label {
+  width: 125px;
+  display: inline-block;
+  font-size: .9rem;
+  font-weight: 200;
+  color: #666;
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 /* @end */

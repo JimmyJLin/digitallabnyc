@@ -41,7 +41,9 @@ na.leanweb/
   |   |   |   |-  public.controller.js
   |   |   |   |-  publicProvider.js
   |   |   |-  main/
+  |   |   |-  marketplace/
   |   |   |-  partials/
+  |   |   |   |-  forms/
   |   |   |   |-  login/
   |   |   |   |-  modals/
   |   |   |   |-  reset_password/
@@ -49,9 +51,13 @@ na.leanweb/
   |   |   |   |-  footer.html
   |   |   |   |-  header.html
   |   |   |-  vehicle/
-  |   |   |   |-  condition/
   |   |   |   |-  vehicle_add/
-  |   |   |   |-  vehicle_list/
+  |   |   |   |-  vehicle_add_by_vin/
+  |   |   |   |-  vehicle_all/
+  |   |   |   |-  vehicle_condition/
+  |   |   |   |-  vehicle_details/
+  |   |   |   |-  vehicle_inventory/
+  |   |   |-  watchlist/
   |   |   |-  app.js
   |   |-  assets/
   |   |   |-  css/
@@ -107,7 +113,7 @@ na.leanweb/
 |  |   |
 | Watchlist Routes |   |
 | /watchlist |  my watchlist |
-| /inventory |  my inventory |
+| /inventory/vehicles |  my inventory |
 | /inventory |  my account settings |
 |  |   |
 | Messages Routes |   |
