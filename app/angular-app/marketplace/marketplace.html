@@ -1,10 +1,10 @@
 <header class="page-head">
-  <h1>Marketplace <small>{{vehicles.length}}</small></h1>
+  <h1>Marketplace <small>{{ActiveList.length}}</small></h1>
 
 </header>
 <div class="page">
   <ul>
-    <li ng-repeat="vehicle in vehicles | filter: {IsActive:true}">
+    <li ng-repeat="vehicle in vehicles | filter: {IsActive:true} as ActiveList">
       <div class="item vehicle" ng-include src="'angular-app/partials/vehicle/item.html'"></div>
     </li>
   </ul>
