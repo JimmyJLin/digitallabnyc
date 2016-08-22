@@ -1,9 +1,58 @@
 (function() {
   'use strict';
-
+  
   $(document).ready(function() {
     console.log("Hello from scripts")
-
+        
+    // tab control
+    jQuery(function() {
+      $('*[data-tabset]').each(function() {
+        var defaultTab = '#' + $(this).data('tabset')
+        $(this).children('li').each(function() {
+          var currentSheet = $(this).children('a').attr('href')
+          if (currentSheet != defaultTab) {
+            $(currentSheet).addClass('hide')
+          } else {
+            $(this).addClass('selected')
+          }
+          $(this).on('click', function() {
+            $(this).siblings().each(function(){
+              $(this).removeClass('selected')
+              $($(this).children('a').attr('href')).addClass('hide')
+            })
+            $(this).addClass('selected')
+            $($(this).children('a').attr('href')).removeClass('hide')
+            return false
+          })
+        })
+      })
+    })
+    
+    $(document).on("click", ".item .title", function() {
+      $(this).closest('.item').addClass('active');
+    });
+    
+    $(document).on("click", ".item .toolbar .close", function() {
+      $(this).closest('.item').removeClass('active');
+    });
+    
+//    $('.item .title').click(function(e) {
+//      e.preventDefault();
+//      $(this).closest('li').addClass('selected');
+//      return false;
+//    });
+    
+//    $('.item .title').click( function(e) {
+//        e.preventDefault();
+//    //    $('.item.active').removeClass('active');
+//        $(this).closest('.item').addClass('active');
+//        $('.item.active .extended').load(this.href + ' .page');
+//    //    $('.item .extended.active').removeClass('active');
+//    //    $('.item.active .extended').addClass('active');
+//    
+//        
+//      });
+    
   });
 }());
 
