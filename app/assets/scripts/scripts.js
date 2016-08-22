@@ -162,7 +162,7 @@ naBaseApp.directive('myTabs', function() {
         panes.push(pane);
       };
     }],
-    templateUrl: '/angular-app/partials/vehicle/my-tabs.html'
+    templateUrl: '/angular-app/partials/tabs/my-tabs.html'
   };
 })
 
@@ -177,6 +177,6 @@ naBaseApp.directive('myPane', function() {
     link: function(scope, element, attrs, tabsCtrl) {
       tabsCtrl.addPane(scope);
     },
-    templateUrl: '/angular-app/partials/vehicle/my-pane.html'
+    templateUrl: '/angular-app/partials/tabs/my-pane.html'
   };
 });
