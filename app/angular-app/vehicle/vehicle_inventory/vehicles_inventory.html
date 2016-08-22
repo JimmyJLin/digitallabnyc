@@ -2,8 +2,19 @@
   <h1>{{ vm.title }} <small>{{vehicles.length}}</small></h1>
 </header>
 <div class="list">
+  <h1>Vehicles Listed in Marketplace</h1>
   <ul>
-    <li ng-repeat="vehicle in vehicles  track by $index">
+    <li ng-repeat="vehicle in vehicles | filter: {IsActive:true}">
+      <div class="item vehicle" ng-include src="'angular-app/partials/vehicle/item.html'"></div>
+    </li>
+  </ul>
+
+</div>
+
+<div class="list">
+  <h1>Vehicles NOT Listed in Marketplace</h1>
+  <ul>
+    <li ng-repeat="vehicle in vehicles | filter: {IsActive:false}">
       <div class="item vehicle" ng-include src="'angular-app/partials/vehicle/item.html'"></div>
     </li>
   </ul>

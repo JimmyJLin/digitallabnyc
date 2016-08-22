@@ -69,7 +69,7 @@ naBaseApp.config(function ($httpProvider, $routeProvider) {
 
   /* Marketplace */
   .when('/marketplace', {
-    controller: "PublicController",
+    controller: "VehiclesAllController",
     templateUrl: "/angular-app/marketplace/marketplace.html",
     activetab: 'marketplace'
   })
