@@ -46,7 +46,7 @@
 
       <li class="dropdown">
         <label>Previously Repainted</label>
-        <select class="na-select" ng-model="vm.hailDamage" id="select_year_min">
+        <select class="na-select" ng-model="vm.previouslyRepainted" id="select_year_min">
           <option value="0" selected></option>
           <option value="1">Yes</option>
           <option value="2">No</option>
@@ -90,7 +90,8 @@
       </li>
 
       <li class="full footer">
-        <a class="btn" ng-href="#/vehicle/addcondition_step3">Next</button>
+        <!-- <a class="btn" ng-href="#/vehicle/addcondition_step3">Next</button> -->
+          <button type="submit" class="btn" id="addConditionBasics">Next</button>
 
       </li>
     </ul>
