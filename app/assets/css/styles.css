@@ -332,8 +332,8 @@ li:last-child .menu + menu:before {
 }
 
 form {
-  padding-top: 1rem;
-  padding-bottom: 1.5rem;
+/*  padding-top: 1rem;
+  padding-bottom: 1.5rem;*/
 }
 
 .form li {
