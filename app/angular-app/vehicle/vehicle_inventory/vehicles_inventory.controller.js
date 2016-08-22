@@ -14,6 +14,7 @@ function get_vehicles(){
         } else {
               console.log("DEBUG => data --> " + vehicles);
             $scope.vehicles = vehicles;
+            
         }
       });
     }
