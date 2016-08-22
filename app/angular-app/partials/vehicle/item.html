@@ -45,33 +45,36 @@
 <div class="extended">
   <section class="body">
 
-    <ul class="htabs flex nav nav-tabs">
-      <li class="active">
-          <a href="#vehicleDescription">Description</a>
-      </li>
-
-      <li class="active">
-        <a href="#vehicleOptions">Options</a>
-      </li>
+    <!-- <ul data-tabset="na-{{ vehicle.ItemGuid }}-desc" class="htabs flex">
+      <li class=""><a href="#na-{{ vehicle.ItemGuid }}-desc">Description</a></li>
+      <li><a href="#na-{{ vehicle.ItemGuid }}-options">Options</a></li>
       <li><a href="#na-{{ vehicle.ItemGuid }}-cr">Condition Report</a></li>
       <li><a href="#na-{{ vehicle.ItemGuid }}-notes">Notes</a></li>
-    </ul>
+    </ul> -->
 
-    <div id="#vehicleDescription" class="pane">
-      <div class="signin" ng-include src="'angular-app/partials/vehicle/itemDescription.html'"></div>
-    </div>
 
-    <div id="#vehicleOptions" class="pane">
-      <div class="signin" ng-include src="'angular-app/partials/vehicle/itemOptions.html'"></div>
-    </div>
-
-    <div id="na-{{ auto.naid }}-cr" class="pane">
-      <div class="signin" ng-include src="'angular-app/partials/vehicle/itemConditionReport.html'"></div>
-    </div>
-
-    <div id="na-{{ auto.naid }}-notes" class="pane">
-      <div class="signin" ng-include src="'angular-app/partials/vehicle/itemNotes.html'"></div>
-    </div>
+    <my-tabs>
+      <my-pane title="Description">
+        <div class="pane">
+          <div ng-include src="'angular-app/partials/vehicle/itemDescription.html'"></div>
+        </div>
+      </my-pane>
+      <my-pane title="Options">
+        <div class="pane">
+          <div ng-include src="'angular-app/partials/vehicle/itemOptions.html'"></div>
+        </div>
+      </my-pane>
+      <my-pane title="Condition Report">
+        <div class="pane">
+          <div ng-include src="'angular-app/partials/vehicle/itemConditionReport.html'"></div>
+        </div>
+      </my-pane>
+      <my-pane title="Notes">
+        <div class="pane">
+          <div ng-include src="'angular-app/partials/vehicle/itemNotes.html'"></div>
+        </div>
+      </my-pane>
+    </my-tabs>
 
   </section>
 </div>

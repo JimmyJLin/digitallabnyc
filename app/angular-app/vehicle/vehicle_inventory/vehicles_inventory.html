@@ -13,7 +13,7 @@
 
 <div class="list">
   <ul>
-    <h1>Vehicles NOT Listed in Marketplace<small>{{notActiveList.length}}</small></h1>
+    <h1>Vehicles NOT Listed in Marketplace <small>{{notActiveList.length}}</small></h1>
     <li ng-repeat="vehicle in vehicles | filter: {IsActive:false} as notActiveList">
       <div class="item vehicle" ng-include src="'angular-app/partials/vehicle/item.html'"></div>
     </li>
