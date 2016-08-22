@@ -11,7 +11,9 @@
 
   <div class="content">
     <div class="details">
-      <h1 class="title"><a href="#/vehicles/{{ vehicle.ItemGuid }}" class="modal">{{ vehicle.Year }} {{ vehicle.Make }} {{ vehicle.Model }} {{ vehicle.Type }}</a></h1>
+<!--      <h1 class="title"><a href="#/vehicles/{{ vehicle.ItemGuid }}" class="modal">{{ vehicle.Year }} {{ vehicle.Make }} {{ vehicle.Model }} {{ vehicle.Type }}</a></h1>-->
+      <h1 class="title">{{ vehicle.Year }} {{ vehicle.Make }} {{ vehicle.Model }} {{ vehicle.Type }}</h1>
+
       <h2>{{ vehicle.Miles }} miles &middot; {{ vehicle.Drive }} &middot; {{ vehicle.Transmission }} &middot; {{ vehicle.Color }} &middot; {{ vehicle.Engine }}</h2>
     </div>
     <div class="action inline no-wrap">
@@ -22,11 +24,11 @@
       </div>
       <div class="expires">
         <label>Ends</label>
-        <time datetime="{{ auto.Expires }}" data-countdown="{{ auto.Expires | date: '%Y/%m/%d %H:%M:%S' }}">{{ auto.Expires | date: '%Hh %Mm %Ss' }}</time>
+        <time datetime="{{vehicle.Expires }}" data-countdown="{{ vehicle.Expires | date: '%Y/%m/%d %H:%M:%S' }}">{{ vehicle.Expires | date: '%Hh %Mm %Ss' }}</time>
       </div>
       <div class="bids">
         <label>Bids</label>
-        {{ auto.CurrentBids }}
+        {{ vehicle.CurrentBids }}
       </div>
 
       <div class="buttons inline no-wrap">
@@ -43,11 +45,11 @@
 <div class="extended">
   <section class="body">
 
-    <ul data-tabset="na-{{ auto.naid }}-desc" class="htabs flex">
-      <li><a href="#na-{{ auto.naid }}-desc">Description</a></li>
-      <li><a href="#na-{{ auto.naid }}-options">Options</a></li>
-      <li><a href="#na-{{ auto.naid }}-cr">Condition Report</a></li>
-      <li><a href="#na-{{ auto.naid }}-notes">Notes</a></li>
+    <ul data-tabset="na-{{ vehicle.ItemGuid }}-desc" class="htabs flex">
+      <li class=""><a href="#na-{{ vehicle.ItemGuid }}-desc">Description</a></li>
+      <li><a href="#na-{{ vehicle.ItemGuid }}-options">Options</a></li>
+      <li><a href="#na-{{ vehicle.ItemGuid }}-cr">Condition Report</a></li>
+      <li><a href="#na-{{ vehicle.ItemGuid }}-notes">Notes</a></li>
     </ul>
 
     <div id="na-{{ auto.naid }}-desc" class="pane">
@@ -55,16 +57,65 @@
 
     </div>
     <div id="na-{{ auto.naid }}-options" class="pane">
+      <ul>
+          <li><label>Item Id:</label> {{ vehicle.ItemGuid }} </li>
+          <li><label>Item Name:</label> {{ vehicle.ItemName }} </li>
+          <li><label>Date Created:</label> {{ vehicle.DateCreated }} </li>
+          <li><label>Date Last Modified:</label> {{ vehicle.DateLastModified }} </li>
+          <li><label>Is Active:</label> {{ vehicle.IsActive }} </li>
+          <li><label>Notes:</label> {{ vehicle.Notes }} </li>
+          <li><label>VIN:</label> {{ vehicle.VIN }} </li>
+          <li><label>Year:</label> {{ vehicle.Year}} </li>
+          <li><label>Make:</label> {{ vehicle.Make}} </li>
+          <li><label>Model:</label> {{ vehicle.Model}} </li>
+          <li><label>Body Type:</label> {{ vehicle.BodyType}} </li>
+          <li><label>Description:</label> {{ vehicle.Description}} </li>
+          <li><label>Price:</label> {{ vehicle.Price}} </li>
+          <li><label>Owner:</label> {{ vehicle.OwnerGuid}} </li>
+          <li><label>Trim:</label> {{ vehicle.Trim}} </li>
+          <li><label>Body Style:</label> {{ vehicle.BodyStyle}} </li>
+          <li><label>Vehicle Style:</label> {{ vehicle.VehicleStyle}} </li>
+          <li><label>Vehicle Type:</label> {{ vehicle.VehicleType}} </li>
+          <li><label>Item Number:</label> {{ vehicle.ItemNumber}} </li>
+          <li><label>Mileage:</label> {{ vehicle.Milage}} </li>
+          <li><label>Location:</label> {{ vehicle.Location}} </li>
+          <li><label>Inventory Status:</label> {{ vehicle.InventoryStatus}} </li>
+          <li><label>Date Added:</label> {{ vehicle.DateAdded }} </li>
+          <li><label>Exterior Color:</label> {{ vehicle.ExteriorColor}} </li>
+          <li><label>Interior Color:</label> {{ vehicle.InteriorColor}} </li>
+          <li><label>Search Color:</label> {{ vehicle.SearchColor}} </li>
+          <li><label>Seat Cover:</label> {{ vehicle.SeatCovering}} </li>
+          <li><label>Door:</label> {{ vehicle.DoorCount}} </li>
+          <li><label>Engine:</label> {{ vehicle.Engine}} </li>
+          <li><label>Transmission:</label> {{ vehicle.Transmission}} </li>
+          <li><label>Drivetrain:</label> {{ vehicle.Drivetrain}} </li>
+          <li><label>FuelType:</label> {{ vehicle.FuelType}} </li>
+          <li><label>Brakes:</label> {{ vehicle.Brakes}} </li>
+          <li><label>Title Status:</label> {{ vehicle.TitleStatus}} </li>
+          <li><label>Title Date:</label> {{ vehicle.TitleDate}} </li>
+          <li><label>Full Warranty:</label> {{ vehicle.FullWarranty}} </li>
+          <li><label>Drivetrain Warranty:</label> {{ vehicle.DrivetrainWarranty}} </li>
+          <li><label>Additional Warranty:</label> {{ vehicle.AdditionalWarranty}} </li>
+          <li><label>Certified Pre-Owned:</label> {{ vehicle.CertifiedPreOwned}} </li>
+          <li><label>Guaranteed Financing:</label> {{ vehicle.GuaranteedFinancing}} </li>
+          <ul>
+            <li>Interior Options: {{ vehicle.InteriorOptions}} </li>
+          </ul>
+          <ul>
+            <li>Exterior Options: {{ vehicle.ExteriorOptions}} </li>
+          </ul>
+          <ul>
+            <li>Premium Options: {{ vehicle.PremiumOptions}} </li>
+          </ul>
+          <ul>
+            <li>TruckOptions: {{ vehicle.TruckOptions}} </li>
+          </ul>
+          <ul>
+            <li>CustomOptions: {{ vehicle.CustomOptions}} </li>
+          </ul>
+      
+        </ul>
 
-    <ul>
-    {% for option in auto.Options %}
-      <li>
-      {% for value in option %}
-        {{ value }}
-      {% endfor %}
-      </li>
-    {% endfor %}
-    </ul>
 
     </div>
     <div id="na-{{ auto.naid }}-cr" class="pane">
