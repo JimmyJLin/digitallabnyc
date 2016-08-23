@@ -84,9 +84,11 @@ return {
 naBaseApp.directive("toggleModal", function() {
   return {
     link: function($scope, element, attr) {
+      console.log($scope, element, attr)
       element.on("click", function() {
           $('body').toggleClass("modal");
-      });
+
+        });
     }
   }
 });

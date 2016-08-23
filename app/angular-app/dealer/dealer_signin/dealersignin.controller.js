@@ -13,6 +13,7 @@ angular.module('naBaseApp').controller('DealerSigninController', DealerSigninCon
         return false;
       }
     }
+    $window.sessionStorage.isModel =  true;
 
     vm.signin =function(){
        if (vm.email && vm.password) {
