@@ -174,22 +174,18 @@ function VehicleAddbyVinController($scope, addbyVinProvider){
             vm.model = JSON.parse($scope.vehicle.DataBasic).model.name;
             vm.trim = JSON.parse($scope.vehicle.DataBasic).trim.name;
             vm.bodystyle = JSON.parse($scope.vehicle.DataBasic).vehicleStyle;
+            vm.vehicleStyle =JSON.parse($scope.vehicle.DataBasic).vehicleStyle;
             vm.vehicleType =JSON.parse($scope.vehicle.DataBasic).vehicleType;
             vm.itemNo = $scope.vehicle.ItemGuid;
             vm.addedsDate = $scope.vehicle.DateCreated;
-            // vm.engine = JSON.parse($scope.vehicle.DataSquishDetail).engine;
-            // vm.availability = JSON.parse($scope.vehicle.DataSquishDetail).engine.availability;
             vm.cylinder = JSON.parse($scope.vehicle.DataSquishDetail).engine.cylinder;
-            // vm.compressionRatio = JSON.parse($scope.vehicle.DataSquishDetail).engine.compressionRatio;
+            vm.doorCount = JSON.parse($scope.vehicle.DataDetail).numOfDoors;
+
             vm.size = JSON.parse($scope.vehicle.DataSquishDetail).engine.size;
             vm.configuration = JSON.parse($scope.vehicle.DataSquishDetail).engine.configuration;
-            // vm.displacement = JSON.parse($scope.vehicle.DataSquishDetail).engine.displacement;
+            vm.transmission = JSON.parse($scope.vehicle.DataSquishDetail).transmission.transmissionType;
             vm.fuelType = JSON.parse($scope.vehicle.DataSquishDetail).engine.fuelType;
-            // vm.horsepower = JSON.parse($scope.vehicle.DataSquishDetail).engine.horsepower;
-            // vm.torque = JSON.parse($scope.vehicle.DataSquishDetail).engine.torque;
-            // vm.totalValves = JSON.parse($scope.vehicle.DataSquishDetail).engine.totalValves;
-            // vm.manufacturerEgineCode = JSON.parse($scope.vehicle.DataSquishDetail).engine.manufacturerEgineCode;
-            // vm.type = JSON.parse($scope.vehicle.DataSquishDetail).engine.type;
+
             console.log( vm.vin , $scope.vehicle);
 
         }

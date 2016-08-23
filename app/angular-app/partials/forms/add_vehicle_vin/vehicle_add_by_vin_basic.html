@@ -5,20 +5,20 @@
   <ul class="cols-2">
     <li class="input">
       <label>VIN</label>
-      <input type="text" ng-model="vm.vin" ng-value = "vm.vin" placeholder="{{ vm.vin }}"/>
+      <input type="text" ng-model="vm.vin" ng-value = "vm.vin" placeholder="{{ vm.vin }} Vehicle VIN Number"/>
     </li>
     <li class="dropdown">
       <label>Year</label>
-      <select class="na-select" ng-model="vm.year" id="select_year_min">
+      <select ng-model="vm.year" id="select_year_min">
         <option ng-value="{{vm.year}}" selected>{{ vm.year }}</option>
-        <option ng-value="2017">2017</option>
-        <option ng-value="2016">2016</option>
-        <option ng-value="2015">2015</option>
-        <option ng-value="2014">2014</option>
-        <option ng-value="2013">2013</option>
-        <option ng-value="2012">2012</option>
-        <option ng-value="2011">2011</option>
-        <option ng-value="2010">2010</option>
+        <option value="2017">2017</option>
+        <option value="2016">2016</option>
+        <option value="2015">2015</option>
+        <option value="2014">2014</option>
+        <option value="2013">2013</option>
+        <option value="2012">2012</option>
+        <option value="2011">2011</option>
+        <option value="2010">2010</option>
       </select>
     </li>
     <li class="dropdown">
@@ -52,7 +52,7 @@
     <li class="dropdown">
       <label>Vehicle Style</label>
       <select class="na-select" ng-model="vm.vehicleStyle">
-        <option value="{{vm.bodystyle}}" selected>{{vm.vehicleStyle}}</option>
+        <option value="{{vm.vehicleStyle}}" selected>{{vm.vehicleStyle}}</option>
         <option value="SUV">SUV</option>
         <option value="Sedan">Sedan</option>
         <option value="Regular Cab Pickup">Regular Cab Pickup</option>
@@ -79,7 +79,7 @@
     </li>
     <li class="input">
       <label>Item Number</label>
-      <input type="text" ng-model="vm.itemNo" ng-value="vm.itemNo"/>
+      <input type="text" ng-model="vm.itemNo" ng-value="vm.itemNo" placeholder="Item Number"/>
     </li>
     <li class="input">
       <label>Mileage</label>
@@ -115,7 +115,7 @@
     </li>
     <li>
       <label>Availability</label>
-      <input type="text" ng-model="vm.availability" ng-value="vm.availability"/>
+      <input type="text" ng-model="vm.availability" ng-value="vm.availability" placeholder="Availability"/>
     </li>
     <li class="input full">
       <label>Description</label>
@@ -130,7 +130,7 @@
     <li class="dropdown">
       <label>Body Style</label>
       <select class="na-select" ng-model="vm.bodyStyle">
-        <option value="bodyStyle0" selected>bodyStyle0</option>
+        <option value="bodyStyle0" selected>Body Style</option>
         <option value="bodyStyle1">bodyStyle1</option>
         <option value="bodyStyle2">bodyStyle2</option>
         <option value="bodyStyle3">bodyStyle3</option>
@@ -139,7 +139,7 @@
     <li class="dropdown">
       <label>Body Type</label>
       <select class="na-select" ng-model="vm.bodyType">
-        <option value="bodyType0" selected>bodyType0</option>
+        <option value="bodyType0" selected>Body Type</option>
         <option value="bodyType1">bodyType1</option>
         <option value="bodyType2">bodyType2</option>
         <option value="bodyType3">bodyType3</option>

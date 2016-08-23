@@ -6,7 +6,7 @@
   <ul class="cols-2">
     <li class="input">
       <label>Exterior Color</label>
-      <input type="text" ng-model="vm.exteriorColor" ng-value="vm.exteriorColor"/>
+      <input type="text" ng-model="vm.exteriorColor" ng-value="vm.exteriorColor" placeholder="Exterior Color"/>
     </li>
     <li class="dropdown">
       <label>Search Color</label>
@@ -70,40 +70,20 @@
   <ul class="cols-2">
     <li>
       <label>Cylinder</label>
-      <input type="text" ng-model="vm.cylinder" ng-value="vm.cylinder"/>
-    </li>
-    <li>
-      <label>Compression Ratio</label>
-      <input type="text" ng-model="vm.compressionRatio" ng-value="vm.compressionRatio"/>
+      <input type="text" ng-model="vm.cylinder" ng-value="vm.cylinder" placeholder="Cylinder"/>
     </li>
     <li>
       <label>Size</label>
-      <input type="text" ng-model="vm.size" ng-value="vm.size"/>
+      <input type="text" ng-model="vm.size" ng-value="vm.size" placeholder="Size"/>
     </li>
     <li>
-      <label>Displacement</label>
-      <input type="text" ng-model="vm.displacement" ng-value="vm.displacement"/>
-    </li>
-    <li>
-      <label>Fuel Type</label>
-      <input type="text" ng-model="vm.fuelType" ng-value="vm.fuelType"/>
-    </li>
-    <li>
-      <label>Horsepower</label>
-      <input type="text" ng-model="vm.horsepower" ng-value="vm.horsepower"/>
-    </li>
-    <li>
-      <label>Torque</label>
-      <input type="text" ng-model="vm.torque" ng-value="vm.torque"/>
-    </li>
-    <li>
-      <label>Total Valves</label>
-      <input type="text" ng-model="vm.totalValves" ng-value="vm.totalValves"/>
+      <label>Configuration</label>
+      <input type="text" ng-model="vm.configuration" ng-value="vm.configuration" placeholder="Configuration"/>
     </li>
     <li class="dropdown">
       <label>Transmission</label>
       <select class="na-select" ng-model="vm.transmission">
-        <option value="0" selected>Transmission</option>
+        <option ng-value="{{vm.transmission}}" selected>{{ vm.transmission }}</option>
         <option value="Automatic">Automatic</option>
         <option value="Automatic 3-Speed">Automatic 3-Speed</option>
         <option value="Automatic 4-Speed">Automatic 4-Speed</option>
@@ -133,8 +113,8 @@
     </li>
     <li class="dropdown">
       <label>Fuel</label>
-      <select class="na-select" ng-model="vm.fueltype">
-        <option value="0" selected>Fuel</option>
+      <select class="na-select" ng-model="vm.fuelType">
+        <option ng-value="{{vm.fuelType}}" selected>{{ vm.fuelType }}</option>
         <option value="Gasoline">Gasoline</option>
         <option value="Diesel">Diesel</option>
         <option value="Gasoline/E85">Gasoline/E85</option>
