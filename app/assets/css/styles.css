@@ -408,6 +408,10 @@ form {
   width: 100%;
 }
 
+.form select.ng-empty {
+  color: #a8a9a8;
+}
+
 .form .error {
   color: #E91E25;
   display: block;
