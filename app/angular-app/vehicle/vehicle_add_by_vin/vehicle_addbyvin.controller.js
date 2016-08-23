@@ -5,7 +5,7 @@ function VehicleAddbyVinController($scope, addbyVinProvider){
   // TEST VIN - 1GNEK13Z34J221437
   var vm = this;
   vm.finalvehicle = {};
-
+  vm.isSearched = false;
   // Truck Option Checkbox
   $scope.truckOptions = [
     'Bed Liner',
@@ -168,6 +168,7 @@ function VehicleAddbyVinController($scope, addbyVinProvider){
         } else {
             // console.log('DEBUG controller ' + JSON.stringify(data) );
             $scope.vehicle = data;
+            vm.isSearched = true;
             vm.vin = $scope.vehicle.VIN;
             vm.make = $scope.vehicle.VehicleMake;
             vm.year = JSON.parse($scope.vehicle.DataBasic).year;

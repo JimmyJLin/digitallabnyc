@@ -1,0 +1,6 @@
+      <div class="nge-tabs">
+          <div class="tabs">
+           <a ng-repeat='tab in tabs' ng-class="{active: active == tab.name}" ng-click="switch(tab)">{{ tab.title }}</a>
+          </div>
+          <div class="panes" ng-transclude></div>
+       </div>

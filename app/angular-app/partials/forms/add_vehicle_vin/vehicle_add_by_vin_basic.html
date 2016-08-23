@@ -5,12 +5,13 @@
   <ul class="cols-2">
     <li class="input">
       <label>VIN</label>
-      <input type="text" ng-model="vm.vin" ng-value = "vm.vin" placeholder="{{ vm.vin }}"/>
+      <input type="text" ng-model="vm.vin" ng-value = "vm.vin" placeholder="Vin Number"/>
     </li>
     <li class="dropdown">
       <label>Year</label>
       <select class="na-select" ng-model="vm.year" id="select_year_min">
-        <option ng-value="{{vm.year}}" selected>{{ vm.year }}</option>
+        <option ng-if="vm.isSearched" ng-value="{{vm.year}}" selected> {{vm.year}} </option>
+        <option ng-if="!vm.isSearched" selected>Year</option>
         <option ng-value="2017">2017</option>
         <option ng-value="2016">2016</option>
         <option ng-value="2015">2015</option>
@@ -24,7 +25,8 @@
     <li class="dropdown">
       <label>Make</label>
       <select class="na-select"  ng-model="vm.make">
-        <option ng-value="{{vm.make}}" selected>{{vm.make}}</option>
+        <option ng-if="vm.isSearched" ng-value="{{vm.make}}" selected> {{vm.make}} </option>
+        <option ng-if="!vm.isSearched" selected>Make</option>
         <option value="1">Make 1</option>
         <option value="2">Make 2</option>
         <option value="3">Make 3</option>
@@ -38,7 +40,8 @@
     <li class="dropdown">
       <label>Model</label>
       <select class="na-select" ng-model="vm.model">
-        <option value="{{vm.model}}" selected>{{vm.model}}</option>
+        <option ng-if="vm.isSearched" ng-value="{{vm.make}}" selected> {{vm.model}} </option>
+        <option ng-if="!vm.isSearched" selected>Model</option>
         <option value="1">Model 1</option>
         <option value="2">Model 2</option>
         <option value="3">Model 3</option>
@@ -52,7 +55,8 @@
     <li class="dropdown">
       <label>Vehicle Style</label>
       <select class="na-select" ng-model="vm.vehicleStyle">
-        <option value="{{vm.bodystyle}}" selected>{{vm.vehicleStyle}}</option>
+        <option ng-if="vm.isSearched" ng-value="{{vm.bodystyle}}" selected> {{vm.bodystyle}}</option>
+        <option ng-if="!vm.isSearched" selected>Vehicle Style</option>
         <option value="SUV">SUV</option>
         <option value="Sedan">Sedan</option>
         <option value="Regular Cab Pickup">Regular Cab Pickup</option>
@@ -70,7 +74,8 @@
     <li class="dropdown">
       <label>Vehicle Type</label>
       <select class="na-select" ng-model="vm.vehicleType">
-        <option value={{vm.vehicleType}} selected>{{vm.vehicleType}}</option>
+        <option ng-if="vm.isSearched" ng-value="{{vm.vehicleType}}" selected> {{vm.vehicleType}}</option>
+        <option ng-if="!vm.isSearched" selected>Vehicle Type</option>
         <option value="New">New</option>
         <option value="Used">Used</option>
         <option value="Certified Pre-Owned">Certified Pre-Owned</option>
@@ -79,7 +84,7 @@
     </li>
     <li class="input">
       <label>Item Number</label>
-      <input type="text" ng-model="vm.itemNo" ng-value="vm.itemNo"/>
+      <input type="text" ng-model="vm.itemNo" ng-value="vm.itemNo" placeholder="Item Number"/>
     </li>
     <li class="input">
       <label>Mileage</label>
@@ -94,7 +99,8 @@
     <li class="dropdown">
       <label>Inventory Status </label>
       <select class="na-select" ng-model="vm.inventoryStatus">
-        <option value="{{vm.inventoryStatus}}" selected>{{vm.inventoryStatus}}</option>
+        <option ng-if="vm.isSearched" ng-value="{{vm.inventoryStatus}}" selected> {{vm.inventoryStatus}}</option>
+        <option ng-if="!vm.isSearched" selected>Inventory Status </option>
         <option value="Not Ready to List">Not Ready to List</option>
         <option value="Reconditioning">Reconditioning</option>
         <option value="In Detail">In Detail</option>
@@ -115,11 +121,11 @@
     </li>
     <li>
       <label>Availability</label>
-      <input type="text" ng-model="vm.availability" ng-value="vm.availability"/>
+      <input type="text" ng-model="vm.availability" ng-value="vm.availability" placeholder="availability"/>
     </li>
     <li class="input full">
       <label>Description</label>
-      <textarea type="textbox" ng-model="vm.description" ng-value="vm.description"/></textarea>
+      <textarea type="textbox" ng-model="vm.description" ng-value="vm.description" placeholder="description"/></textarea>
     </li>
   </ul>
 </section>
@@ -148,7 +154,8 @@
     <li class="dropdown">
       <label>Trim</label>
       <select class="na-select" ng-model="vm.trim">
-        <option value="{{vm.trim}}" selected>{{vm.trim}}</option>
+        <option ng-if="vm.isSearched" ng-value="{{vm.trim}}" selected> {{vm.trim}}</option>
+        <option ng-if="!vm.isSearched" selected>Trim </option>
         <option value="1">Body Style 1</option>
         <option value="2">Body Style 2</option>
       </select>
@@ -156,7 +163,8 @@
     <li class="dropdown">
       <label>Doors</label>
       <select class="na-select" ng-model="vm.doorCount">
-        <option value="0" selected>Doors</option>
+        <option ng-if="vm.isSearched" ng-value="{{}}" selected> {{}}</option>
+        <option ng-if="!vm.isSearched" selected>Doors </option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
