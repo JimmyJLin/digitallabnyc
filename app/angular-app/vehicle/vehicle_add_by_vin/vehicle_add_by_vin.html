@@ -3,6 +3,7 @@
 </header>
 <div class="page form" id="checkVin">
   <form ng-submit="vm.addCond()" >
+    <section>
     <ul>
       <li>
         <input class="large" type="text" ng-model="vm.vin" placeholder="Vehicle VIN Number" />
@@ -12,6 +13,7 @@
         <!-- <button type="submit" class="btn" id="checkVinButton">Next</button> -->
       <!-- </li> -->
     </ul>
+    </section>
   </form>
   <div ng-include src="'angular-app/partials/forms/add_vehicle_vin/vehicle_add_by_vin_basic.html'"></div>
   <div ng-include src="'angular-app/partials/forms/add_vehicle_vin/vehicle_add_by_vin_details.html'"></div>
