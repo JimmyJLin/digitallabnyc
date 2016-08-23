@@ -2,21 +2,21 @@
   <h1>{{ vm.title }} <small>{{vehicles.length}}</small></h1>
 </header>
 <div class="list">
-  <ul>
-    <h1>Vehicles Listed in Marketplace <small>{{activeList.length}}</small></h1>
-    <li ng-repeat="vehicle in vehicles | filter: {IsActive:true} as activeList">
-      <div class="item vehicle" ng-include src="'angular-app/partials/vehicle/item.html'"></div>
-    </li>
-  </ul>
-
+  <section>
+    <h2>Unlisted <small>{{notActiveList.length}}</small></h2>
+    <ul>
+      <li ng-repeat="vehicle in vehicles | filter: {IsActive:false} as notActiveList">
+        <div class="item vehicle" ng-include src="'angular-app/partials/vehicle/item.html'"></div>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Listed <small>{{activeList.length}}</small></h2>
+    <ul>
+      <li ng-repeat="vehicle in vehicles | filter: {IsActive:true} as activeList">
+        <div class="item vehicle" ng-include src="'angular-app/partials/vehicle/item.html'"></div>
+      </li>
+    </ul>
+  </section>
 </div>
 
-<div class="list">
-  <ul>
-    <h1>Vehicles NOT Listed in Marketplace <small>{{notActiveList.length}}</small></h1>
-    <li ng-repeat="vehicle in vehicles | filter: {IsActive:false} as notActiveList">
-      <div class="item vehicle" ng-include src="'angular-app/partials/vehicle/item.html'"></div>
-    </li>
-  </ul>
-
-</div>
