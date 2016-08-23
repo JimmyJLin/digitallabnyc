@@ -1,13 +1,11 @@
-<header class="page-head">
-  <h1>Add Miscellaneous Details</h1>
-</header>
-<div class="page form">
-  <form ng-submit="vm.addCond()" >
+<form ng-submit="vm.addCond()" >
+<section>
+<h2>Add Miscellaneous Details</h2>
     <ul class="cols-2">
       <li class="dropdown">
         <label>Master</label>
         <select class="na-select" ng-model="vm.master" id="select_year_min">
-          <option value="0" selected></option>
+          <option value="" selected>Select Num of Master Key</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -19,7 +17,7 @@
       <li class="dropdown">
         <label>Remote</label>
         <select class="na-select" ng-model="vm.remote" id="select_year_min">
-          <option value="0" selected></option>
+          <option value="" selected>Select Num of Remote Key</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -30,7 +28,7 @@
       <li class="dropdown">
         <label>Valet</label>
         <select class="na-select" ng-model="vm.valet" id="select_year_min">
-          <option value="0" selected></option>
+          <option value="" selected>Select Num of Valet Key</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -41,7 +39,7 @@
       <li class="dropdown">
         <label>Combo</label>
         <select class="na-select" ng-model="vm.combo" id="select_year_min">
-          <option value="0" selected></option>
+          <option value="" selected>Select Num of Combo Key</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -52,19 +50,16 @@
       <li class="dropdown">
         <label>Keyless Go</label>
         <select class="na-select" ng-model="vm.keylessGo" id="select_year_min">
-          <option value="0" selected></option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
+          <option value="" selected>Keyless Go</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
         </select>
       </li>
 
       <li class="dropdown">
         <label>Windshield</label>
         <select class="na-select" ng-model="vm.windshield" id="select_year_min">
-          <option value="0" selected></option>
+          <option value="" selected>Select Windshield Damage</option>
           <option value="No Damage">No Damage</option>
           <option value="Chipped">Chipped</option>
           <option value="Pited">Pited</option>
@@ -76,7 +71,7 @@
       <li class="dropdown">
         <label>Owners Manual</label>
         <select class="na-select" ng-model="vm.ownersManual" id="select_year_min">
-          <option value="0" selected></option>
+          <option value="" selected>Owner's Manual</option>
           <option value="Present">Present</option>
           <option value="Not Present">Not Present</option>
         </select>
@@ -85,7 +80,7 @@
       <li class="dropdown">
         <label>Odor</label>
         <select class="na-select" ng-model="vm.odor" id="select_year_min">
-          <option value="0" selected></option>
+          <option value="" selected>Odor</option>
           <option value="None">None</option>
           <option value="Smoke">Smoke</option>
           <option value="Foul">Foul</option>
@@ -96,18 +91,17 @@
       <li class="dropdown">
         <label>Floor Mats</label>
         <select class="na-select" ng-model="vm.floorMats" id="select_year_min">
-          <option value="0" selected></option>
+          <option value="" selected>Floor Mats</option>
           <option value="1">Yes</option>
           <option value="2">No</option>
         </select>
       </li>
 
-      <li class="full footer">
-        <!-- <a class="btn" ng-href="#/vehicle/addcondition_step7">Next</button> -->
+<!--      <li class="full footer">
+        <!-- <a class="btn" ng-href="#/vehicle/addcondition_step7">Next</button> --*>
         <button type="submit" class="btn" id="addConditionMsc">Next</button>
 
-      </li>
+      </li>-->
     </ul>
-  </form>
-
-</div>
+</section>
+</form>
