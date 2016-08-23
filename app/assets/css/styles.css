@@ -368,6 +368,11 @@ form {
   padding-bottom: 1.5rem;*/
 }
 
+.modal .form {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .form li {
 /*  margin-bottom: 1.5em;*/
   padding: .5rem 1.5rem;
@@ -393,6 +398,7 @@ form {
 /*  text-decoration: underline;*/
   font-size: .9em;
   float: right;
+  margin-left: 1rem;
 }
 
 .form input[type="text"],
