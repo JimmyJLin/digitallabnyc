@@ -11,7 +11,7 @@
     <li class="dropdown">
       <label>Search Color</label>
       <select class="na-select" ng-model="vm.searchColor">
-        <option value="0" selected>Color</option>
+        <option value="" selected>Select a Color</option>
         <option value="Black">Black</option>
         <option value="Blue">Blue</option>
         <option value="Brown">Brown</option>
@@ -49,7 +49,7 @@
     <li class="dropdown">
       <label>Seats</label>
       <select class="na-select" ng-model="vm.seatCovering">
-        <option value="0" selected>Seats</option>
+        <option value="" selected>Select Seats Covering</option>
         <option value="Leather">Leather</option>
         <option value="Cloth">Cloth</option>
         <option value="Vinyl">Vinyl</option>
@@ -83,7 +83,8 @@
     <li class="dropdown">
       <label>Transmission</label>
       <select class="na-select" ng-model="vm.transmission">
-        <option ng-value="{{vm.transmission}}" selected>{{ vm.transmission }}</option>
+        <option ng-if="vm.isSearched" ng-value="{{vm.transmission}}" selected> {{vm.transmission}} </option>
+        <option ng-if="!vm.isSearched" selected>Select Transmission</option>
         <option value="Automatic">Automatic</option>
         <option value="Automatic 3-Speed">Automatic 3-Speed</option>
         <option value="Automatic 4-Speed">Automatic 4-Speed</option>
@@ -104,7 +105,7 @@
     <li class="dropdown">
       <label>Drivetrain</label>
       <select class="na-select" ng-model="vm.drivetrain">
-        <option value="0" selected>Drivetrain</option>
+        <option value="" selected>Select a Drivetrain</option>
         <option value="Front Wheel Drive">Front Wheel Drive</option>
         <option value="Rear Wheel Drive">Rear Wheel Drive</option>
         <option value="All Wheel Drive">All Wheel Drive</option>
@@ -114,7 +115,8 @@
     <li class="dropdown">
       <label>Fuel</label>
       <select class="na-select" ng-model="vm.fuelType">
-        <option ng-value="{{vm.fuelType}}" selected>{{ vm.fuelType }}</option>
+        <option ng-if="vm.isSearched" ng-value="{{vm.fuelType}}" selected> {{vm.fuelType}} </option>
+        <option ng-if="!vm.isSearched" selected>Select Fuel Type</option>
         <option value="Gasoline">Gasoline</option>
         <option value="Diesel">Diesel</option>
         <option value="Gasoline/E85">Gasoline/E85</option>
@@ -160,6 +162,7 @@
     <li class="dropdown">
       <label>Full Warranty</label>
       <select class="na-select" ng-model="vm.fullWarranty">
+        <option value="">Select Warranty</option>
         <option value="No Warranty">No Warranty</option>
         <option value="Manufacturer Warranty Active">Manufacturer Warranty Active</option>
         <option value="Aftermarket Warranty Available">Aftermarket Warranty Available</option>
@@ -182,7 +185,7 @@
     <li class="dropdown">
       <label>Drivetrain Warranty</label>
       <select class="na-select" ng-model="vm.drivetrainWarranty">
-        <option value="0" selected>Driven Warranty</option>
+        <option value="" selected>Select Drivetrain Warranty</option>
         <option value="3 Month/3,000 Miles">3 Month/3,000 Miles</option>
         <option value="12 Month/12,000 Miles">12 Month/12,000 Miles</option>
         <option value="18 Month/18,000 Miles">18 Month/18,000 Miles</option>
@@ -197,7 +200,7 @@
     <li class="dropdown">
       <label>Certified Pre-Owned</label>
       <select class="na-select" ng-model="vm.certifiedPreOwned" id="select_year_min">
-        <option value="0" selected></option>
+        <option value="" selected>Certified Pre-Owned</option>
         <option value="1">Yes</option>
         <option value="2">No</option>
       </select>

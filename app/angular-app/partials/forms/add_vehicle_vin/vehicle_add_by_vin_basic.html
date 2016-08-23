@@ -9,22 +9,24 @@
     </li>
     <li class="dropdown">
       <label>Year</label>
-      <select ng-model="vm.year" id="select_year_min">
-        <option ng-value="{{vm.year}}" selected>{{ vm.year }}</option>
-        <option value="2017">2017</option>
-        <option value="2016">2016</option>
-        <option value="2015">2015</option>
-        <option value="2014">2014</option>
-        <option value="2013">2013</option>
-        <option value="2012">2012</option>
-        <option value="2011">2011</option>
-        <option value="2010">2010</option>
+      <select class="na-select" ng-model="vm.year" id="select_year_min">
+        <option ng-if="vm.isSearched" ng-value="{{vm.year}}" selected> {{vm.year}} </option>
+        <option ng-if="!vm.isSearched" selected>Select a Year</option>
+        <option ng-value="2017">2017</option>
+        <option ng-value="2016">2016</option>
+        <option ng-value="2015">2015</option>
+        <option ng-value="2014">2014</option>
+        <option ng-value="2013">2013</option>
+        <option ng-value="2012">2012</option>
+        <option ng-value="2011">2011</option>
+        <option ng-value="2010">2010</option>
       </select>
     </li>
     <li class="dropdown">
       <label>Make</label>
       <select class="na-select"  ng-model="vm.make">
-        <option ng-value="{{vm.make}}" selected>{{vm.make}}</option>
+        <option ng-if="vm.isSearched" ng-value="{{vm.make}}" selected> {{vm.make}} </option>
+        <option ng-if="!vm.isSearched" selected>Select a Make</option>
         <option value="1">Make 1</option>
         <option value="2">Make 2</option>
         <option value="3">Make 3</option>
@@ -38,7 +40,8 @@
     <li class="dropdown">
       <label>Model</label>
       <select class="na-select" ng-model="vm.model">
-        <option value="{{vm.model}}" selected>{{vm.model}}</option>
+        <option ng-if="vm.isSearched" ng-value="{{vm.model}}" selected> {{vm.model}} </option>
+        <option ng-if="!vm.isSearched" selected>Select a Model</option>
         <option value="1">Model 1</option>
         <option value="2">Model 2</option>
         <option value="3">Model 3</option>
@@ -52,7 +55,8 @@
     <li class="dropdown">
       <label>Vehicle Style</label>
       <select class="na-select" ng-model="vm.vehicleStyle">
-        <option value="{{vm.vehicleStyle}}" selected>{{vm.vehicleStyle}}</option>
+        <option ng-if="vm.isSearched" ng-value="{{vm.vehicleStyle}}" selected> {{vm.vehicleStyle}} </option>
+        <option ng-if="!vm.isSearched" selected>Select a Vehicle Style</option>
         <option value="SUV">SUV</option>
         <option value="Sedan">Sedan</option>
         <option value="Regular Cab Pickup">Regular Cab Pickup</option>
@@ -70,7 +74,7 @@
     <li class="dropdown">
       <label>Vehicle Type</label>
       <select class="na-select" ng-model="vm.vehicleType">
-        <option value={{vm.vehicleType}} selected>{{vm.vehicleType}}</option>
+        <option value="">Select Vehicle Type</option>
         <option value="New">New</option>
         <option value="Used">Used</option>
         <option value="Certified Pre-Owned">Certified Pre-Owned</option>
@@ -88,13 +92,14 @@
     <li class="dropdown">
       <label>Location</label>
       <select class="na-select" ng-model="vm.location" ng-value="vm.lication">
+        <option value="">Select Company Location</option>
         <option value="617a69c3-bd34-445c-a762-1bbcf228f7bb" selected>Company Address</option>
       </select>
     </li>
     <li class="dropdown">
       <label>Inventory Status </label>
       <select class="na-select" ng-model="vm.inventoryStatus">
-        <option value="{{vm.inventoryStatus}}" selected>{{vm.inventoryStatus}}</option>
+        <option value="">Select Inventory Status</option>
         <option value="Not Ready to List">Not Ready to List</option>
         <option value="Reconditioning">Reconditioning</option>
         <option value="In Detail">In Detail</option>
@@ -130,7 +135,7 @@
     <li class="dropdown">
       <label>Body Style</label>
       <select class="na-select" ng-model="vm.bodyStyle">
-        <option value="bodyStyle0" selected>Body Style</option>
+        <option value="" selected>Select Body Style</option>
         <option value="bodyStyle1">bodyStyle1</option>
         <option value="bodyStyle2">bodyStyle2</option>
         <option value="bodyStyle3">bodyStyle3</option>
@@ -139,7 +144,7 @@
     <li class="dropdown">
       <label>Body Type</label>
       <select class="na-select" ng-model="vm.bodyType">
-        <option value="bodyType0" selected>Body Type</option>
+        <option value="" selected>Select Body Type</option>
         <option value="bodyType1">bodyType1</option>
         <option value="bodyType2">bodyType2</option>
         <option value="bodyType3">bodyType3</option>
@@ -148,7 +153,8 @@
     <li class="dropdown">
       <label>Trim</label>
       <select class="na-select" ng-model="vm.trim">
-        <option value="{{vm.trim}}" selected>{{vm.trim}}</option>
+        <option ng-if="vm.isSearched" ng-value="{{vm.trim}}" selected> {{vm.trim}} </option>
+        <option ng-if="!vm.isSearched" selected>Select a Trim</option>
         <option value="1">Body Style 1</option>
         <option value="2">Body Style 2</option>
       </select>
@@ -156,7 +162,8 @@
     <li class="dropdown">
       <label>Doors</label>
       <select class="na-select" ng-model="vm.doorCount">
-        <option value="0" selected>Doors</option>
+        <option ng-if="vm.isSearched" ng-value="{{vm.doorCount}}" selected> {{vm.doorCount}} </option>
+        <option ng-if="!vm.isSearched" selected>Select Car Doors</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
