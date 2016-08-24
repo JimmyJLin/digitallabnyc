@@ -1,6 +1,6 @@
 (function () {
 
-    function vehicleAllProvider ($http) {
+    function vehicleAllProvider($http) {
 
 
     this.getAllVehicle = function (callback){

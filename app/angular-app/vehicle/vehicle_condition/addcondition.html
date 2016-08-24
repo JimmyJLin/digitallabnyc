@@ -1,6 +1,7 @@
 <header class="page-head">
   <h1>Condition Report</h1>
 </header>
+<loading></loading>
 <div class="page form">
   <form ng-submit="vm.addCond()" >
     <section>
@@ -10,7 +11,7 @@
       </li>
       <li>
         <!-- <a class="btn" ng-href="#/vehicle/addcondition_step2">Next</button> -->
-        <button type="submit" class="btn" id="addConditionButton">Next</button>
+        <!-- <button type="submit" class="btn" id="addConditionButton">Next</button> -->
       </li>
     </ul>
     </section>
@@ -19,19 +20,19 @@
   <div id="condition_details">
     <div ng-include src="'angular-app/partials/forms/add_vehicle_condition/addcondition_condition.html'"></div>
   </div>
-  
+
   <div id="mechanical_details">
     <div ng-include src="'angular-app/partials/forms/add_vehicle_condition/addcondition_mechanical.html'"></div>
   </div>
-  
+
   <div id="tire_details">
     <div ng-include src="'angular-app/partials/forms/add_vehicle_condition/addcondition_tire.html'"></div>
   </div>
-  
+
   <div id="misc_details">
     <div ng-include src="'angular-app/partials/forms/add_vehicle_condition/addcondition_misc.html'"></div>
   </div>
-  
+
   <div id="damage_details">
     <div ng-include src="'angular-app/partials/forms/add_vehicle_condition/addcondition_damage.html'"></div>
   </div>

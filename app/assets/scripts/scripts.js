@@ -180,3 +180,19 @@ naBaseApp.directive('myPane', function() {
     templateUrl: '/angular-app/partials/tabs/my-pane.html'
   };
 });
+
+naBaseApp.directive('loading', function () {
+  return {
+    restrict: 'E',
+    replace: true,
+    template: '<div class="loading"><img src="/assets/images/spinner/spinner.gif" width="40" height="40"/>LOADING...</div>',
+    link: function (scope, element, attr) {
+      scope.$watch('loading', function (val) {
+          if (val)
+              $(element).show();
+          else
+              $(element).hide();
+      });
+    }
+  }
+})

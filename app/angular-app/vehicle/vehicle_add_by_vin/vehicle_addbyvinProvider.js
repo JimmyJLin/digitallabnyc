@@ -28,6 +28,7 @@
 
       this.addVehicle = function(addVehicleData){
         console.log(addVehicleData)
+
         $http.post('http://api.nationsauction.com/inventory/Vehicle/Add', addVehicleData)
           .then(function(response){
             console.log('this is the response', response)

@@ -6,6 +6,7 @@ function VehiclesAllController($scope, vehicleAllProvider){
   vm.title= "All Vehicles";
 
 function get_vehicles_all(){
+  $scope.loading=true;
 
   $scope.vehicles =   vehicleAllProvider.getAllVehicle( function(err, vehicles){
         $scope.finished_loading = true;
@@ -14,6 +15,8 @@ function get_vehicles_all(){
         } else {
               console.log("DEBUG => data --> " + vehicles);
             $scope.vehicles = vehicles;
+            $scope.loading=false;
+
         }
       });
     }

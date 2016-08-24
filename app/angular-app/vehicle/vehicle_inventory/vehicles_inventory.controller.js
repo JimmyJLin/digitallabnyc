@@ -6,6 +6,7 @@ function VehiclesInventoryController($scope, vehicleInventoryProvider){
   vm.title= "Inventory";
 
 function get_vehicles(){
+  $scope.loading=true;
 
   $scope.vehicles =   vehicleInventoryProvider.getVehicleByOwnerID( function(err, vehicles){
         $scope.finished_loading = true;
@@ -14,7 +15,9 @@ function get_vehicles(){
         } else {
               console.log("DEBUG => data --> " + vehicles);
             $scope.vehicles = vehicles;
-            
+            $scope.loading=false;
+
+
         }
       });
     }

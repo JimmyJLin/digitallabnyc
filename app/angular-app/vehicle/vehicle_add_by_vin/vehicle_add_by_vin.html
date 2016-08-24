@@ -1,6 +1,7 @@
 <header class="page-head">
   <h1>Add Vehicle by VIN</h1>
 </header>
+<loading></loading>
 <div class="page form" id="checkVin">
   <form ng-submit="vm.addCond()" >
     <section>
@@ -8,10 +9,10 @@
       <li>
         <input class="large" type="text" ng-model="vm.vin" placeholder="Vehicle VIN Number" />
       </li>
-       <li> 
+       <li>
 <!--         <button class="na-input-submit blue" type="submit" >Next</button> -->
-         <button type="submit" class="btn" id="checkVinButton">Fetch Vehicle Details</button> 
-       </li> 
+         <button type="submit" class="btn" id="checkVinButton">Fetch Vehicle Details</button>
+       </li>
     </ul>
     </section>
   </form>
