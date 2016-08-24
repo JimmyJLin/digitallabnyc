@@ -161,12 +161,16 @@ function VehicleAddbyVinController($scope, addbyVinProvider){
 
 
   vm.addCond = function(){
+
       var vin = vm.vin;
+      $scope.loading=true;
+
       addbyVinProvider.getvehiclebyVin( vin, function(err, data){
         $scope.finished_loading = true;
         if (err) {
             $scope.page_load_error = err.message;
         } else {
+
             // console.log('DEBUG controller ' + JSON.stringify(data) );
             $scope.vehicle = data;
             vm.isSearched = true;
@@ -186,6 +190,8 @@ function VehicleAddbyVinController($scope, addbyVinProvider){
             vm.configuration = JSON.parse($scope.vehicle.DataSquishDetail).engine.configuration;
             vm.transmission = JSON.parse($scope.vehicle.DataSquishDetail).transmission.transmissionType;
             vm.fuelType = JSON.parse($scope.vehicle.DataSquishDetail).engine.fuelType;
+            
+            $scope.loading=false;
 
             console.log( vm.vin , $scope.vehicle);
 
