@@ -6,6 +6,8 @@ function VehicleAddbyVinController($scope, addbyVinProvider){
   var vm = this;
   vm.isSearched = false;
   vm.finalvehicle = {};
+  vm.VIN_REGEXP = /^[a-zA-Z0-9](\w{9}(\w{7})?)?$/;
+
 
   // Truck Option Checkbox
   $scope.truckOptions = [
@@ -163,13 +165,17 @@ function VehicleAddbyVinController($scope, addbyVinProvider){
   vm.addCond = function(){
 
       var vin = vm.vin;
-      $scope.loading=true;
+      console.log("this is vin", vin)
+      if (angular.isUndefined(vin)) {
+        alert('Vehicle VIN field cannot be blank')
+      } else {
+        $scope.loading=true;
 
-      addbyVinProvider.getvehiclebyVin( vin, function(err, data){
-        $scope.finished_loading = true;
-        if (err) {
+        addbyVinProvider.getvehiclebyVin( vin, function(err, data){
+          $scope.finished_loading = true;
+          if (err) {
             $scope.page_load_error = err.message;
-        } else {
+          } else {
 
             // console.log('DEBUG controller ' + JSON.stringify(data) );
             $scope.vehicle = data;
@@ -190,13 +196,15 @@ function VehicleAddbyVinController($scope, addbyVinProvider){
             vm.configuration = JSON.parse($scope.vehicle.DataSquishDetail).engine.configuration;
             vm.transmission = JSON.parse($scope.vehicle.DataSquishDetail).transmission.transmissionType;
             vm.fuelType = JSON.parse($scope.vehicle.DataSquishDetail).engine.fuelType;
-            
+
             $scope.loading=false;
 
             console.log( vm.vin , $scope.vehicle);
 
-        }
-      });
+          }
+        });
+
+      }
   }
 
   vm.addVehicle = function(){

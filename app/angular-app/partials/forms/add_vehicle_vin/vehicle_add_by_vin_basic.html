@@ -5,11 +5,11 @@
   <ul class="cols-2">
     <li class="input">
       <label>VIN</label>
-      <input type="text" ng-model="vm.vin" ng-value = "vm.vin" placeholder="{{ vm.vin }} Vehicle VIN Number"/>
+      <input type="text" ng-model="vm.vin" ng-value = "vm.vin" placeholder="{{ vm.vin }} Vehicle VIN Number" required/>
     </li>
     <li class="dropdown">
       <label>Year</label>
-      <select class="na-select" ng-model="vm.year" id="select_year_min">
+      <select class="na-select" ng-model="vm.year" id="select_year_min" required>
         <option ng-if="vm.isSearched" ng-value="{{vm.year}}" selected> {{vm.year}} </option>
         <option ng-if="!vm.isSearched" selected>Select a Year</option>
         <option ng-value="2017">2017</option>
@@ -24,7 +24,7 @@
     </li>
     <li class="dropdown">
       <label>Make</label>
-      <select class="na-select"  ng-model="vm.make">
+      <select class="na-select"  ng-model="vm.make" required>
         <option ng-if="vm.isSearched" ng-value="{{vm.make}}" selected> {{vm.make}} </option>
         <option ng-if="!vm.isSearched" selected>Select a Make</option>
         <option value="1">Make 1</option>
@@ -39,7 +39,7 @@
     </li>
     <li class="dropdown">
       <label>Model</label>
-      <select class="na-select" ng-model="vm.model">
+      <select class="na-select" ng-model="vm.model" required>
         <option ng-if="vm.isSearched" ng-value="{{vm.model}}" selected> {{vm.model}} </option>
         <option ng-if="!vm.isSearched" selected>Select a Model</option>
         <option value="1">Model 1</option>
@@ -54,7 +54,7 @@
     </li>
     <li class="dropdown">
       <label>Vehicle Style</label>
-      <select class="na-select" ng-model="vm.vehicleStyle">
+      <select class="na-select" ng-model="vm.vehicleStyle" required>
         <option ng-if="vm.isSearched" ng-value="{{vm.vehicleStyle}}" selected> {{vm.vehicleStyle}} </option>
         <option ng-if="!vm.isSearched" selected>Select a Vehicle Style</option>
         <option value="SUV">SUV</option>
@@ -73,7 +73,7 @@
     </li>
     <li class="dropdown">
       <label>Vehicle Type</label>
-      <select class="na-select" ng-model="vm.vehicleType">
+      <select class="na-select" ng-model="vm.vehicleType" required>
         <option value="">Select Vehicle Type</option>
         <option value="New">New</option>
         <option value="Used">Used</option>
@@ -83,22 +83,22 @@
     </li>
     <li class="input">
       <label>Item Number</label>
-      <input type="text" ng-model="vm.itemNo" ng-value="vm.itemNo" placeholder="Item Number"/>
+      <input type="text" ng-model="vm.itemNo" ng-value="vm.itemNo" placeholder="Item Number" required/>
     </li>
     <li class="input">
       <label>Mileage</label>
-      <input type="text" ng-model="vm.mileage" ng-value="vm.mileage" placeholder="Mileage"/>
+      <input type="text" ng-model="vm.mileage" ng-value="vm.mileage" placeholder="Mileage" required/>
     </li>
     <li class="dropdown">
       <label>Location</label>
-      <select class="na-select" ng-model="vm.location" ng-value="vm.lication">
+      <select class="na-select" ng-model="vm.location" ng-value="vm.lication" required>
         <option value="">Select Company Location</option>
         <option value="617a69c3-bd34-445c-a762-1bbcf228f7bb" selected>Company Address</option>
       </select>
     </li>
     <li class="dropdown">
       <label>Inventory Status </label>
-      <select class="na-select" ng-model="vm.inventoryStatus">
+      <select class="na-select" ng-model="vm.inventoryStatus" required>
         <option value="">Select Inventory Status</option>
         <option value="Not Ready to List">Not Ready to List</option>
         <option value="Reconditioning">Reconditioning</option>
@@ -116,15 +116,15 @@
     </li>
     <li class="input">
       <label>Date Added</label>
-      <input type="date" ng-model="vm.dateAdded" ng-value="vm.addedDate"/>
+      <input type="date" ng-model="vm.dateAdded" ng-value="vm.addedDate" required/>
     </li>
     <li>
       <label>Availability</label>
-      <input type="text" ng-model="vm.availability" ng-value="vm.availability" placeholder="Availability"/>
+      <input type="text" ng-model="vm.availability" ng-value="vm.availability" placeholder="Availability" required/>
     </li>
     <li class="input full">
       <label>Description</label>
-      <textarea type="textbox" ng-model="vm.description" ng-value="vm.description"/></textarea>
+      <textarea type="textbox" ng-model="vm.description" ng-value="vm.description" required/></textarea>
     </li>
   </ul>
 </section>
@@ -134,7 +134,7 @@
   <ul class="cols-2">
     <li class="dropdown">
       <label>Body Style</label>
-      <select class="na-select" ng-model="vm.bodyStyle">
+      <select class="na-select" ng-model="vm.bodyStyle" required>
         <option value="" selected>Select Body Style</option>
         <option value="bodyStyle1">bodyStyle1</option>
         <option value="bodyStyle2">bodyStyle2</option>
@@ -143,7 +143,7 @@
     </li>
     <li class="dropdown">
       <label>Body Type</label>
-      <select class="na-select" ng-model="vm.bodyType">
+      <select class="na-select" ng-model="vm.bodyType" required>
         <option value="" selected>Select Body Type</option>
         <option value="bodyType1">bodyType1</option>
         <option value="bodyType2">bodyType2</option>
@@ -152,7 +152,7 @@
     </li>
     <li class="dropdown">
       <label>Trim</label>
-      <select class="na-select" ng-model="vm.trim">
+      <select class="na-select" ng-model="vm.trim" required>
         <option ng-if="vm.isSearched" ng-value="{{vm.trim}}" selected> {{vm.trim}} </option>
         <option ng-if="!vm.isSearched" selected>Select a Trim</option>
         <option value="1">Body Style 1</option>
@@ -161,7 +161,7 @@
     </li>
     <li class="dropdown">
       <label>Doors</label>
-      <select class="na-select" ng-model="vm.doorCount">
+      <select class="na-select" ng-model="vm.doorCount" required>
         <option ng-if="vm.isSearched" ng-value="{{vm.doorCount}}" selected> {{vm.doorCount}} </option>
         <option ng-if="!vm.isSearched" selected>Select Car Doors</option>
         <option value="1">1</option>
