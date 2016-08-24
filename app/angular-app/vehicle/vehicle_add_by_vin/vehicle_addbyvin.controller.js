@@ -6,6 +6,8 @@ function VehicleAddbyVinController($scope, addbyVinProvider){
   var vm = this;
   vm.isSearched = false;
   vm.finalvehicle = {};
+  vm.VIN_REGEXP = /^[a-zA-Z0-9](\w{9}(\w{7})?)?$/;
+
 
   // Truck Option Checkbox
   $scope.truckOptions = [
@@ -161,36 +163,39 @@ function VehicleAddbyVinController($scope, addbyVinProvider){
 
 
   vm.addCond = function(){
+
       var vin = vm.vin;
+
+      $scope.loading=true;
+
       addbyVinProvider.getvehiclebyVin( vin, function(err, data){
-        $scope.finished_loading = true;
-        if (err) {
-            $scope.page_load_error = err.message;
-        } else {
-            // console.log('DEBUG controller ' + JSON.stringify(data) );
-            $scope.vehicle = data;
-            vm.isSearched = true;
-            vm.vin = $scope.vehicle.VIN;
-            vm.make = $scope.vehicle.VehicleMake;
-            vm.year = JSON.parse($scope.vehicle.DataBasic).year;
-            vm.model = JSON.parse($scope.vehicle.DataBasic).model.name;
-            vm.trim = JSON.parse($scope.vehicle.DataBasic).trim.name;
-            vm.bodystyle = JSON.parse($scope.vehicle.DataBasic).vehicleStyle;
-            vm.vehicleStyle =JSON.parse($scope.vehicle.DataBasic).vehicleStyle;
-            vm.vehicleType =JSON.parse($scope.vehicle.DataBasic).vehicleType;
-            vm.itemNo = $scope.vehicle.ItemGuid;
-            vm.addedsDate = $scope.vehicle.DateCreated;
-            vm.cylinder = JSON.parse($scope.vehicle.DataSquishDetail).engine.cylinder;
-            vm.doorCount = JSON.parse($scope.vehicle.DataDetail).numOfDoors;
-            vm.size = JSON.parse($scope.vehicle.DataSquishDetail).engine.size;
-            vm.configuration = JSON.parse($scope.vehicle.DataSquishDetail).engine.configuration;
-            vm.transmission = JSON.parse($scope.vehicle.DataSquishDetail).transmission.transmissionType;
-            vm.fuelType = JSON.parse($scope.vehicle.DataSquishDetail).engine.fuelType;
 
-            console.log( vm.vin , $scope.vehicle);
+        // console.log('DEBUG controller ' + JSON.stringify(data) );
+        $scope.vehicle = data;
+        vm.isSearched = true;
+        vm.vin = $scope.vehicle.VIN;
+        vm.make = $scope.vehicle.VehicleMake;
+        vm.year = JSON.parse($scope.vehicle.DataBasic).year;
+        vm.model = JSON.parse($scope.vehicle.DataBasic).model.name;
+        vm.trim = JSON.parse($scope.vehicle.DataBasic).trim.name;
+        vm.bodystyle = JSON.parse($scope.vehicle.DataBasic).vehicleStyle;
+        vm.vehicleStyle =JSON.parse($scope.vehicle.DataBasic).vehicleStyle;
+        vm.vehicleType =JSON.parse($scope.vehicle.DataBasic).vehicleType;
+        vm.itemNo = $scope.vehicle.ItemGuid;
+        vm.addedsDate = $scope.vehicle.DateCreated;
+        vm.cylinder = JSON.parse($scope.vehicle.DataSquishDetail).engine.cylinder;
+        vm.doorCount = JSON.parse($scope.vehicle.DataDetail).numOfDoors;
+        vm.size = JSON.parse($scope.vehicle.DataSquishDetail).engine.size;
+        vm.configuration = JSON.parse($scope.vehicle.DataSquishDetail).engine.configuration;
+        vm.transmission = JSON.parse($scope.vehicle.DataSquishDetail).transmission.transmissionType;
+        vm.fuelType = JSON.parse($scope.vehicle.DataSquishDetail).engine.fuelType;
 
-        }
+        $scope.loading=false;
+
+        console.log( vm.vin , $scope.vehicle);
+
       });
+
   }
 
   vm.addVehicle = function(){

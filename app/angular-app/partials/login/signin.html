@@ -1,5 +1,4 @@
 <div class="page form">
-
   <div ng-if='vm.message' class='alert success' role='alert'>
     <p>{{ vm.message }}</p>
   </div>
@@ -25,6 +24,10 @@
         <input type="password" name = "password" class="form-control" id="dealer-password" ng-model="vm.password" placeholder="Enter your password" ng-minlength="6" ng-maxlength="16" required />
 
       </li>
+      
+      <!-- spinner for loading -->
+      <loading></loading>
+
       <li>
         <button class="" id="btnLogIn" type="submit" value="Sign In">Sign In</button>
       </li>
