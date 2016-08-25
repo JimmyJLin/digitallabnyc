@@ -2,11 +2,35 @@
   <h1>{{ vm.title }} <small>{{vehicles.length}}</small></h1>
 </header>
 <loading></loading>
+
+
+
 <div class="list">
+  <li>
+  <input placeholder="Vin" ng-model="search.VIN">
+  </li>
+  <li>
+  <input placeholder="Year" ng-model="search.Year"></li>
+  <li>
+  <input placeholder="Item Number" type="text" ng-model="search.ItemGuid">
+  </li>
+  <li>
+  <input placeholder="Make" type="text" ng-model="search.Make">
+  </li>
+  <li>
+  <input placeholder="Model" type="text" ng-model="search.Model">
+  </li>
+
   <section>
     <h2>Unlisted <small>{{notActiveList.length}}</small></h2>
     <ul>
-      <li ng-repeat="vehicle in vehicles | filter: {IsActive:false} as notActiveList">
+      <li ng-repeat="vehicle in vehicles | filter: {
+        IsActive:true,
+        VIN:search.VIN,
+        Year:search.Year,
+        ItemGuid:search.ItemGuid ,
+        Make: search.Make,
+        Model: search.Model} as activeList">
         <div class="item vehicle" ng-include src="'angular-app/partials/vehicle/item.html'"></div>
       </li>
     </ul>
@@ -14,7 +38,13 @@
   <section>
     <h2>Listed <small>{{activeList.length}}</small></h2>
     <ul>
-      <li ng-repeat="vehicle in vehicles | filter: {IsActive:true} as activeList">
+      <li ng-repeat="vehicle in vehicles | filter: {
+        IsActive:true,
+        VIN:search.VIN,
+        Year:search.Year,
+        ItemGuid:search.ItemGuid ,
+        Make: search.Make,
+        Model: search.Model} as activeList">
         <div class="item vehicle" ng-include src="'angular-app/partials/vehicle/item.html'"></div>
       </li>
     </ul>
