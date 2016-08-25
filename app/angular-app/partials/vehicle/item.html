@@ -14,7 +14,10 @@
 <!--      <h1 class="title"><a href="#/vehicles/{{ vehicle.ItemGuid }}" class="modal">{{ vehicle.Year }} {{ vehicle.Make }} {{ vehicle.Model }} {{ vehicle.Type }}</a></h1>-->
       <h1 class="title">{{ vehicle.Year }} {{ vehicle.Make }} {{ vehicle.Model }} {{ vehicle.Type }}</h1>
 
-      <h2>{{ vehicle.Miles }} miles &middot; {{ vehicle.Drive }} &middot; {{ vehicle.Transmission }} &middot; {{ vehicle.Color }} &middot; {{ vehicle.Engine }}</h2>
+      <h2> {{ vehicle.Miles }} miles &middot; {{ vehicle.Drive }} &middot; {{ vehicle.Transmission }} &middot; {{ vehicle.Color }} &middot; {{ vehicle.Engine }}</h2>
+      <h4 class="marketplace" ng-if="vehicle.IsActive">in Marketplace</h4>
+      <h4 class="marketplace" ng-if="!vehicle.IsActive">Not in Marketplace</h4>
+
     </div>
     <div class="action inline no-wrap">
 
@@ -42,6 +45,7 @@
     </div>
   </div>
 </header>
+
 <div class="extended">
   <section class="body">
 

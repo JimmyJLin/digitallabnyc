@@ -16,6 +16,7 @@ function get_vehicles(){
               console.log("DEBUG => data --> " + vehicles);
             $scope.vehicles = vehicles;
             $scope.loading=false;
+            console.log('this is a single vehicle', vehicles[2].IsActive)
 
 
         }
