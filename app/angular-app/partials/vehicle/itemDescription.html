@@ -1,4 +1,6 @@
-  <ul>
+<button ng-click="show=true">Edit</button>
+
+<ul ng-hide="show">
       <li><label>Item Id:</label> {{ vehicle.ItemGuid }} </li>
       <li><label>Item Name:</label> {{ vehicle.ItemName }} </li>
       <li><label>Date Created:</label> {{ vehicle.DateCreated }} </li>
@@ -38,6 +40,7 @@
       <li><label>Additional Warranty:</label> {{ vehicle.AdditionalWarranty}} </li>
       <li><label>Certified Pre-Owned:</label> {{ vehicle.CertifiedPreOwned}} </li>
       <li><label>Guaranteed Financing:</label> {{ vehicle.GuaranteedFinancing}} </li>
-
-
     </ul>
+
+
+    <div ng-include src="'angular-app/partials/forms/add_vehicle_vin/vehicle_add_by_vin_basic_edit.html'"></div>
