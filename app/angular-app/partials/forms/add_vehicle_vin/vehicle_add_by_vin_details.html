@@ -1,4 +1,4 @@
-<form ng-submit="vm.addVehicle()" >
+<form name="addVehicleByVin" ng-submit="vm.addVehicle()" >
 
 <!-- exterior -->
 <section>
@@ -6,11 +6,13 @@
   <ul class="cols-2">
     <li class="input">
       <label>Exterior Color</label>
-      <input type="text" ng-model="vm.exteriorColor" ng-value="vm.exteriorColor" placeholder="Exterior Color" required/>
+      <input name="exterior_color" type="text" ng-model="vm.exteriorColor" ng-value="vm.exteriorColor" placeholder="Exterior Color" required/>
+      <small class="error" ng-show="addVehicleByVin.exterior_color.$error.required">This field is required and cannot be left blank</small>
+
     </li>
     <li class="dropdown">
       <label>Search Color</label>
-      <select class="na-select" ng-model="vm.searchColor" required>
+      <select name="search_color" class="na-select" ng-model="vm.searchColor" required>
         <option value="" selected>Select a Color</option>
         <option value="Black">Black</option>
         <option value="Blue">Blue</option>
@@ -28,12 +30,14 @@
         <option value="White">White</option>
         <option value="Yellow">Yellow</option>
       </select>
+      <small class="error" ng-show="addVehicleByVin.search_color.$error.required">This field is required and cannot be left blank</small>
+
     </li>
   </ul>
   <h3>Exterior Options</h3>
   <ul class="cols-3">
     <li ng-repeat="exteriorOption in exteriorOptions">
-      <input type="checkbox" checklist-model="vm.exteriorOptions" checklist-value="exteriorOption" required/> <label for="">{{exteriorOption}}</label>
+      <input name="exterior_options" type="checkbox" checklist-model="vm.exteriorOptions" checklist-value="exteriorOption" required/> <label for="">{{exteriorOption}}</label>
     </li>
   </ul>
 </section>
@@ -44,22 +48,26 @@
   <ul class="cols-2">
     <li class="input">
       <label>Interior Color</label>
-      <input type="text" ng-model="vm.interiorColor" ng-value="vm.interiorColor" placeholder="Interior Color" required/>
+      <input name="interior_color" type="text" ng-model="vm.interiorColor" ng-value="vm.interiorColor" placeholder="Interior Color" required/>
+      <small class="error" ng-show="addVehicleByVin.interior_color.$error.required">This field is required and cannot be left blank</small>
+
     </li>
     <li class="dropdown">
       <label>Seats</label>
-      <select class="na-select" ng-model="vm.seatCovering" required>
+      <select name="seats" class="na-select" ng-model="vm.seatCovering" required>
         <option value="" selected>Select Seats Covering</option>
         <option value="Leather">Leather</option>
         <option value="Cloth">Cloth</option>
         <option value="Vinyl">Vinyl</option>
       </select>
+      <small class="error" ng-show="addVehicleByVin.seats.$error.required">This field is required and cannot be left blank</small>
+
     </li>
   </ul>
   <h3>Interior Options</h3>
   <ul class="cols-3">
     <li ng-repeat="interiorOption in interiorOptions">
-      <input type="checkbox" checklist-model="vm.interiorOptions" checklist-value="interiorOption" required/> <label for="">{{interiorOption}}</label>
+      <input name="interior_options" type="checkbox" checklist-model="vm.interiorOptions" checklist-value="interiorOption" required/> <label for="">{{interiorOption}}</label>
     </li>
   </ul>
 </section>
@@ -70,19 +78,25 @@
   <ul class="cols-2">
     <li>
       <label>Cylinder</label>
-      <input type="text" ng-model="vm.cylinder" ng-value="vm.cylinder" placeholder="Cylinder" required/>
+      <input name="cylinder" type="text" ng-model="vm.cylinder" ng-value="vm.cylinder" placeholder="Cylinder" required/>
+      <small class="error" ng-show="addVehicleByVin.cylinder.$error.required">This field is required and cannot be left blank</small>
+
     </li>
     <li>
       <label>Size</label>
-      <input type="text" ng-model="vm.size" ng-value="vm.size" placeholder="Size" required/>
+      <input name="size" type="text" ng-model="vm.size" ng-value="vm.size" placeholder="Size" required/>
+      <small class="error" ng-show="addVehicleByVin.size.$error.required">This field is required and cannot be left blank</small>
+
     </li>
     <li>
       <label>Configuration</label>
-      <input type="text" ng-model="vm.configuration" ng-value="vm.configuration" placeholder="Configuration" required/>
+      <input name="configuration" type="text" ng-model="vm.configuration" ng-value="vm.configuration" placeholder="Configuration" required/>
+      <small class="error" ng-show="addVehicleByVin.configuration.$configuration.required">This field is required and cannot be left blank</small>
+
     </li>
     <li class="dropdown">
       <label>Transmission</label>
-      <select class="na-select" ng-model="vm.transmission" required>
+      <select name="transmission" class="na-select" ng-model="vm.transmission" required>
         <option ng-if="vm.isSearched" ng-value="{{vm.transmission}}" selected> {{vm.transmission}} </option>
         <option ng-if="!vm.isSearched" selected>Select Transmission</option>
         <option value="Automatic">Automatic</option>
@@ -101,20 +115,24 @@
         <option value="Shiftable Automatic">Shiftable Automatic</option>
         <option value="Continuously Variable/CVT">Continuously Variable/CVT</option>
       </select>
+      <small class="error" ng-show="addVehicleByVin.transmission.$error.required">This field is required and cannot be left blank</small>
+
     </li>
     <li class="dropdown">
       <label>Drivetrain</label>
-      <select class="na-select" ng-model="vm.drivetrain" required>
+      <select name="drivetrain" class="na-select" ng-model="vm.drivetrain" required>
         <option value="" selected>Select a Drivetrain</option>
         <option value="Front Wheel Drive">Front Wheel Drive</option>
         <option value="Rear Wheel Drive">Rear Wheel Drive</option>
         <option value="All Wheel Drive">All Wheel Drive</option>
         <option value="4 Wheel Drive">4 Wheel Drive</option>
       </select>
+      <small class="error" ng-show="addVehicleByVin.drivetrain.$error.required">This field is required and cannot be left blank</small>
+
     </li>
     <li class="dropdown">
       <label>Fuel</label>
-      <select class="na-select" ng-model="vm.fuelType" required>
+      <select name="fuel" class="na-select" ng-model="vm.fuelType" required>
         <option ng-if="vm.isSearched" ng-value="{{vm.fuelType}}" selected> {{vm.fuelType}} </option>
         <option ng-if="!vm.isSearched" selected>Select Fuel Type</option>
         <option value="Gasoline">Gasoline</option>
@@ -125,6 +143,8 @@
         <option value="Hydrogen">Hydrogen</option>
         <option value="LPG">LPG</option>
       </select>
+      <small class="error" ng-show="addVehicleByVin.fuel.$error.required">This field is required and cannot be left blank</small>
+
     </li>
   </ul>
 </section>
@@ -135,7 +155,9 @@
   <ul class="cols-2">
     <li class="input">
       <label>Brakes</label>
-      <input type="text" ng-model="vm.brakes" placeholder="Brakes" required/>
+      <input name="brakes" type="text" ng-model="vm.brakes" placeholder="Brakes" required/>
+      <small class="error" ng-show="addVehicleByVin.brakes.$error.required">This field is required and cannot be left blank</small>
+
     </li>
   </ul>
 </section>
@@ -146,11 +168,15 @@
   <ul class="cols-2">
     <li class="input">
       <label>Title Status</label>
-      <input type="text" ng-model="vm.titleStatus" placeholder="Title Status" required/>
+      <input name="title_status" type="text" ng-model="vm.titleStatus" placeholder="Title Status" required/>
+      <small class="error" ng-show="addVehicleByVin.title_status.$error.required">This field is required and cannot be left blank</small>
+
     </li>
     <li class="input">
       <label>Title State</label>
-      <input type="text" ng-model="vm.titleState" placeholder="Title State" required/>
+      <input name="title_state" type="text" ng-model="vm.titleState" placeholder="Title State" required/>
+      <small class="error" ng-show="addVehicleByVin.title_state.$error.required">This field is required and cannot be left blank</small>
+
     </li>
   </ul>
 </section>
@@ -161,7 +187,7 @@
   <ul class="cols-2">
     <li class="dropdown">
       <label>Full Warranty</label>
-      <select class="na-select" ng-model="vm.fullWarranty" required>
+      <select name="full_warranty" class="na-select" ng-model="vm.fullWarranty" required>
         <option value="">Select Warranty</option>
         <option value="No Warranty">No Warranty</option>
         <option value="Manufacturer Warranty Active">Manufacturer Warranty Active</option>
@@ -181,10 +207,12 @@
         <option value="72 Months/100,000 Miles">72 Months/100,000 Miles</option>
         <option value="AUL 36 Month/36,000 Miles Service Contract">AUL 36 Month/36,000 Miles Service Contract</option>
       </select>
+      <small class="error" ng-show="addVehicleByVin.full_warranty.$error.required">This field is required and cannot be left blank</small>
+
     </li>
     <li class="dropdown">
       <label>Drivetrain Warranty</label>
-      <select class="na-select" ng-model="vm.drivetrainWarranty" required>
+      <select name="drivetrain_warranty" class="na-select" ng-model="vm.drivetrainWarranty" required>
         <option value="" selected>Select Drivetrain Warranty</option>
         <option value="3 Month/3,000 Miles">3 Month/3,000 Miles</option>
         <option value="12 Month/12,000 Miles">12 Month/12,000 Miles</option>
@@ -192,22 +220,30 @@
         <option value="24 Month/24,000 Miles">24 Month/24,000 Miles</option>
         <option value="60 Month/100,000 Miles">v.	60 Month/100,000 Miles</option>
       </select>
+      <small class="error" ng-show="addVehicleByVin.drivetrain_warranty.$error.required">This field is required and cannot be left blank</small>
+
     </li>
     <li class="input">
       <label>Additional Warranty</label>
-      <input type="text" ng-model="vm.additionalWarranty" placeholder="Additional Warranty" required/>
+      <input name="additional_warranty" type="text" ng-model="vm.additionalWarranty" placeholder="Additional Warranty" required/>
+      <small class="error" ng-show="addVehicleByVin.additional_warranty.$error.required">This field is required and cannot be left blank</small>
+
     </li>
     <li class="dropdown">
       <label>Certified Pre-Owned</label>
-      <select class="na-select" ng-model="vm.certifiedPreOwned" id="select_year_min" required>
+      <select name="certified_preowned" class="na-select" ng-model="vm.certifiedPreOwned" id="select_year_min" required>
         <option value="" selected>Certified Pre-Owned</option>
         <option value="1">Yes</option>
         <option value="2">No</option>
       </select>
+      <small class="error" ng-show="addVehicleByVin.certified_preowned.$error.required">This field is required and cannot be left blank</small>
+
     </li>
     <li class="input">
       <label>Guaranteed Financing</label>
-      <input type="text" ng-model="vm.guaranteedFinancing" placeholder="Guaranteed Financing" required/>
+      <input name="financing" type="text" ng-model="vm.guaranteedFinancing" placeholder="Guaranteed Financing" required/>
+      <small class="error" ng-show="addVehicleByVin.financing.$error.required">This field is required and cannot be left blank</small>
+
     </li>
   </ul>
 </section>
@@ -217,7 +253,7 @@
   <h2>Premium Options</h2>
   <ul class="cols-3">
     <li ng-repeat="premiumOption in premiumOptions" >
-      <input type="checkbox" checklist-model="vm.premiumOptions" checklist-value="premiumOption" required/> <label for="">{{premiumOption}}</label>
+      <input name="premium_options" type="checkbox" checklist-model="vm.premiumOptions" checklist-value="premiumOption" required/> <label for="">{{premiumOption}}</label>
     </li>
   </ul>
 </section>
@@ -227,7 +263,7 @@
   <h2>Truck Options</h2>
   <ul class="cols-3">
     <li ng-repeat="truckOption in truckOptions" >
-      <input type="checkbox" checklist-model="vm.truckOptions" checklist-value="truckOption" required/> <label for="">{{truckOption}}</label>
+      <input name="truck_options" type="checkbox" checklist-model="vm.truckOptions" checklist-value="truckOption" required/> <label for="">{{truckOption}}</label>
     </li>
   </ul>
 </section>
@@ -237,7 +273,9 @@
   <h2>Custom Options</h2>
   <ul>
     <li>
-      <textarea type="textbox" ng-model="vm.customOptions" ng-value="vm.customOptions" required/></textarea>
+      <textarea name="custom_options" type="textbox" ng-model="vm.customOptions" ng-value="vm.customOptions" required/></textarea>
+      <small class="error" ng-show="addVehicleByVin.custom_options.$error.required">This field is required and cannot be left blank</small>
+
     </li>
   </ul>
 </section>
