@@ -3,10 +3,50 @@
 </header>
 <loading></loading>
 <div class="list">
+
+<ul><li class="dropdown">
+  <label>Filter By</label>
+  Year
+  <select class="na-select" ng-model="search.Year">
+    <option value="" selected>All</option>
+    <option value="2004">2004</option>
+    <option value="2005">2005</option>
+    <option value="2012">2012</option>
+    <option value="2013">2013</option>
+    <option value="2014">2014</option>
+    <option value="2017">2017</option>
+  </select>
+  Make
+  <select class="na-select" ng-model="search.Make">
+    <option value="" selected>All</option>
+    <option value="Toyota">Toyota</option>
+    <option value="Ford">Ford</option>
+    <option value="Chevrolet">Chevrolet</option>
+  </select>
+</li></ul>
+
+<ul><li class="dropdown">
+  <label>Sort By</label>
+  <select class="na-select" ng-model="sortBy">
+    <option value="Year" selected>Year</option>
+    <option value="Make">Make</option>
+    <option value="Model">Model</option>
+  </select>
+</li></ul>
+
+
+  <label>Search By</label>
+  <input placeholder="Vin" ng-model="search.VIN">
+  <input placeholder="Year" ng-model="search.Year">
+  <input placeholder="Item Number" type="text" ng-model="search.ItemGuid">
+  <input placeholder="Make" type="text" ng-model="search.Make">
+  <input placeholder="Model" type="text" ng-model="search.Model">
+
+
   <section>
     <h2>Unlisted <small>{{notActiveList.length}}</small></h2>
     <ul>
-      <li ng-repeat="vehicle in vehicles | filter: {IsActive:false} as notActiveList">
+      <li ng-repeat="vehicle in vehicles | filter: {IsActive:false, VIN:search.VIN, Year:search.Year, ItemGuid:search.ItemGuid, Make: search.Make, Model: search.Model} | orderBy:sortBy  as notActiveList">
         <div class="item vehicle" ng-include src="'angular-app/partials/vehicle/item.html'"></div>
       </li>
     </ul>
@@ -14,7 +54,8 @@
   <section>
     <h2>Listed <small>{{activeList.length}}</small></h2>
     <ul>
-      <li ng-repeat="vehicle in vehicles | filter: {IsActive:true} as activeList">
+      <li ng-repeat="vehicle in vehicles | filter: {
+        IsActive:true, VIN:search.VIN, Year:search.Year,  ItemGuid:search.ItemGuid , Make: search.Make, Model: search.Model}  | orderBy:sortBy as activeList">
         <div class="item vehicle" ng-include src="'angular-app/partials/vehicle/item.html'"></div>
       </li>
     </ul>

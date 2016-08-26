@@ -31,7 +31,6 @@
     				console.log("DEBUG => data > " + data);
     				var testData = JSON.parse(data);
 
-    				console.log("DEBUG => testData raw > " + testData);
     				console.log("DEBUG => testData > " + JSON.stringify(testData));
     			    callback(null, testData);
     			})
@@ -40,8 +39,22 @@
     			});
   		};
 
+
+
+    this.editVehicle = function (editedVehicleData){
+        console.log('passed updated vehicle', editedVehicleData)
+
+        $http.post('http://api.nationsauction.com/inventory/Vehicle/Update', editedVehicleData)
+          .then(function(response){
+            console.log("vehicle updated!", response)
+          })
+          .catch(function(error){
+            console.log("Unable to Add condition, error: ", error)
+          })
     }
 
+
+    };
     naBaseApp.service("vehicleInventoryProvider", [ "$http", vehicleInventoryProvider]);
 
 })();
