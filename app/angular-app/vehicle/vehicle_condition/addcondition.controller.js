@@ -3,6 +3,7 @@ angular.module('naBaseApp').controller('AddConditionController', AddConditionCon
 function AddConditionController($scope, addConditionProvider){
 
   var vm = this;
+  vm.VIN_REGEXP = /^[a-zA-Z0-9](\w{9}(\w{7})?)?$/;
 
   // Truck Option Checkbox
   $scope.dashLightOptions = [
