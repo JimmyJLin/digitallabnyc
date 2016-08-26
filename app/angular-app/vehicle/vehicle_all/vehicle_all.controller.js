@@ -5,7 +5,6 @@ function VehiclesAllController($scope, vehicleAllProvider){
   var vm = this;
   vm.title= "All Vehicles";
 
-function get_vehicles_all(){
   $scope.loading=true;
 
   $scope.vehicles =   vehicleAllProvider.getAllVehicle( function(err, vehicles){
@@ -19,8 +18,6 @@ function get_vehicles_all(){
 
         }
       });
-    }
 
-get_vehicles_all();
 
 }

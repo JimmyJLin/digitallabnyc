@@ -3,6 +3,8 @@ angular.module('naBaseApp').controller('VehicleAddbyVinController', VehicleAddby
 function VehicleAddbyVinController($scope, addbyVinProvider){
 
   // TEST VIN - 1GNEK13Z34J221437
+  // TEST Item Num = 617a69c3-bd34-445c-a762-1bbcf228f7bb
+
   var vm = this;
   vm.isSearched = false;
   vm.finalvehicle = {};
@@ -163,12 +165,15 @@ function VehicleAddbyVinController($scope, addbyVinProvider){
 
 
   vm.addCond = function(){
-
       var vin = vm.vin;
 
       $scope.loading=true;
 
       addbyVinProvider.getvehiclebyVin( vin, function(err, data){
+        if (err===500){
+          $scope.loading=false;
+          vm.error_message = "Please enter a valid VIN Number"
+        } else {
 
         // console.log('DEBUG controller ' + JSON.stringify(data) );
         $scope.vehicle = data;
@@ -193,6 +198,8 @@ function VehicleAddbyVinController($scope, addbyVinProvider){
         $scope.loading=false;
 
         console.log( vm.vin , $scope.vehicle);
+      }
+
 
       });
 
