@@ -6,11 +6,11 @@
   <ul class="cols-2">
     <li class="input">
       <label>Exterior Color</label>
-      <input type="text" ng-model="vm.exteriorColor" ng-value="vm.exteriorColor" placeholder="Exterior Color"/>
+      <input type="text" ng-model="vm.exteriorColor" ng-value="vm.exteriorColor" placeholder="Exterior Color" required/>
     </li>
     <li class="dropdown">
       <label>Search Color</label>
-      <select class="na-select" ng-model="vm.searchColor">
+      <select class="na-select" ng-model="vm.searchColor" required>
         <option value="" selected>Select a Color</option>
         <option value="Black">Black</option>
         <option value="Blue">Blue</option>
@@ -33,7 +33,7 @@
   <h3>Exterior Options</h3>
   <ul class="cols-3">
     <li ng-repeat="exteriorOption in exteriorOptions">
-      <input type="checkbox" checklist-model="vm.exteriorOptions" checklist-value="exteriorOption" /> <label for="">{{exteriorOption}}</label>
+      <input type="checkbox" checklist-model="vm.exteriorOptions" checklist-value="exteriorOption" required/> <label for="">{{exteriorOption}}</label>
     </li>
   </ul>
 </section>
@@ -44,11 +44,11 @@
   <ul class="cols-2">
     <li class="input">
       <label>Interior Color</label>
-      <input type="text" ng-model="vm.interiorColor" ng-value="vm.interiorColor" placeholder="Interior Color"/>
+      <input type="text" ng-model="vm.interiorColor" ng-value="vm.interiorColor" placeholder="Interior Color" required/>
     </li>
     <li class="dropdown">
       <label>Seats</label>
-      <select class="na-select" ng-model="vm.seatCovering">
+      <select class="na-select" ng-model="vm.seatCovering" required>
         <option value="" selected>Select Seats Covering</option>
         <option value="Leather">Leather</option>
         <option value="Cloth">Cloth</option>
@@ -59,7 +59,7 @@
   <h3>Interior Options</h3>
   <ul class="cols-3">
     <li ng-repeat="interiorOption in interiorOptions">
-      <input type="checkbox" checklist-model="vm.interiorOptions" checklist-value="interiorOption" /> <label for="">{{interiorOption}}</label>
+      <input type="checkbox" checklist-model="vm.interiorOptions" checklist-value="interiorOption" required/> <label for="">{{interiorOption}}</label>
     </li>
   </ul>
 </section>
@@ -70,19 +70,19 @@
   <ul class="cols-2">
     <li>
       <label>Cylinder</label>
-      <input type="text" ng-model="vm.cylinder" ng-value="vm.cylinder" placeholder="Cylinder"/>
+      <input type="text" ng-model="vm.cylinder" ng-value="vm.cylinder" placeholder="Cylinder" required/>
     </li>
     <li>
       <label>Size</label>
-      <input type="text" ng-model="vm.size" ng-value="vm.size" placeholder="Size"/>
+      <input type="text" ng-model="vm.size" ng-value="vm.size" placeholder="Size" required/>
     </li>
     <li>
       <label>Configuration</label>
-      <input type="text" ng-model="vm.configuration" ng-value="vm.configuration" placeholder="Configuration"/>
+      <input type="text" ng-model="vm.configuration" ng-value="vm.configuration" placeholder="Configuration" required/>
     </li>
     <li class="dropdown">
       <label>Transmission</label>
-      <select class="na-select" ng-model="vm.transmission">
+      <select class="na-select" ng-model="vm.transmission" required>
         <option ng-if="vm.isSearched" ng-value="{{vm.transmission}}" selected> {{vm.transmission}} </option>
         <option ng-if="!vm.isSearched" selected>Select Transmission</option>
         <option value="Automatic">Automatic</option>
@@ -104,7 +104,7 @@
     </li>
     <li class="dropdown">
       <label>Drivetrain</label>
-      <select class="na-select" ng-model="vm.drivetrain">
+      <select class="na-select" ng-model="vm.drivetrain" required>
         <option value="" selected>Select a Drivetrain</option>
         <option value="Front Wheel Drive">Front Wheel Drive</option>
         <option value="Rear Wheel Drive">Rear Wheel Drive</option>
@@ -114,7 +114,7 @@
     </li>
     <li class="dropdown">
       <label>Fuel</label>
-      <select class="na-select" ng-model="vm.fuelType">
+      <select class="na-select" ng-model="vm.fuelType" required>
         <option ng-if="vm.isSearched" ng-value="{{vm.fuelType}}" selected> {{vm.fuelType}} </option>
         <option ng-if="!vm.isSearched" selected>Select Fuel Type</option>
         <option value="Gasoline">Gasoline</option>
@@ -135,7 +135,7 @@
   <ul class="cols-2">
     <li class="input">
       <label>Brakes</label>
-      <input type="text" ng-model="vm.brakes" placeholder="Brakes"/>
+      <input type="text" ng-model="vm.brakes" placeholder="Brakes" required/>
     </li>
   </ul>
 </section>
@@ -146,11 +146,11 @@
   <ul class="cols-2">
     <li class="input">
       <label>Title Status</label>
-      <input type="text" ng-model="vm.titleStatus" placeholder="Title Status"/>
+      <input type="text" ng-model="vm.titleStatus" placeholder="Title Status" required/>
     </li>
     <li class="input">
       <label>Title State</label>
-      <input type="text" ng-model="vm.titleState" placeholder="Title State"/>
+      <input type="text" ng-model="vm.titleState" placeholder="Title State" required/>
     </li>
   </ul>
 </section>
@@ -161,7 +161,7 @@
   <ul class="cols-2">
     <li class="dropdown">
       <label>Full Warranty</label>
-      <select class="na-select" ng-model="vm.fullWarranty">
+      <select class="na-select" ng-model="vm.fullWarranty" required>
         <option value="">Select Warranty</option>
         <option value="No Warranty">No Warranty</option>
         <option value="Manufacturer Warranty Active">Manufacturer Warranty Active</option>
@@ -184,7 +184,7 @@
     </li>
     <li class="dropdown">
       <label>Drivetrain Warranty</label>
-      <select class="na-select" ng-model="vm.drivetrainWarranty">
+      <select class="na-select" ng-model="vm.drivetrainWarranty" required>
         <option value="" selected>Select Drivetrain Warranty</option>
         <option value="3 Month/3,000 Miles">3 Month/3,000 Miles</option>
         <option value="12 Month/12,000 Miles">12 Month/12,000 Miles</option>
@@ -195,11 +195,11 @@
     </li>
     <li class="input">
       <label>Additional Warranty</label>
-      <input type="text" ng-model="vm.additionalWarranty" placeholder="Additional Warranty"/>
+      <input type="text" ng-model="vm.additionalWarranty" placeholder="Additional Warranty" required/>
     </li>
     <li class="dropdown">
       <label>Certified Pre-Owned</label>
-      <select class="na-select" ng-model="vm.certifiedPreOwned" id="select_year_min">
+      <select class="na-select" ng-model="vm.certifiedPreOwned" id="select_year_min" required>
         <option value="" selected>Certified Pre-Owned</option>
         <option value="1">Yes</option>
         <option value="2">No</option>
@@ -207,7 +207,7 @@
     </li>
     <li class="input">
       <label>Guaranteed Financing</label>
-      <input type="text" ng-model="vm.guaranteedFinancing" placeholder="Guaranteed Financing"/>
+      <input type="text" ng-model="vm.guaranteedFinancing" placeholder="Guaranteed Financing" required/>
     </li>
   </ul>
 </section>
@@ -217,7 +217,7 @@
   <h2>Premium Options</h2>
   <ul class="cols-3">
     <li ng-repeat="premiumOption in premiumOptions" >
-      <input type="checkbox" checklist-model="vm.premiumOptions" checklist-value="premiumOption" /> <label for="">{{premiumOption}}</label>
+      <input type="checkbox" checklist-model="vm.premiumOptions" checklist-value="premiumOption" required/> <label for="">{{premiumOption}}</label>
     </li>
   </ul>
 </section>
@@ -227,7 +227,7 @@
   <h2>Truck Options</h2>
   <ul class="cols-3">
     <li ng-repeat="truckOption in truckOptions" >
-      <input type="checkbox" checklist-model="vm.truckOptions" checklist-value="truckOption" /> <label for="">{{truckOption}}</label>
+      <input type="checkbox" checklist-model="vm.truckOptions" checklist-value="truckOption" required/> <label for="">{{truckOption}}</label>
     </li>
   </ul>
 </section>
@@ -237,7 +237,7 @@
   <h2>Custom Options</h2>
   <ul>
     <li>
-      <textarea type="textbox" ng-model="vm.customOptions" ng-value="vm.customOptions"/></textarea>
+      <textarea type="textbox" ng-model="vm.customOptions" ng-value="vm.customOptions" required/></textarea>
     </li>
   </ul>
 </section>
@@ -245,7 +245,7 @@
 <section>
   <ul class="cols-2">
     <li class="full">
-      <button type="submit" >Add Vehicle</button>
+      <button ng-disabled="addVehicleByVin.$invalid" type="submit" >Add Vehicle</button>
     </li>
   </ul>
 

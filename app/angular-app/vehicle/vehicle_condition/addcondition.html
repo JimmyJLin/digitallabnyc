@@ -3,11 +3,13 @@
 </header>
 <loading></loading>
 <div class="page form">
-  <form ng-submit="vm.addCond()" >
+  <form name="addCondtionReport" ng-submit="vm.addCond()" >
     <section>
     <ul >
       <li>
-        <input class="large" type="text" ng-model="vm.vin" placeholder="Vehicle VIN Number" />
+        <small class="error" ng-show="addCondtionReport.vin.$error.pattern">Please enter a valid VIN Number or Quish VIN Number</small>
+        <input name="vin" class="large" type="text" ng-model="vm.vin" placeholder="Vehicle VIN Number" ng-pattern="vm.VIN_REGEXP" required/>
+
       </li>
       <li>
         <!-- <a class="btn" ng-href="#/vehicle/addcondition_step2">Next</button> -->

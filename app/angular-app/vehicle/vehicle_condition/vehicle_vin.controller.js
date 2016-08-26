@@ -4,6 +4,7 @@ function VehiclesVinController($scope, vehicleVinProvider){
 
   var vm = this;
   vm.title= "Vehicles By Vin";
+  vm.VIN_REGEXP = /^[a-zA-Z0-9](\w{9}(\w{7})?)?$/;
 
 function get_vehicles_vin(){
 
