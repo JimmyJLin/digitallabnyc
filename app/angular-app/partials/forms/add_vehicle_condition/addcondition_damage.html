@@ -3,9 +3,22 @@
     <h2>Exterior Damage</h2>
     <button ng-click="exteriorShow = !exteriorShow; $event.preventDefault(); $event.stopPropagation();">Add Exterior Damage</button>
 
-    <ul ng-repeat="exteriorDamageReport in exteriorDamageReports">
-      <li>{{exteriorDamageReport}}</li>
-    </ul>
+    <table ng-show="exteriorTableShow">
+      <tr>
+        <th>Damage Location</th>
+        <th>Damage Type</th>
+        <th>Damage Severity</th>
+        <th>Est Repair Cost</th>
+        <th>Damage Comment</th>
+      </tr>
+      <tr ng-repeat="exteriorDamageReport in exteriorDamageReports">
+        <td>{{exteriorDamageReport.exteriorDamageLocation}}</td>
+        <td>{{exteriorDamageReport.exteriorDamageType}}</td>
+        <td>{{exteriorDamageReport.exteriorDamageSeverity}}</td>
+        <td>{{exteriorDamageReport.estimatedexteriorRepairCost}}</td>
+        <td>{{exteriorDamageReport.exteriorDamageComment}}</td>
+      </tr>
+    </table>
 
     <ul class="cols-2" ng-show="exteriorShow">
       <li class="dropdown">
@@ -98,7 +111,7 @@
         <input ng-model="file" type="file">
       </li>
 
-      <button ng-click="vm.addExteriorDamageData(); $event.preventDefault(); $event.stopPropagation();"> Save Exterior Damage</button>
+      <button ng-click="exteriorTableShow = !exteriorTableShow; vm.addExteriorDamageData(); $event.preventDefault(); $event.stopPropagation();"> Save Exterior Damage</button>
 
     </ul>
   </section>
@@ -107,9 +120,23 @@
 
     <button ng-click="interiorShow = !interiorShow; $event.preventDefault(); $event.stopPropagation();">Add Interior Damage</button>
 
-    <ul ng-repeat="interiorDamageReport in interiorDamageReports">
-      <li>{{interiorDamageReport}}</li>
-    </ul>
+
+    <table ng-show="interiorTableShow">
+      <tr>
+        <th>Damage Location</th>
+        <th>Damage Type</th>
+        <th>Damage Severity</th>
+        <th>Est Repair Cost</th>
+        <th>Damage Comment</th>
+      </tr>
+      <tr ng-repeat="interiorDamageReport in interiorDamageReports">
+        <td>{{interiorDamageReport.interiorDamageLocation}}</td>
+        <td>{{interiorDamageReport.interiorDamageType}}</td>
+        <td>{{interiorDamageReport.interiorDamageSeverity}}</td>
+        <td>{{interiorDamageReport.estimatedInteriorRepairCost}}</td>
+        <td>{{interiorDamageReport.interiorDamageComment}}</td>
+      </tr>
+    </table>
 
     <ul class="cols-2" ng-show="interiorShow">
       <li class="dropdown">
@@ -204,7 +231,7 @@
       <li>
         <input ng-model="file" type="file">
       </li>
-      <button ng-click="vm.addInteriorDamageData(); $event.preventDefault(); $event.stopPropagation();"> Save Interior Damage</button>
+      <button ng-click="interiorTableShow = !interiorTableShow; vm.addInteriorDamageData(); $event.preventDefault(); $event.stopPropagation();"> Save Interior Damage</button>
 
     </ul>
   </section>
