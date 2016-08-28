@@ -22,6 +22,58 @@ function AddConditionController($scope, addConditionProvider){
     options: ['dashLightOption']
   };
 
+  $scope.exteriorDamageReports = []
+  $scope.interiorDamageReports = []
+
+  vm.addExteriorDamageData = function(){
+
+    var exteriorDamage = {
+      'exteriorDamageLocation': vm.exteriorDamageLocation,
+      'exteriorDamageType': vm.exteriorDamageType,
+      'exteriorDamageSeverity': vm.exteriorDamageSeverity,
+      'estimatedExteriorRepairCost': vm.estimatedExteriorRepairCost,
+      'exteriorDamageComment': vm.exteriorDamageComment
+    }
+    $scope.exteriorDamageReports.push(exteriorDamage)
+    console.log("exteior Damage", exteriorDamage)
+
+    $scope.exteriorDamageReset()
+
+  }
+
+  $scope.exteriorDamageReset = function(){
+    vm.exteriorDamageLocation = null;
+    vm.exteriorDamageType = null;
+    vm.exteriorDamageSeverity = null;
+    vm.estimatedExteriorRepairCost = null;
+    vm.exteriorDamageComment = null;
+
+  }
+
+
+  vm.addInteriorDamageData = function(){
+
+    var interiorDamage = {
+      'interiorDamageLocation': vm.interiorDamageLocation,
+      'interiorDamageType': vm.interiorDamageType,
+      'interiorDamageSeverity': vm.interiorDamageSeverity,
+      'estimatedInteriorRepairCost': vm.estimatedInteriorRepairCost,
+      'interiorDamageComment': vm.interiorDamageComment
+    }
+    $scope.interiorDamageReports.push(interiorDamage)
+    console.log("interior Damage", interiorDamage)
+
+    $scope.interiorDamageReset()
+  }
+
+  $scope.interiorDamageReset = function(){
+    vm.interiorDamageLocation = null;
+    vm.interiorDamageType = null;
+    vm.interiorDamageSeverity = null;
+    vm.estimatedInteriorRepairCost = null;
+    vm.interiorDamageComment = null;
+  }
+
   vm.addCond = function(){
 
   var conditionData = JSON.stringify({
@@ -59,22 +111,102 @@ function AddConditionController($scope, addConditionProvider){
     'ownersManual': vm.ownersManual,
     'odor': vm.odor,
     'floorMats': vm.floorMats,
-    'exteriorDamageLocation': vm.exteriorDamageLocation,
-    'exteriorDamageType': vm.exteriorDamageType,
-    'exteriorDamageSeverity': vm.exteriorDamageSeverity,
-    'estimatedExteriorRepairCost': vm.estimatedExteriorRepairCost,
-    'exteriorDamageComment': vm.exteriorDamageComment,
-    'interiorDamageLocation': vm.interiorDamageLocation,
-    'interiorDamageType': vm.interiorDamageType,
-    'interiorDamageSeverity': vm.interiorDamageSeverity,
-    'estimatedInteriorRepairCost': vm.estimatedInteriorRepairCost,
-    'interiorDamageComment': vm.interiorDamageComment,
+    'exteriorDamages': $scope.exteriorDamageReports,
+    'interiorDamages': $scope.interiorDamageReports,
+    // 'exteriorDamageLocation': vm.exteriorDamageLocation,
+    // 'exteriorDamageType': vm.exteriorDamageType,
+    // 'exteriorDamageSeverity': vm.exteriorDamageSeverity,
+    // 'estimatedExteriorRepairCost': vm.estimatedExteriorRepairCost,
+    // 'exteriorDamageComment': vm.exteriorDamageComment,
+    // 'interiorDamageLocation': vm.interiorDamageLocation,
+    // 'interiorDamageType': vm.interiorDamageType,
+    // 'interiorDamageSeverity': vm.interiorDamageSeverity,
+    // 'estimatedInteriorRepairCost': vm.estimatedInteriorRepairCost,
+    // 'interiorDamageComment': vm.interiorDamageComment,
     'activity': 'add'
   })
     console.log(conditionData)
     // alert('clicked')
-    addConditionProvider.addConditionData(conditionData)
+    // addConditionProvider.addConditionData(conditionData)
 
   }
 
 }
+
+//
+// {
+//    "submitter":"submitter",
+//    "owner":"617a69c3-bd34-445c-a762-1bbcf228f7bb",
+//    "vin":"1GNEK13Z34J221437",
+//    "grade":"4",
+//    "recondition":"2",
+//    "detail":"2",
+//    "frameDamage":"2",
+//    "previouslyRepainted":"2",
+//    "dashLightOptions":[
+//       "Hydraulic Lift",
+//       "Hard Tonneau Cover"
+//    ],
+//    "damage":"2",
+//    "vehicleDrive":"2",
+//    "transmission":"Makes Noise",
+//    "exhaust":"No Damage",
+//    "ac":"No A/C",
+//    "battery":"Weak",
+//    "oilChanged":"2",
+//    "fuelLevel":"1/2",
+//    "tireMatch":"2",
+//    "weatherChecked":"1",
+//    "leftFront":"4/32 to 7/32",
+//    "rightFront":"4/32 to 7/32",
+//    "leftRear":"4/32 to 7/32",
+//    "rightRear":"Missing",
+//    "spare":"New",
+//    "jack":"1",
+//    "master":"5",
+//    "remote":"2",
+//    "valet":"3",
+//    "combo":"4",
+//    "keylessGo":"No",
+//    "windshield":"Chipped",
+//    "ownersManual":"Not Present",
+//    "odor":"Smoke",
+//    "floorMats":"2",
+//    "exteriorDamages":[
+//       {
+//          "exteriorDamageLocation":"Right Mirror",
+//          "exteriorDamageType":"Creased",
+//          "exteriorDamageSeverity":"Less than 1",
+//          "estimatedExteriorRepairCost":333,
+//          "exteriorDamageComment":"333",
+//          "$$hashKey":"object:173"
+//       },
+//       {
+//          "exteriorDamageLocation":"Front Bumper",
+//          "exteriorDamageType":"Faded",
+//          "exteriorDamageSeverity":"Greater than 24",
+//          "estimatedExteriorRepairCost":6666,
+//          "exteriorDamageComment":"6666",
+//          "$$hashKey":"object:175"
+//       }
+//    ],
+//    "interiorDamages":[
+//       {
+//          "interiorDamageLocation":"Glovebox",
+//          "interiorDamageType":"Faded",
+//          "interiorDamageSeverity":"1-2",
+//          "estimatedInteriorRepairCost":1111,
+//          "interiorDamageComment":"1111",
+//          "$$hashKey":"object:177"
+//       },
+//       {
+//          "interiorDamageLocation":"Dash",
+//          "interiorDamageType":"Hairline Scratch",
+//          "interiorDamageSeverity":"6-10",
+//          "estimatedInteriorRepairCost":4444,
+//          "interiorDamageComment":"4444",
+//          "$$hashKey":"object:179"
+//       }
+//    ],
+//    "activity":"add"
+// }
