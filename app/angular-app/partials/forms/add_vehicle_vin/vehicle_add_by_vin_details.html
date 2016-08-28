@@ -37,7 +37,7 @@
   <h3>Exterior Options</h3>
   <ul class="cols-3">
     <li ng-repeat="exteriorOption in exteriorOptions">
-      <input name="exterior_options" type="checkbox" checklist-model="vm.exteriorOptions" checklist-value="exteriorOption" required/> <label for="">{{exteriorOption}}</label>
+      <input name="exterior_options" type="checkbox" checklist-model="vm.exteriorOptions" checklist-value="exteriorOption"/> <label for="">{{exteriorOption}}</label>
     </li>
   </ul>
 </section>
@@ -67,7 +67,7 @@
   <h3>Interior Options</h3>
   <ul class="cols-3">
     <li ng-repeat="interiorOption in interiorOptions">
-      <input name="interior_options" type="checkbox" checklist-model="vm.interiorOptions" checklist-value="interiorOption" required/> <label for="">{{interiorOption}}</label>
+      <input name="interior_options" type="checkbox" checklist-model="vm.interiorOptions" checklist-value="interiorOption" /> <label for="">{{interiorOption}}</label>
     </li>
   </ul>
 </section>
@@ -253,7 +253,7 @@
   <h2>Premium Options</h2>
   <ul class="cols-3">
     <li ng-repeat="premiumOption in premiumOptions" >
-      <input name="premium_options" type="checkbox" checklist-model="vm.premiumOptions" checklist-value="premiumOption" required/> <label for="">{{premiumOption}}</label>
+      <input name="premium_options" type="checkbox" checklist-model="vm.premiumOptions" checklist-value="premiumOption"/> <label for="">{{premiumOption}}</label>
     </li>
   </ul>
 </section>
@@ -263,7 +263,7 @@
   <h2>Truck Options</h2>
   <ul class="cols-3">
     <li ng-repeat="truckOption in truckOptions" >
-      <input name="truck_options" type="checkbox" checklist-model="vm.truckOptions" checklist-value="truckOption" required/> <label for="">{{truckOption}}</label>
+      <input name="truck_options" type="checkbox" checklist-model="vm.truckOptions" checklist-value="truckOption" /> <label for="">{{truckOption}}</label>
     </li>
   </ul>
 </section>
@@ -283,7 +283,8 @@
 <section>
   <ul class="cols-2">
     <li class="full">
-      <button ng-disabled="addVehicleByVin.$invalid" type="submit" >Add Vehicle</button>
+      <h1 class="error" ng-if="vm.error_message_submit">{{vm.error_message_submit}}</h1>
+      <button type="submit" >Add Vehicle</button>
     </li>
   </ul>
 

@@ -23,15 +23,23 @@
           })
           .error(function (data, status, headers, config) {
 
+              callback(status);
+
           });
   		};
 
       this.addVehicle = function(addVehicleData){
-        console.log(addVehicleData)
+        console.log("Provider Line 30", addVehicleData)
 
         $http.post('http://api.nationsauction.com/inventory/Vehicle/Add', addVehicleData)
           .then(function(response){
             console.log('this is the response', response)
+
+            if (response.status === 200 && JSON.parse(response.data).status === "FAIL") {
+              return false
+            } else {
+            }
+
           })
           .catch(function(error){
             console.log("Unable to Add vehicle, error: ", error)
