@@ -28,10 +28,10 @@
 			    headers: {'Content-Type': 'application/json'}
   			})
           .success(function (data, status, headers, config) {
-    				console.log("DEBUG => data > " + data);
+    				// console.log("DEBUG => data > " + data);
     				var testData = JSON.parse(data);
 
-    				console.log("DEBUG => testData > " + JSON.stringify(testData));
+    				// console.log("DEBUG => testData > " + JSON.stringify(testData));
     			    callback(null, testData);
     			})
           .error(function (data, status, headers, config) {
@@ -42,33 +42,40 @@
 
 
     this.editVehicle = function (editedVehicleData){
-        console.log('passed updated vehicle', editedVehicleData)
+        // console.log('passed updated vehicle', editedVehicleData)
 
         $http.post('http://api.nationsauction.com/inventory/Vehicle/Update', editedVehicleData)
           .then(function(response){
-            console.log("vehicle updated!", response)
+            // console.log("vehicle updated!", response)
           })
           .catch(function(error){
-            console.log("Unable to Add condition, error: ", error)
+            // console.log("Unable to Add condition, error: ", error)
           })
     }
 
-    this.getCondition = function(data){
+
+    this.getCondition = function(vin, callback){
+
+
+      var vehicleDataForConditionReport = {
+        "submitter": "submitter",
+        "activity": "getbyvin",
+        "vin": vin
+      }
 
       $http({
-        url: 'http://api.nationsauction.com/inventory/Vehicle/GetByOwner',
+        url: 'http://api.nationsauction.com/inventory/Vehicle/CRGetByVIN',
         method: "POST",
-        data: data
-        // headers: {'Content-Type': 'application/json'}
+        data: vehicleDataForConditionReport,
+        headers: {'Content-Type': 'application/json'}
       })
       .success(function (data, status, headers, config) {
-
-        var testData = JSON.parse(data);
-
-          callback(null, testData);
+        var conditions = JSON.parse(data)
+        callback(null,conditions)
       })
       .error(function (data, status, headers, config) {
-          callback(data);
+        callback(data)
+
       });
 
     }

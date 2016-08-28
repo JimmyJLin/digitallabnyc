@@ -13,13 +13,14 @@ function get_vehicles(){
         if (err) {
             $scope.page_load_error = err.message;
         } else {
-              console.log("DEBUG => data --> " + vehicles);
+              console.log("$scope.vehicles --> " + vehicles);
             $scope.vehicles = vehicles;
             $scope.loading=false;
 
+            }
 
-        }
-      });
+
+        });
     };
 
     get_vehicles();
@@ -84,24 +85,20 @@ function get_vehicles(){
 
     }
 
-  vm.getVehicleCondition = function(vin){
+    vm.getCondReport = function(vin) {
 
-    var vehicleDataForConditionReport = JSON.stringify({
-      "submitter": "submitter",
-      "activity": "getbyvin",
-      "vin": vin
-    });
-
-    vehicleInventoryProvider.getCondition( vehicleDataForConditionReport, function(err, data){
+        $scope.conditions = vehicleInventoryProvider.getCondition(vin,  function(err,conditions){
           $scope.finished_loading = true;
           if (err) {
               $scope.page_load_error = err.message;
           } else {
-            console.log("This is the condition report --> " + JSON.stringify(data));
-              $scope.conditions = data;
-              $scope.loading=false;
-          }
-        })
+          $scope.conditions = conditions;
+          console.log('this is the conditions', vin, JSON.stringify($scope.conditions));
+          $scope.loading=false;
+      }
+    })
   }
+
+
 
 }
