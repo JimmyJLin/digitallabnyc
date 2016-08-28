@@ -1,10 +1,16 @@
 <form name="addCondtionReport" ng-submit="vm.addCond()" >
   <section>
     <h2>Exterior Damage</h2>
-    <ul class="cols-2">
+    <button ng-click="exteriorShow = !exteriorShow; $event.preventDefault(); $event.stopPropagation();">Add Exterior Damage</button>
+
+    <ul ng-repeat="exteriorDamageReport in exteriorDamageReports">
+      <li>{{exteriorDamageReport}}</li>
+    </ul>
+
+    <ul class="cols-2" ng-show="exteriorShow">
       <li class="dropdown">
         <label>Exterior Damage Location</label>
-        <select name="exterior_damage_location" class="na-select" ng-model="vm.exteriorDamageLocation" id="select_year_min" required>
+        <select name="exterior_damage_location" class="na-select" ng-model="vm.exteriorDamageLocation" id="select_year_min">
           <option value="" selected>Select Damage Location</option>
           <option value="Head Light">Head Light</option>
           <option value="Grill">Grill</option>
@@ -36,7 +42,7 @@
       </li>
       <li class="dropdown">
           <label>Exterior Damage Type</label>
-          <select name="exterior_damage_type" class="na-select" ng-model="vm.exteriorDamageType" id="select_year_min" required>
+          <select name="exterior_damage_type" class="na-select" ng-model="vm.exteriorDamageType" id="select_year_min">
             <option value="" selected>Select Damage Type</option>
             <option value="Bent">Bent</option>
             <option value="Broken">Broken</option>
@@ -62,7 +68,7 @@
         </li>
       <li class="dropdown">
         <label>Exterior Damage Severity</label>
-        <select name="exterior_damage_severity" class="na-select" ng-model="vm.exteriorDamageSeverity" id="select_year_min" required>
+        <select name="exterior_damage_severity" class="na-select" ng-model="vm.exteriorDamageSeverity" id="select_year_min">
           <option value="" selected>Select Damge Severity</option>
           <option value="Less than 1">Less than 1"</option>
           <option value="1-2">1"-2"</option>
@@ -78,27 +84,37 @@
       </li>
       <li class="input">
         <label>Estimated Repair Cost</label>
-        <input name="estimated_exterior_repair_cost" type="number" ng-model="vm.estimatedExteriorRepairCost" ng-value = "vm.estimatedExteriorRepairCost" placeholder="Exterior Estimated Repair Cost" required/>
+        <input name="estimated_exterior_repair_cost" type="number" ng-model="vm.estimatedExteriorRepairCost" ng-value = "vm.estimatedExteriorRepairCost" placeholder="Exterior Estimated Repair Cost" />
         <small class="error" ng-show="addCondtionReport.estimated_exterior_repair_cost.$error.required">This field is required and cannot be left blank</small>
 
       </li>
       <li class="full text">
         <label>Damage Description:</label>
-        <textarea name="exterior_damage_comment" ng-model="vm.exteriorDamageComment" required></textarea>
+        <textarea name="exterior_damage_comment" ng-model="vm.exteriorDamageComment" ></textarea>
         <small class="error" ng-show="addCondtionReport.exterior_damage_comment.$error.required">This field is required and cannot be left blank</small>
 
       </li>
       <li>
         <input ng-model="file" type="file">
       </li>
+
+      <button ng-click="vm.addExteriorDamageData(); $event.preventDefault(); $event.stopPropagation();"> Save Exterior Damage</button>
+
     </ul>
   </section>
   <section>
     <h2>Interior Damage</h2>
-    <ul class="cols-2">
+
+    <button ng-click="interiorShow = !interiorShow; $event.preventDefault(); $event.stopPropagation();">Add Interior Damage</button>
+
+    <ul ng-repeat="interiorDamageReport in interiorDamageReports">
+      <li>{{interiorDamageReport}}</li>
+    </ul>
+
+    <ul class="cols-2" ng-show="interiorShow">
       <li class="dropdown">
         <label>Interior Damage Location</label>
-        <select name="interior_damage_location" class="na-select" ng-model="vm.interiorDamageLocation" id="select_year_min" required>
+        <select name="interior_damage_location" class="na-select" ng-model="vm.interiorDamageLocation" id="select_year_min">
           <option value="" selected>Select Damage Location</option>
           <option value="Rear View Mirror">Rear View Mirror</option>
           <option value="Gauges">Gauges</option>
@@ -133,7 +149,7 @@
       </li>
       <li class="dropdown">
         <label>Interior Damage Type</label>
-        <select name="interior_damage_type" class="na-select" ng-model="vm.interiorDamageType" id="select_year_min" required>
+        <select name="interior_damage_type" class="na-select" ng-model="vm.interiorDamageType" id="select_year_min">
           <option value="" selected>Select Damage Type</option>
           <option value="Bent">Bent</option>
           <option value="Broken">Broken</option>
@@ -159,7 +175,7 @@
       </li>
       <li class="dropdown">
         <label>Interior Damage Severity</label>
-        <select name="interior_damage_severity" class="na-select" ng-model="vm.interiorDamageSeverity" id="select_year_min" required>
+        <select name="interior_damage_severity" class="na-select" ng-model="vm.interiorDamageSeverity" id="select_year_min">
           <option value="" selected>Select Damage Severity</option>
           <option value="Less than 1">Less than 1"</option>
           <option value="1-2">1"-2"</option>
@@ -175,19 +191,21 @@
       </li>
       <li class="input">
         <label>Estimated Repair Cost</label>
-        <input name="estimated_interior_repair_cost" type="number" ng-model="vm.estimatedInteriorRepairCost" ng-value = "vm.estimatedinteriorRepairCost" placeholder="Interior Estimated Repair Cost" required/>
+        <input name="estimated_interior_repair_cost" type="number" ng-model="vm.estimatedInteriorRepairCost" ng-value = "vm.estimatedinteriorRepairCost" placeholder="Interior Estimated Repair Cost" />
         <small class="error" ng-show="addCondtionReport.estimated_interior_repair_cost.$error.required">This field is required and cannot be left blank</small>
 
       </li>
       <li class="full text">
         <label>Damage Comment:</label>
-        <textarea name="interior_damage_comment" ng-model="vm.interiorDamageComment" required></textarea>
+        <textarea name="interior_damage_comment" ng-model="vm.interiorDamageComment" ></textarea>
         <small class="error" ng-show="addCondtionReport.interior_damage_comment.$error.required">This field is required and cannot be left blank</small>
 
       </li>
       <li>
         <input ng-model="file" type="file">
       </li>
+      <button ng-click="vm.addInteriorDamageData(); $event.preventDefault(); $event.stopPropagation();"> Save Interior Damage</button>
+
     </ul>
   </section>
   <section>
