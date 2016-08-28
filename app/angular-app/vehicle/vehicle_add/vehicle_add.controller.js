@@ -205,62 +205,15 @@ function VehiclesAddController($scope, vehicleProvider){
         'activity': 'add'
       })
 
+    var status = vehicleProvider.addVehicle(addVehicleData);
+        if (!status) {
+          vm.error_message_submit = "Vehicle already exists"
+        }
 
-  vehicleProvider.addVehicle(addVehicleData);
+  // vehicleProvider.addVehicle(addVehicleData);
 
   }
 
-  // vm.addVehicle = function(){
-  //   var vehicleAdd = {
-  //     VIN: vm.vin,
-  //     Year:vm.year,
-  //     Make:vm.make,
-  //     Model:vm.model,
-  //     Trim:vm.trim,
-  //     bodystyle:vm.bodystyle,
-  //     vehicleType:vm.vehicleType,
-  //     itemNo:vm.itemNo,
-  //     mileage:vm.mileage,
-  //     location:vm.location,
-  //     inventoryStatus:vm.inventoryStatus,
-  //     date:vm.date,
-  //     description: vm.description,
-  //     exteriorColor: vm.exterior_color,
-  //     interiorColor: vm.interior_color,
-  //     searchColor: vm.search_color,
-  //     seat:vm.seat,
-  //     door:vm.door,
-  //     engine:{
-  //       'availability': vm.availability,
-  //       'cylinder': vm.cylinder,
-  //       'compressionRatio': vm.compressionRatio,
-  //       'size': vm.size,
-  //       'displacement': vm.displacement,
-  //       'fuelType': vm.fuelType,
-  //       'horsepower': vm.horsepower,
-  //       'torque': vm.torque,
-  //       'totalValves': vm.totalValves,
-  //     },
-  //     transmission:vm.transmission,
-  //     drivetrain:vm.drivetrain,
-  //     fuel:vm.fuel,
-  //     brakes:vm.brakes,
-  //     titleStatus:vm.titleStatus,
-  //     titleState:vm.titleState,
-  //     warranty:vm.warranty,
-  //     drivetrainWarranty: vm.drivetrainWarranty,
-  //     additionalWarranty: vm.additionalWarranty,
-  //     certifiedPreOwned:vm.certifiedPreOwned,
-  //     guaranteedFinancing: vm.guaranteedFinancing,
-  //     sellerGuarantee : vm.sellerGuarantee,
-  //     yellowLight : vm.yellowLigh,
-  //     interiorOptions : vm.interirOptions,
-  //     exteriorOptions : vm.exteriorOptions,
-  //     premiumOptions: vm.premiumOptions,
-  //     truckOptions: vm.truckOptions
-  //   };
-  //   console.log(JSON.stringify(vehicleAdd))
-  // }
 
 
 

@@ -9,6 +9,12 @@
           .then(function(response){
             console.log('this is the response', response)
             // $scope.loading=false;
+
+            if (response.status === 200 && JSON.parse(response.data).status === "FAIL") {
+              return false
+            } else {
+            }
+
           })
           .catch(function(error){
             console.log("Unable to Add vehicle, error: ", error)
