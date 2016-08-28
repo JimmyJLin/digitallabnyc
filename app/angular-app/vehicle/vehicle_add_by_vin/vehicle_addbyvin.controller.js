@@ -256,8 +256,10 @@ function VehicleAddbyVinController($scope, addbyVinProvider){
       })
 
 
-  addbyVinProvider.addVehicle(addVehicleData);
-
+  var status = addbyVinProvider.addVehicle(addVehicleData);
+      if (!status) {
+        vm.error_message_submit = "Vehicle already exists"
+      }
   }
 
 
