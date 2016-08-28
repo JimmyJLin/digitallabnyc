@@ -1,60 +1,64 @@
-<div id="na-{{ auto.naid }}-cr" class="pane">
+<div>
 
-  <h3>Vehicle History</h3>
+</div><h3>Vehicle History</h3>
+<!-- <div ng-repeat="condition in conditions"></div> -->
   <ul>
-    <li><label>Overall Condition:</label>	8 - Clean</li>
-    <li><label>Reconditioned:</label>	Yes</li>
-    <li><label>Detailed:</label>	Yes</li>
-    <li><label>Frame Damage:</label>	No</li>
+    <li><label>Overall Condition:</label>	{{condition.ID}}</li>
+    <li><label>Reconditioned:</label>	{{condition}}</li>
+    <li><label>Detailed:</label>{{condition}}</li>
+    <li><label>Frame Damage:</label>{{condition}}</li>
 
-    <li><label>Title:</label>	Clear</li>
-    <li><label>Pending Payoff:</label>	No</li>
-    <li><label>Rental Vehicle:</label>	No</li>
-    <li><label>Certified Preowned:</label>	No</li>
+    <li><label>Title:</label>{{condition}}</li>
+    <li><label>Pending Payoff:</label>{{condition}}</li>
+    <li><label>Rental Vehicle:</label>{{condition}}</li>
+    <li><label>Certified Preowned:</label>{{condition}}</li>
 
-    <li><label>Clean CARFAX:</label>	Unknown</li>
-    <li><label>Clean AutoCheck:</label>	Unknown</li>
-    <li><label>Hail Damage:</label>	None</li>
+    <li><label>Clean CARFAX:</label>{{condition}}</li>
+    <li><label>Clean AutoCheck:</label>{{condition}}</li>
+    <li><label>Hail Damage:</label>{{condition}}</li>
   </ul>
 
   <h3>Mechanical</h3>
   <ul>
-    <li><label>Engine:</label>	No Damage</li>
-    <li><label>Check Engine:</label>	Off</li>
-    <li><label>Transmission:</label>	No Damage</li>
-    <li><label>Exhaust:</label>	No Damage</li>
-    <li><label>Brakes:</label>	No Damage</li>
-    <li><label>A/C:</label>	No Damage</li>
-    <li><label>Battery:</label>	No Damage</li>
-    <li><label>Oil Changed:</label>	Yes</li>
-    <li><label>Fuel Level:</label>	1/4</li>
+    <li><label>Engine:</label>{{condition}}</li>
+    <li><label>Check Engine:</label>{{condition}}</li>
+    <li><label>Transmission:</label>{{condition}}</li>
+    <li><label>Exhaust:</label>{{condition}}</li>
+    <li><label>Brakes:</label>{{condition}}</li>
+    <li><label>A/C:</label>{{condition}}</li>
+    <li><label>Battery:</label>{{condition}}</li>
+    <li><label>Oil Changed:</label>{{condition}}</li>
+    <li><label>Fuel Level:</label>{{condition}}</li>
   </ul>
 
   <h3>Tires</h3>
   <ul>
-    <li><label>Tires Match:</label>	Yes</li>
-    <li><label>Left Front:</label>	More than 7/32</li>
-    <li><label>Right Front:</label>	More than 7/32</li>
-    <li><label>Left Rear:</label>	More than 7/32</li>
-    <li><label>Right Rear:</label>	More than 7/32</li>
-    <li><label>Spare:</label>	New</li>
-    <li><label>Jack:</label>	true</li>
+    <li><label>Tires Match:</label>{{condition}}</li>
+    <li><label>Left Front:</label>{{condition}}</li>
+    <li><label>Right Front:</label>{{condition}}</li>
+    <li><label>Left Rear:</label>{{condition}}</li>
+    <li><label>Right Rear:</label>{{condition}}</li>
+    <li><label>Spare:</label>{{condition.TireSpare}}</li>
+    <li><label>Jack:</label>{{condition.TireJack}}</li>
   </ul>
 
   <h3>Miscellaneous</h3>
   <ul>
-    <li><label>Keys:</label>	Master (2)</li>
-    <li><label>Keys:</label>	Remote (1)</li>
-    <li><label>Windshield:</label>	Pitted</li>
-    <li><label>Owners Manual:</label>	Present</li>
-    <li><label>Odor:</label>	None</li>
-    <li><label>Floor Mats:</label>	Yes</li>
+    <li><label>Keys KeysCombo:</label>{{condition.KeysMaster}}</li>
+    <li><label>Keys KeysCombo:</label>{{condition.KeysRemote}}</li>
+    <li><label>Keys KeysCombo:</label>{{condition.KeysValet}}</li>
+    <li><label>Keys KeysCombo:</label>{{condition.KeysCombo}}</li>
+    <li><label>Keys Keyless Go:</label>{{condition.KeysKeylessGo}}</li>
+    <li><label>Windshield:</label>{{condition.Windshield}}</li>
+    <li><label>Owners Manual:</label>	{{condition.OwnersManual}}</li>
+    <li><label>Odor:</label>{{condition.Odor}}</li>
+    <li><label>Floor Mats:</label>{{condition.FloorMats}}</li>
   </ul>
 
   <h3>Damages:</h3>
   <ul>
-    <li><label>Exterior:</label> None</li>
-    <li><label>Interior:</label> None</li>
+    <li><label>Exterior:</label>{{condition}}</li>
+    <li><label>Interior:</label>{{condition}}</li>
   </ul>
 
   <h3>Other Problems</h3>
@@ -62,5 +66,3 @@
 
   <h3>Positives</h3>
   <p>NICE VEHICLE! GLASS IS LIGHTLY PITTED</p>
-
-</div>

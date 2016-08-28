@@ -163,13 +163,14 @@ function VehicleAddbyVinController($scope, addbyVinProvider){
 
 
   vm.addCond = function(){
-
       var vin = vm.vin;
 
       $scope.loading=true;
 
       addbyVinProvider.getvehiclebyVin( vin, function(err, data){
-
+        if(err===500){
+          vm.message= "Please check the vin number and try again"
+        } else {
         // console.log('DEBUG controller ' + JSON.stringify(data) );
         $scope.vehicle = data;
         vm.isSearched = true;
@@ -193,12 +194,16 @@ function VehicleAddbyVinController($scope, addbyVinProvider){
         $scope.loading=false;
 
         console.log( vm.vin , $scope.vehicle);
+      }
 
       });
+
 
   }
 
   vm.addVehicle = function(){
+    alert('clicked')
+
     var owner = "617a69c3-bd34-445c-a762-1bbcf228f7bb"
 
       var addVehicleData = JSON.stringify({

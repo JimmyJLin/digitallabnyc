@@ -84,6 +84,24 @@ function get_vehicles(){
 
     }
 
+  vm.getVehicleCondition = function(vin){
 
+    var vehicleDataForConditionReport = JSON.stringify({
+      "submitter": "submitter",
+      "activity": "getbyvin",
+      "vin": vin
+    });
+
+    vehicleInventoryProvider.getCondition( vehicleDataForConditionReport, function(err, data){
+          $scope.finished_loading = true;
+          if (err) {
+              $scope.page_load_error = err.message;
+          } else {
+            console.log("This is the condition report --> " + JSON.stringify(data));
+              $scope.conditions = data;
+              $scope.loading=false;
+          }
+        })
+  }
 
 }

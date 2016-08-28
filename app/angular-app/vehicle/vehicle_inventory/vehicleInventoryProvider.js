@@ -53,6 +53,27 @@
           })
     }
 
+    this.getCondition = function(data){
+
+      $http({
+        url: 'http://api.nationsauction.com/inventory/Vehicle/GetByOwner',
+        method: "POST",
+        data: data
+        // headers: {'Content-Type': 'application/json'}
+      })
+      .success(function (data, status, headers, config) {
+
+        var testData = JSON.parse(data);
+
+          callback(null, testData);
+      })
+      .error(function (data, status, headers, config) {
+          callback(data);
+      });
+
+    }
+
+
 
     };
     naBaseApp.service("vehicleInventoryProvider", [ "$http", vehicleInventoryProvider]);

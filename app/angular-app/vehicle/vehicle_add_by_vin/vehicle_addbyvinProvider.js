@@ -22,7 +22,8 @@
               callback(null,vehicledata)
           })
           .error(function (data, status, headers, config) {
-
+            callback(status)
+            console.log("Unable to Add vehicle, error: ", status)
           });
   		};
 
@@ -34,6 +35,7 @@
             console.log('this is the response', response)
           })
           .catch(function(error){
+            return error;
             console.log("Unable to Add vehicle, error: ", error)
           })
 

@@ -2,15 +2,19 @@
   <h1>Add Vehicle by VIN</h1>
 </header>
 <loading></loading>
-<div class="alert alert-success" ng-show="showSuccessAlert">
+
+<!-- <div class="alert alert-success" ng-show="showSuccessAlert">
    <button type="button" class="close" data-ng-click="switchBool('showSuccessAlert')" >×</button>
    <strong>Done!</strong> {{successTextAlert}}
-</div>
+</div> -->
+
 <div class="page form" id="checkVin">
+
   <form name="addVehicleByVin" ng-submit="vm.addCond()" >
     <section>
     <ul>
       <li>
+        <h1 class="error" ng-if="vm.message">{{vm.message}}<h1>
         <small class="error" ng-show="addVehicleByVin.vin.$error.pattern">Please enter a valid VIN Number or Quish VIN Number</small>
         <input name="vin" class="large" type="text" ng-model="vm.vin" placeholder="Vehicle VIN Number" ng-pattern="vm.VIN_REGEXP" required/>
       </li>
@@ -21,7 +25,9 @@
     </ul>
     </section>
   </form>
+
   <div ng-include src="'angular-app/partials/forms/add_vehicle_vin/vehicle_add_by_vin_basic.html'"></div>
+
   <div ng-include src="'angular-app/partials/forms/add_vehicle_vin/vehicle_add_by_vin_details.html'"></div>
 
 </div>
