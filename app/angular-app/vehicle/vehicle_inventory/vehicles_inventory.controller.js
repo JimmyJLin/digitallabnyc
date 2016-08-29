@@ -13,9 +13,9 @@ function get_vehicles(){
         if (err) {
             $scope.page_load_error = err.message;
         } else {
-              console.log("DEBUG => data --> " + vehicles);
-            $scope.vehicles = vehicles;
-            $scope.loading=false;
+          // console.log("DEBUG => data --> " + vehicles);
+          $scope.vehicles = vehicles;
+          $scope.loading=false;
 
 
         }
@@ -82,6 +82,21 @@ function get_vehicles(){
         console.log('this is the new vehicle', editedVehicleData)
         // vehicleInventoryProvider.editVehicle(editedVehicleData);
 
+    }
+
+    vm.addVehiclePricing = function(){
+      // var vin = "1GNEK13Z34J221437"
+
+      var vehiclePricingData = JSON.stringify({
+        'submitter': "submitter",
+        'vin': vm.vehicleVin,
+        'vehicleCost': vm.vehicleCost,
+        'vehiclePurchaseDate': vm.purchaseDate,
+        'activity': 'add'
+
+      })
+      console.log("Vehicle Pricing Data Hello", vehiclePricingData)
+      // vehicleInventoryProvider.addVehiclePricing(vehiclePricingData)
     }
 
 

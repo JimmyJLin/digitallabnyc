@@ -4,17 +4,22 @@
 
 <div class="page form">
 
-  <form ng-submit="vm.addVehiclePricing()" >
+  <form name="add_vehicle_pricing" ng-submit="vm.addVehiclePricing()" >
     <section>
+      <ul >
+        <li class="input">
+          <input type="text" ng-model="vm.vehicleVin" ng-value=vehicle.VIN placeholder="{{vehicle.VIN}}" />
+        </li>
+      </ul>
       <ul class="cols-2">
         <li class="input">
           <label>Vehicle Cost</label>
-          <input type="number" ng-value = "vm.vehicleCost" placeholder="Cost" />
+          <input type="number" ng-model="vm.vehicleCost" ng-value="" placeholder="Vehicle Cost" />
         </li>
 
         <li class="input">
           <label>Purchase Date</label>
-          <input type="date" ng-model="vm.purchaseDate" ng-value="" required/>
+          <input type="date" ng-model="vm.purchaseDate" ng-value=""/>
         </li>
       </ul>
     </section>

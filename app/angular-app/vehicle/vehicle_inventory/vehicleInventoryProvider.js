@@ -28,10 +28,10 @@
 			    headers: {'Content-Type': 'application/json'}
   			})
           .success(function (data, status, headers, config) {
-    				console.log("DEBUG => data > " + data);
+    				// console.log("DEBUG => data > " + data);
     				var testData = JSON.parse(data);
 
-    				console.log("DEBUG => testData > " + JSON.stringify(testData));
+    				// console.log("DEBUG => testData > " + JSON.stringify(testData));
     			    callback(null, testData);
     			})
           .error(function (data, status, headers, config) {
@@ -51,6 +51,29 @@
           .catch(function(error){
             console.log("Unable to Add condition, error: ", error)
           })
+    }
+
+
+    this.addVehiclePricing = function(vehiclePricingData){
+
+      console.log("Vehicle_add/vehicleProvider lin 6", vehiclePricingData)
+      // $scope.loading=true;
+      $http.post('http://api.nationsauction.com/inventory/Vehicle/Add', vehiclePricingData)
+        .then(function(response){
+          console.log('this is Vehicle Pricing response: ', response)
+          // $scope.loading=false;
+
+          if (response.status === 200 && JSON.parse(response.data).status === "FAIL") {
+            return false
+          } else {
+          }
+
+        })
+        .catch(function(error){
+          console.log("Unable to Add Vehicle Pricing, error: ", error)
+        })
+
+
     }
 
 
