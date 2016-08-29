@@ -28,11 +28,11 @@ function AddConditionController($scope, addConditionProvider){
   vm.addExteriorDamageData = function(){
 
     var exteriorDamage = {
-      'exteriorDamageLocation': vm.exteriorDamageLocation,
-      'exteriorDamageType': vm.exteriorDamageType,
-      'exteriorDamageSeverity': vm.exteriorDamageSeverity,
-      'estimatedExteriorRepairCost': vm.estimatedExteriorRepairCost,
-      'exteriorDamageComment': vm.exteriorDamageComment
+      'location': vm.exteriorDamageLocation,
+      'damageType': vm.exteriorDamageType,
+      'severity': vm.exteriorDamageSeverity,
+      'estimatedRepairCost': vm.estimatedExteriorRepairCost,
+      'description': vm.exteriorDamageComment
     }
     $scope.exteriorDamageReports.push(exteriorDamage)
     console.log("exteior Damage", exteriorDamage)
@@ -54,11 +54,11 @@ function AddConditionController($scope, addConditionProvider){
   vm.addInteriorDamageData = function(){
 
     var interiorDamage = {
-      'interiorDamageLocation': vm.interiorDamageLocation,
-      'interiorDamageType': vm.interiorDamageType,
-      'interiorDamageSeverity': vm.interiorDamageSeverity,
-      'estimatedInteriorRepairCost': vm.estimatedInteriorRepairCost,
-      'interiorDamageComment': vm.interiorDamageComment
+      'location': vm.interiorDamageLocation,
+      'damageType': vm.interiorDamageType,
+      'severity': vm.interiorDamageSeverity,
+      'estimatedRepairCost': vm.estimatedInteriorRepairCost,
+      'description': vm.interiorDamageComment
     }
     $scope.interiorDamageReports.push(interiorDamage)
     console.log("interior Damage", interiorDamage)
@@ -74,61 +74,78 @@ function AddConditionController($scope, addConditionProvider){
     vm.interiorDamageComment = null;
   }
 
+
   vm.addCond = function(){
 
-  var conditionData = JSON.stringify({
-    'submitter': "submitter",
-    'owner': '617a69c3-bd34-445c-a762-1bbcf228f7bb',
-    'vin': vm.vin,
-    'grade': vm.grade,
-    'recondition': vm.recondition,
-    'detail': vm.detail,
-    'frameDamage': vm.frameDamage,
-    'previouslyRepainted': vm.previouslyRepainted,
-    'dashLightOptions': vm.dashLightOptions,
-    'damage': vm.damage,
-    'vehicleDrive': vm.vehicleDrive,
-    'transmission': vm.transmission,
-    'exhaust': vm.exhaust,
-    'ac': vm.ac,
-    'battery': vm.battery,
-    'oilChanged': vm.oilChanged,
-    'fuelLevel': vm.fuelLevel,
-    'tireMatch': vm.tireMatch,
-    'weatherChecked': vm.weatherChecked,
-    'leftFront': vm.leftFront,
-    'rightFront': vm.rightFront,
-    'leftRear': vm.leftRear,
-    'rightRear': vm.rightRear,
-    'spare': vm.spare,
-    'jack': vm.jack,
-    'master': vm.master,
-    'remote': vm.remote,
-    'valet': vm.valet,
-    'combo': vm.combo,
-    'keylessGo': vm.keylessGo,
-    'windshield': vm.windshield,
-    'ownersManual': vm.ownersManual,
-    'odor': vm.odor,
-    'floorMats': vm.floorMats,
-    'exteriorDamages': $scope.exteriorDamageReports,
-    'interiorDamages': $scope.interiorDamageReports,
-    // 'exteriorDamageLocation': vm.exteriorDamageLocation,
-    // 'exteriorDamageType': vm.exteriorDamageType,
-    // 'exteriorDamageSeverity': vm.exteriorDamageSeverity,
-    // 'estimatedExteriorRepairCost': vm.estimatedExteriorRepairCost,
-    // 'exteriorDamageComment': vm.exteriorDamageComment,
-    // 'interiorDamageLocation': vm.interiorDamageLocation,
-    // 'interiorDamageType': vm.interiorDamageType,
-    // 'interiorDamageSeverity': vm.interiorDamageSeverity,
-    // 'estimatedInteriorRepairCost': vm.estimatedInteriorRepairCost,
-    // 'interiorDamageComment': vm.interiorDamageComment,
-    'activity': 'add'
-  })
+    var interiorDamageData = JSON.stringify({
+      'submitter': "submitter",
+      'crGuid': vm.vin,
+      'intExt': "int",
+      'interiorDamages': $scope.interiorDamageReports,
+      'activity': "cradd"
+    })
+
+    var exteriorDamageData = JSON.stringify({
+      'submitter': "submitter",
+      'crGuid': vm.vin,
+      'intExt': "ext",
+      'exteriorDamages': $scope.exteriorDamageReports,
+      'activity': "cradd"
+    })
+
+    var conditionData = JSON.stringify({
+      'submitter': "submitter",
+      'owner': '617a69c3-bd34-445c-a762-1bbcf228f7bb',
+      'vin': vm.vin,
+      'grade': vm.grade,
+      'recondition': vm.recondition,
+      'detail': vm.detail,
+      'frameDamage': vm.frameDamage,
+      'previouslyRepainted': vm.previouslyRepainted,
+      'dashLightOptions': vm.dashLightOptions,
+      'damage': vm.damage,
+      'vehicleDrive': vm.vehicleDrive,
+      'transmission': vm.transmission,
+      'exhaust': vm.exhaust,
+      'ac': vm.ac,
+      'battery': vm.battery,
+      'oilChanged': vm.oilChanged,
+      'fuelLevel': vm.fuelLevel,
+      'tireMatch': vm.tireMatch,
+      'weatherChecked': vm.weatherChecked,
+      'leftFront': vm.leftFront,
+      'rightFront': vm.rightFront,
+      'leftRear': vm.leftRear,
+      'rightRear': vm.rightRear,
+      'spare': vm.spare,
+      'jack': vm.jack,
+      'master': vm.master,
+      'remote': vm.remote,
+      'valet': vm.valet,
+      'combo': vm.combo,
+      'keylessGo': vm.keylessGo,
+      'windshield': vm.windshield,
+      'ownersManual': vm.ownersManual,
+      'odor': vm.odor,
+      'floorMats': vm.floorMats,
+      // 'exteriorDamages': $scope.exteriorDamageReports,
+      // 'interiorDamages': $scope.interiorDamageReports,
+      // 'exteriorDamageLocation': vm.exteriorDamageLocation,
+      // 'exteriorDamageType': vm.exteriorDamageType,
+      // 'exteriorDamageSeverity': vm.exteriorDamageSeverity,
+      // 'estimatedExteriorRepairCost': vm.estimatedExteriorRepairCost,
+      // 'exteriorDamageComment': vm.exteriorDamageComment,
+      // 'interiorDamageLocation': vm.interiorDamageLocation,
+      // 'interiorDamageType': vm.interiorDamageType,
+      // 'interiorDamageSeverity': vm.interiorDamageSeverity,
+      // 'estimatedInteriorRepairCost': vm.estimatedInteriorRepairCost,
+      // 'interiorDamageComment': vm.interiorDamageComment,
+      'activity': 'add'
+    })
     console.log(conditionData)
     // alert('clicked')
-    // addConditionProvider.addConditionData(conditionData)
-
+    addConditionProvider.addConditionData(conditionData)
+    addConditionProvider.addDamageData(interiorDamageData, exteriorDamageData)
   }
 
 }
@@ -209,4 +226,52 @@ function AddConditionController($scope, addConditionProvider){
 //       }
 //    ],
 //    "activity":"add"
+// }
+
+
+
+// {
+//    "submitter":"submitter",
+//    "crGuid":"911f3413-0e9d-402d-b651-380c8c4d2e9e",
+//    "intExt":"int",
+//    "interiorDamages":[
+//       {
+//          "location":"Steering Wheel",
+//          "damageType":"Chipped",
+//          "severity":"10-16",
+//          "estimatedRepairCost":5677,
+//          "description":"7777",
+//       },
+//       {
+//          "location":"Console",
+//          "damageType":"Creased",
+//          "severity":"6-10",
+//          "estimatedRepairCost":5555,
+//          "description":"5555",
+//       }
+//    ],
+//    "activity":"cradd"
+// }
+//
+// {
+//    "submitter":"submitter",
+//    "crGuid":"911f3413-0e9d-402d-b651-380c8c4d2e9e",
+//    "intExt":"ext",
+//    "exteriorDamages":[
+//       {
+//          "location":"Head Light",
+//          "damageType":"Broken",
+//          "severity":"Less than 1",
+//          "estimatedRepairCost":12345,
+//          "description":"12346",
+//       },
+//       {
+//          "location":"Windshield",
+//          "damageType":"Chipped",
+//          "severity":"4-6",
+//          "estimatedRepairCost":5678,
+//          "description":"56798",
+//       }
+//    ],
+//    "activity":"cradd"
 // }
