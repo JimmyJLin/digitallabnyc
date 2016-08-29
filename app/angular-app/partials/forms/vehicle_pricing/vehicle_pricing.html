@@ -1,0 +1,32 @@
+<header class="page-head">
+  <h1>Add Vehicle Pricing</h1>
+</header>
+
+<div class="page form">
+
+  <form ng-submit="vm.addVehiclePricing()" >
+    <section>
+      <ul class="cols-2">
+        <li class="input">
+          <label>Vehicle Cost</label>
+          <input type="number" ng-value = "vm.vehicleCost" placeholder="Cost" />
+        </li>
+
+        <li class="input">
+          <label>Purchase Date</label>
+          <input type="date" ng-model="vm.purchaseDate" ng-value="" required/>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <ul>
+        <li class="full">
+          <button class="na-input-submit blue" type="submit">Add</button>
+        </li>
+      </ul>
+    </section>
+
+
+  </form>
+</div>
