@@ -28,10 +28,10 @@
 			    headers: {'Content-Type': 'application/json'}
   			})
           .success(function (data, status, headers, config) {
-    				console.log("DEBUG => data > " + data);
+    				// console.log("DEBUG => data > " + data);
     				var testData = JSON.parse(data);
 
-    				console.log("DEBUG => testData > " + JSON.stringify(testData));
+    				// console.log("DEBUG => testData > " + JSON.stringify(testData));
     			    callback(null, testData);
     			})
           .error(function (data, status, headers, config) {
@@ -42,7 +42,7 @@
 
 
     this.editVehicle = function (editedVehicleData){
-        console.log('passed updated vehicle', editedVehicleData)
+        // console.log('passed updated vehicle', editedVehicleData)
 
         $http.post('http://api.nationsauction.com/inventory/Vehicle/Update', editedVehicleData)
           .then(function(response){
@@ -53,6 +53,74 @@
           })
     }
 
+
+    this.addVehiclePricing = function(vehiclePricingData){
+
+      console.log("Vehicle_add/vehicleProvider lin 6", vehiclePricingData)
+      // $scope.loading=true;
+      $http.post('http://api.nationsauction.com/inventory/Vehicle/Add', vehiclePricingData)
+        .then(function(response){
+          console.log('this is Vehicle Pricing response: ', response)
+          // $scope.loading=false;
+
+          if (response.status === 200 && JSON.parse(response.data).status === "FAIL") {
+            return false
+          } else {
+          }
+
+        })
+        .catch(function(error){
+          console.log("Unable to Add Vehicle Pricing, error: ", error)
+        })
+
+
+    }
+
+    this.addDamageData = function(damageData){
+      // console.log('passed DamageData', damageData)
+
+      $http.post('http://api.nationsauction.com/inventory/Vehicle/DamageAdd', damageData)
+        .then(function(response){
+          console.log("interiorDamageData & exteriorDamageData Posted!", response)
+          if (response.status === 200 && JSON.parse(response.data).status === "FAIL") {
+            return false
+          } else {
+          }
+        })
+        .catch(function(error){
+          console.log("unable to add interior & exterior damage", error)
+        })
+
+    }
+
+
+    this.getAllConditionReports = function (callback){
+
+        var vehicleListData = JSON.stringify({
+          'submitter': "test",
+          'activity': 'getall'
+        })
+
+
+        $http({
+          url: 'http://api.nationsauction.com/inventory/Vehicle/CRGetAll',
+          method: "POST",
+          cache: 'false',
+          data: vehicleListData,
+          headers: {'Content-Type': 'application/json'}
+        })
+          .success(function (data, status, headers, config) {
+            // console.log("DEBUG => data > " + data);
+            var testData = JSON.parse(data);
+
+            // console.log("DEBUG => testData raw > " + testData);
+            // console.log("DEBUG => testData > " + JSON.stringify(testData));
+              callback(null, testData);
+          })
+          .error(function (data, status, headers, config) {
+              callback(data);
+          });
+      };
 
     };
     naBaseApp.service("vehicleInventoryProvider", [ "$http", vehicleInventoryProvider]);

@@ -1,0 +1,38 @@
+<header class="page-head">
+  <h1>Add Vehicle Pricing</h1>
+</header>
+
+<div class="page form">
+
+  <form name="add_vehicle_pricing" ng-submit="vm.addVehiclePricing(vehicle.VIN)" >
+    <section>
+      <ul >
+        <li class="input">
+          <input type="text" ng-model="vm.vehicleVin" ng-value=vehicle.VIN placeholder="{{vehicle.VIN}}" />
+        </li>
+      </ul>
+      <ul class="cols-2">
+        <li class="input">
+          <label>Vehicle Cost</label>
+          <input type="number" ng-model="vm.vehicleCost" ng-value="" placeholder="Vehicle Cost" />
+        </li>
+
+        <li class="input">
+          <label>Purchase Date</label>
+          <input type="date" ng-model="vm.purchaseDate" ng-value=""/>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <ul>
+        <li class="full">
+          <h1 class="error" ng-if="vm.error_message_submit">{{vm.error_message_submit}}</h1>
+          <button class="na-input-submit blue" type="submit">Add Vehicle Pricing</button>
+        </li>
+      </ul>
+    </section>
+
+
+  </form>
+</div>

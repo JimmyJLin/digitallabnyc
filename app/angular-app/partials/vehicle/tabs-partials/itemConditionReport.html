@@ -1,31 +1,17 @@
 <div id="na-{{ auto.naid }}-cr" class="pane">
-  <button>Add New Report</button>
-  <br>
-  <br>
-  
-  <table>
+  <header class="page-head">
+    <h1>Condition Reports<small>{{conditionReports.length}}</small></h1>
+  </header>
+  <loading></loading>
+  <div class="list">
 
-    <tr>
-      <th> Number</th>
-      <th> Name</th>
-      <th> Description</th>
-      <th> Date</th>
-    </tr>
+    <ul>
+      <li ng-repeat="conditionReport in conditionReports  track by $index">
+        <div class="item vehicle" ng-include src="'angular-app/partials/vehicle/condition_report/condition_reports.html'"></div>
+      </li>
+    </ul>
 
-    <tr>
-      <td> Report 001</td>
-      <td> Funny Report</td>
-      <td> Really Really Really Funny Report</td>
-      <td> 8-26-2016</td>
-      <td><button>Edit</button></td>
-    </tr>
-    <tr>
-      <td> Report 004</td>
-      <td> NOT Funny Report</td>
-      <td> Really Really Really NOT Funny Report</td>
-      <td> 8-26-2016</td>
-      <td><button>Edit</button></td>
-    </tr>
-  </table>
+  </div>
+
 
 </div>

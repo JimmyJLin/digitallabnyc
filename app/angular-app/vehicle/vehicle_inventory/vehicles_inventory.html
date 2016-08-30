@@ -78,6 +78,13 @@
   <input placeholder="Make" type="text" ng-model="search.Make">
   <input placeholder="Model" type="text" ng-model="search.Model">
 
+  <section>
+    <ul>
+      <li ng-repeat="vehicle in vehicles">
+        <div class="item vehicle" ng-include src="'angular-app/partials/vehicle/item.html'"></div>
+      </li>
+    </ul>
+  </section>
 
   <section>
     <h2>Unlisted <small>{{notActiveList.length}}</small></h2>

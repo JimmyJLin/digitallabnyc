@@ -1,6 +1,6 @@
 (function () {
 
-    function vehicleProvider ($http) {
+    function vehicleProvider ($http, $location) {
 
       this.addVehicle = function(addVehicleData){
         console.log("Vehicle_add/vehicleProvider lin 6", addVehicleData)
@@ -12,6 +12,8 @@
 
             if (response.status === 200 && JSON.parse(response.data).status === "FAIL") {
               return false
+              $location.path("/index")
+
             } else {
             }
 
@@ -26,6 +28,6 @@
 
     }
 
-    naBaseApp.service("vehicleProvider", [ "$http", vehicleProvider]);
+    naBaseApp.service("vehicleProvider", [ "$http", "$location", vehicleProvider]);
 
 })();

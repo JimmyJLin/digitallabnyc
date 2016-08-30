@@ -12,7 +12,7 @@ function VehiclesAllController($scope, vehicleAllProvider){
         if (err) {
             $scope.page_load_error = err.message;
         } else {
-              console.log("DEBUG => data --> " + vehicles);
+              // console.log("DEBUG => data --> " + vehicles);
             $scope.vehicles = vehicles;
             $scope.loading=false;
 

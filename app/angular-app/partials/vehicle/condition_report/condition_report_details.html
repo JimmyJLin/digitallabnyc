@@ -1,62 +1,68 @@
-<h3>Vehicle History</h3>
-<ul>
-  <li><label>Overall Condition:</label>	8 - Clean</li>
-  <li><label>Reconditioned:</label>	Yes</li>
-  <li><label>Detailed:</label>	Yes</li>
-  <li><label>Frame Damage:</label>	No</li>
 
-  <li><label>Title:</label>	Clear</li>
-  <li><label>Pending Payoff:</label>	No</li>
-  <li><label>Rental Vehicle:</label>	No</li>
-  <li><label>Certified Preowned:</label>	No</li>
+<div >
 
-  <li><label>Clean CARFAX:</label>	Unknown</li>
-  <li><label>Clean AutoCheck:</label>	Unknown</li>
-  <li><label>Hail Damage:</label>	None</li>
-</ul>
+  <h3>Vehicle History for VIN: {{conditionReport.Vin}}</h3>
+  <ul>
+    <li><label>Overall Condition:</label>	</li>
+    <li><label>Reconditioned:</label>	{{conditionReport.Reconditioned}} </li>
+    <li><label>Detailed:</label>	{{conditionReport.Detailed}}</li>
+    <li><label>Frame Damage:</label>	{{conditionReport.FrameDamage}}</li>
 
-<h3>Mechanical</h3>
-<ul>
-  <li><label>Engine:</label>	No Damage</li>
-  <li><label>Check Engine:</label>	Off</li>
-  <li><label>Transmission:</label>	No Damage</li>
-  <li><label>Exhaust:</label>	No Damage</li>
-  <li><label>Brakes:</label>	No Damage</li>
-  <li><label>A/C:</label>	No Damage</li>
-  <li><label>Battery:</label>	No Damage</li>
-  <li><label>Oil Changed:</label>	Yes</li>
-  <li><label>Fuel Level:</label>	1/4</li>
-</ul>
+    <li><label>Title:</label>	</li>
+    <li><label>Pending Payoff:</label>	</li>
+    <li><label>Rental Vehicle:</label>	</li>
+    <li><label>Certified Preowned:</label>	</li>
 
-<h3>Tires</h3>
-<ul>
-  <li><label>Tires Match:</label>	Yes</li>
-  <li><label>Left Front:</label>	More than 7/32</li>
-  <li><label>Right Front:</label>	More than 7/32</li>
-  <li><label>Left Rear:</label>	More than 7/32</li>
-  <li><label>Right Rear:</label>	More than 7/32</li>
-  <li><label>Spare:</label>	New</li>
-  <li><label>Jack:</label>	true</li>
-</ul>
+    <li><label>Clean CARFAX:</label>	</li>
+    <li><label>Clean AutoCheck:</label></li>
+    <li><label>Hail Damage:</label>	{{conditionReport.HailDamage}}</li>
+  </ul>
 
-<h3>Miscellaneous</h3>
-<ul>
-  <li><label>Keys:</label>	Master (2)</li>
-  <li><label>Keys:</label>	Remote (1)</li>
-  <li><label>Windshield:</label>	Pitted</li>
-  <li><label>Owners Manual:</label>	Present</li>
-  <li><label>Odor:</label>	None</li>
-  <li><label>Floor Mats:</label>	Yes</li>
-</ul>
+  <h3>Mechanical</h3>
+  <ul>
+    <li><label>Engine:</label>	{{conditionReport.Engine}}</li>
+    <li><label>Check Engine:</label>	{{conditionReport.FrameDamage}}</li>
+    <li><label>Transmission:</label>	{{conditionReport.Transmission}}</li>
+    <li><label>Exhaust:</label>	{{conditionReport.Exhaust}}</li>
+    <li><label>Brakes:</label>	{{conditionReport.Brakes}}</li>
+    <li><label>A/C:</label>	{{conditionReport.AC}}</li>
+    <li><label>Battery:</label>	{{conditionReport.Battery}}</li>
+    <li><label>Oil Changed:</label>	{{conditionReport.OilChanged}}</li>
+    <li><label>Fuel Level:</label>	{{conditionReport.FuelLevel}}</li>
+  </ul>
 
-<h3>Damages:</h3>
-<ul>
-  <li><label>Exterior:</label> None</li>
-  <li><label>Interior:</label> None</li>
-</ul>
+  <h3>Tires</h3>
+  <ul>
+    <li><label>Tires Match:</label>	{{conditionReport.TireMatch}}</li>
+    <li><label>Left Front:</label>	{{conditionReport.TireLeftFront}}</li>
+    <li><label>Right Front:</label>	{{conditionReport.TireRightFront}}</li>
+    <li><label>Left Rear:</label>	{{conditionReport.TireLeftRear}}</li>
+    <li><label>Right Rear:</label>	{{conditionReport.TireRightRear}}</li>
+    <li><label>Spare:</label>	{{conditionReport.TireSpare}}</li>
+    <li><label>Jack:</label>	tru{{conditionReport.TireJack}}e</li>
+  </ul>
 
-<h3>Other Problems</h3>
-<p>SEE LABELED PHOTOS OF DAMAGES</p>
+  <h3>Miscellaneous</h3>
+  <ul>
+    <li><label>Master Keys:</label>	{{conditionReport.KeysMaster}}</li>
+    <li><label>Remote Keys:</label>	{{conditionReport.KeysRemote}}</li>
+    <li><label>Valet Keys:</label>	{{conditionReport.KeysValet}}</li>
+    <li><label>Combo Keys:</label>	{{conditionReport.KeysCombo}}</li>
+    <li><label>Windshield:</label>	{{conditionReport.Windshield}}</li>
+    <li><label>Owners Manual:</label>	{{conditionReport.OwnersManual}}</li>
+    <li><label>Odor:</label>	{{conditionReport.Odor}}</li>
+    <li><label>Floor Mats:</label>	{{conditionReport.FloorMats}}</li>
+  </ul>
 
-<h3>Positives</h3>
-<p>NICE VEHICLE! GLASS IS LIGHTLY PITTED</p>
+  <h3>Damages:</h3>
+  <ul>
+    <li><label>Damage:</label> {{conditionReport.Damage}}</li>
+  </ul>
+
+  <h3>Other Problems</h3>
+  <p>SEE LABELED PHOTOS OF DAMAGES</p>
+
+  <h3>Positives</h3>
+  <p>NICE VEHICLE! GLASS IS LIGHTLY PITTED</p>
+
+</div>

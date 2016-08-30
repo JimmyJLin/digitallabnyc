@@ -311,6 +311,12 @@ li:last-child .menu + menu:before {
   font-size: .9em;
 }
 
+.form .cols-2 {
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
 .form .cols-2 li {
   width: 50%;
 }
@@ -476,6 +482,16 @@ form {
   border-color: #525fb8;
   -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.form input[type="text"] + .error,
+.form select + .error {
+  display: none;
+}
+
+.form input[type="text"].ng-touched + .error,
+.form select.ng-touched + .error {
+  display: block;
 }
 
 .form input.ng-invalid + input {

@@ -1,6 +1,6 @@
 (function () {
 
-  function addbyVinProvider ($http) {
+  function addbyVinProvider ($http, $location) {
 
 
       this.getvehiclebyVin = function(vin, callback) {
@@ -37,6 +37,8 @@
 
             if (response.status === 200 && JSON.parse(response.data).status === "FAIL") {
               return false
+              $location.path("/index")
+
             } else {
             }
 
@@ -49,6 +51,6 @@
 
     }
 
-  naBaseApp.service("addbyVinProvider", [ "$http", addbyVinProvider]);
+  naBaseApp.service("addbyVinProvider", [ "$http", "$location", addbyVinProvider]);
 
 })();

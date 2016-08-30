@@ -13,9 +13,9 @@ function get_vehicles(){
         if (err) {
             $scope.page_load_error = err.message;
         } else {
-              console.log("DEBUG => data --> " + vehicles);
-            $scope.vehicles = vehicles;
-            $scope.loading=false;
+          // console.log("DEBUG => data --> " + vehicles);
+          $scope.vehicles = vehicles;
+          $scope.loading=false;
 
 
         }
@@ -26,6 +26,7 @@ function get_vehicles(){
 
 
 
+  // Edit Vehicle Starts
   vm.editVehicle =  function(){
 
       $scope.loading=true;
@@ -79,11 +80,117 @@ function get_vehicles(){
           'activity': 'update'
         })
 
-        console.log('this is the new vehicle', editedVehicleData)
+        // console.log('this is the new vehicle', editedVehicleData)
         // vehicleInventoryProvider.editVehicle(editedVehicleData);
 
     }
+  // Edit Vehicle Ends
+
+  // Add Vehicle Pricing Start
+  vm.addVehiclePricing = function(vin){
+    // var vin = "1GNEK13Z34J221437"
+
+    var vehiclePricingData = JSON.stringify({
+      'submitter': "submitter",
+      'vin': vin,
+      'vehicleCost': vm.vehicleCost,
+      'vehiclePurchaseDate': vm.purchaseDate,
+      'activity': 'add'
+
+    })
+    console.log("Vehicle Pricing Data Hello", vehiclePricingData)
+    var status = vehicleInventoryProvider.addVehiclePricing(vehiclePricingData);
+      if(!status) {
+        vm.error_message_submit = "Vehicle Pricing not added"
+      }
+  }
+  // Add Vehicle Pricing Ends
+
+  // Add Damage Start
+  $scope.damageReports = []
+  $scope.exteriorDamageReports = []
+  $scope.interiorDamageReports = []
+
+  vm.addExteriorDamage = function(){
+    var exteriorDamage = {
+      'intExt': 'ext',
+      'location': vm.exteriorDamageLocation,
+      'damageType': vm.exteriorDamageType,
+      'severity': vm.exteriorDamageSeverity,
+      'estimatedRepairCost': vm.estimatedExteriorRepairCost,
+      'description': vm.exteriorDamageComment
+    }
+    $scope.damageReports.push(exteriorDamage)
+    $scope.exteriorDamageReports.push(exteriorDamage)
+
+    // console.log("exteior Damage", exteriorDamage)
+
+    $scope.exteriorDamageReset()
+  }
+
+  vm.addInteriorDamage = function(){
+    var interiorDamage = {
+      'intExt': 'ext',
+      'location': vm.interiorDamageLocation,
+      'damageType': vm.interiorDamageType,
+      'severity': vm.interiorDamageSeverity,
+      'estimatedRepairCost': vm.estimatedInteriorRepairCost,
+      'description': vm.interiorDamageComment
+    }
+    $scope.damageReports.push(interiorDamage)
+    $scope.interiorDamageReports.push(interiorDamage)
+
+    // console.log("interior Damage", interiorDamage)
+
+    $scope.interiorDamageReset()
+  }
+
+  $scope.exteriorDamageReset = function(){
+    vm.exteriorDamageLocation = null;
+    vm.exteriorDamageType = null;
+    vm.exteriorDamageSeverity = null;
+    vm.estimatedExteriorRepairCost = null;
+    vm.exteriorDamageComment = null;
+
+  }
+
+  $scope.interiorDamageReset = function(){
+    vm.interiorDamageLocation = null;
+    vm.interiorDamageType = null;
+    vm.interiorDamageSeverity = null;
+    vm.estimatedInteriorRepairCost = null;
+    vm.interiorDamageComment = null;
+  }
 
 
+  vm.addVehicleDamage = function(vin){
+    // console.log("VIN is", vin)
+    var damageData = angular.toJson({
+      'submitter': "submitter",
+      "crGuid": "911f3413-0e9d-402d-b651-380c8c4d2e9e",
+      'damages': $scope.damageReports,
+      'activity': "cradd"
+    })
+    // console.log("Vehicle damageData Posted! Damages are: ", damageData)
+    var status = vehicleInventoryProvider.addDamageData(damageData)
+      if (!status) {
+        vm.error_message_submit = "Vehicle Damage Report NOT posted"
+      }
 
+
+  }
+  // Add Damage Ends
+
+
+  $scope.conditionReports =   vehicleInventoryProvider.getAllConditionReports( function(err, conditionReports){
+    $scope.finished_loading = true;
+    if (err) {
+        $scope.page_load_error = err.message;
+    } else {
+          // console.log("DEBUG => data --> " + conditionReports);
+        $scope.conditionReports = conditionReports;
+        $scope.loading=false;
+
+    }
+  });
 }
