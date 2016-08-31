@@ -1,19 +1,32 @@
 <header class="page-head">
   <h1>Add Vehicle by VIN</h1>
 </header>
-<div class="page form" id="checkVin">
-  <form ng-submit="vm.addCond()" >
-    <ul>
-      <li>
-        <input class="large" type="text" ng-model="vm.vin" placeholder="Vehicle VIN Number" />
-      </li>
-      <!-- <li class="footer"> -->
-        <!-- <button class="na-input-submit blue" type="submit" >Next</button> -->
-        <!-- <button type="submit" class="btn" id="checkVinButton">Next</button> -->
-      <!-- </li> -->
-    </ul>
-  </form>
-  <div ng-include src="'angular-app/partials/forms/add_vehicle_vin/vehicle_add_by_vin_basic.html'"></div>
-  <div ng-include src="'angular-app/partials/forms/add_vehicle_vin/vehicle_add_by_vin_details.html'"></div>
+<loading></loading>
+<!-- <div class="alert alert-success" ng-show="showSuccessAlert">
+   <button type="button" class="close" data-ng-click="switchBool('showSuccessAlert')" >×</button>
+   <strong>Done!</strong> {{successTextAlert}}
+</div> -->
+<section class="mdview">
+  <section class="detail">
+    <div class="page form" id="checkVin">
+      <form name="addVehicleByVin" ng-submit="vm.addCond()" >
+        <section>
+        <ul>
+          <li>
+            <h1 class="error" ng-if="vm.error_message">{{vm.error_message}}</h1>
+            <small class="error" ng-show="addVehicleByVin.vin.$error.pattern">Please enter a valid VIN Number or Quish VIN Number</small>
+            <input name="vin" class="large" type="text" ng-model="vm.vin" placeholder="Vehicle VIN Number" ng-pattern="vm.VIN_REGEXP" required/>
+          </li>
+           <li>
+    <!--         <button class="na-input-submit blue" type="submit" >Next</button> -->
+             <button type="submit" class="btn" id="checkVinButton">Fetch Vehicle Details</button>
+           </li>
+        </ul>
+        </section>
+      </form>
+      <div ng-include src="'/angular-app/partials/forms/add_vehicle_vin/vehicle_add_by_vin_basic.html'"></div>
+      <div ng-include src="'/angular-app/partials/forms/add_vehicle_vin/vehicle_add_by_vin_details.html'"></div>
 
-</div>
+    </div>
+  </section>
+</section>

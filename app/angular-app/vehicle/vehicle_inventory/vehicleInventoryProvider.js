@@ -1,6 +1,6 @@
 (function () {
 
-    function vehicleInventoryProvider ($http) {
+    function vehicleInventoryProvider ($http, $location) {
 
 
     this.getVehicleByOwnerID = function (callback){
@@ -28,11 +28,10 @@
 			    headers: {'Content-Type': 'application/json'}
   			})
           .success(function (data, status, headers, config) {
-    				console.log("DEBUG => data > " + data);
+    				// console.log("DEBUG => data > " + data);
     				var testData = JSON.parse(data);
 
-    				console.log("DEBUG => testData raw > " + testData);
-    				console.log("DEBUG => testData > " + JSON.stringify(testData));
+    				// console.log("DEBUG => testData > " + JSON.stringify(testData));
     			    callback(null, testData);
     			})
           .error(function (data, status, headers, config) {
@@ -40,8 +39,114 @@
     			});
   		};
 
+
+
+    this.editVehicle = function (editedVehicleData){
+        // console.log('passed updated vehicle', editedVehicleData)
+
+        $http.post('http://api.nationsauction.com/inventory/Vehicle/Update', editedVehicleData)
+          .then(function(response){
+            console.log("vehicle updated!", response)
+          })
+          .catch(function(error){
+            console.log("Unable to Add condition, error: ", error)
+          })
     }
 
-    naBaseApp.service("vehicleInventoryProvider", [ "$http", vehicleInventoryProvider]);
+
+    this.addVehiclePricing = function(vehiclePricingData){
+
+      console.log("Vehicle_add/vehicleProvider lin 6", vehiclePricingData)
+      // $scope.loading=true;
+      $http.post('http://api.nationsauction.com/inventory/Vehicle/Add', vehiclePricingData)
+        .then(function(response){
+          console.log('this is Vehicle Pricing response: ', response)
+          // $scope.loading=false;
+
+          if (response.status === 200 && JSON.parse(response.data).status === "FAIL") {
+            return false
+          } else {
+          }
+
+        })
+        .catch(function(error){
+          console.log("Unable to Add Vehicle Pricing, error: ", error)
+        })
+
+
+    }
+
+    this.addDamageData = function(damageData){
+      // console.log('passed DamageData', damageData)
+
+      $http.post('http://api.nationsauction.com/inventory/Vehicle/DamageAdd', damageData)
+        .then(function(response){
+          console.log("interiorDamageData & exteriorDamageData Posted!", response)
+          if (response.status === 200 && JSON.parse(response.data).status === "FAIL") {
+            return false
+          } else {
+          }
+        })
+        .catch(function(error){
+          console.log("unable to add interior & exterior damage", error)
+        })
+
+    }
+
+
+    this.getAllConditionReports = function (callback){
+
+        var vehicleListData = JSON.stringify({
+          'submitter': "test",
+          'activity': 'getall'
+        })
+
+
+        $http({
+          url: 'http://api.nationsauction.com/inventory/Vehicle/CRGetAll',
+          method: "POST",
+          cache: 'false',
+          data: vehicleListData,
+          headers: {'Content-Type': 'application/json'}
+        })
+          .success(function (data, status, headers, config) {
+            // console.log("DEBUG => data > " + data);
+            var testData = JSON.parse(data);
+
+            // console.log("DEBUG => testData raw > " + testData);
+            // console.log("DEBUG => testData > " + JSON.stringify(testData));
+              callback(null, testData);
+          })
+          .error(function (data, status, headers, config) {
+              callback(data);
+          });
+      };
+
+
+      this.addConditionData = function(conditionData, callback){
+         // console.log('passed conditionDatadata', conditionData)
+         $http({
+           url: 'http://api.nationsauction.com/inventory/Vehicle/CRAdd',
+             method: "POST",
+             cache: 'false',
+             data: conditionData,
+             headers: {'Content-Type': 'application/json'}
+           })
+           .success(function (data, status, headers, config) {
+             var condD = JSON.parse(data)
+               callback(null,condD)
+               $location.path("/index")
+
+           })
+          .error(function (data, status, headers, config) {
+
+              callback(status);
+
+          });
+      }
+
+
+    };
+    naBaseApp.service("vehicleInventoryProvider", [ "$http", "$location", vehicleInventoryProvider]);
 
 })();

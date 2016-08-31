@@ -4,6 +4,7 @@
 	<meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
 
 	<link rel="stylesheet" href="assets/css/app.css">
+  <base href="/"></base>
 </head>
 <body>
 
@@ -11,14 +12,20 @@
     <header class="main" ng-include src="'angular-app/partials/header.html'"></header>
     <section ng-view>
     </section>
-    <footer class="main" ng-include src="'angular-app/partials/footer.html'"></footer>
+<!--    <footer class="main" ng-include src="'angular-app/partials/footer.html'"></footer>-->
     <section class="modal" ng-include src="'angular-app/partials/modals/login.html'"></section>
   </main>
 
   <!-- Script libraries -->
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+
+
+  <!-- <script type='text/javascript' src="library/jQuery.min.js"></script>
   <script type='text/javascript' src="library/angular.min.js"></script>
-  <script type='text/javascript' src="library/angular-route.min.js"></script>
-  <script type='text/javascript' src="library/jQuery.min.js"></script>
+  <script type='text/javascript' src="library/angular-route.min.js"></script> -->
   <script type='text/javascript' src="library/bootstrap.min.js"></script>
 
 
@@ -26,6 +33,7 @@
   <!-- controllers -->
   <script type='text/javascript' src="angular-app/app.js"></script>
   <script type='text/javascript' src="angular-app/main/public.controller.js"></script>
+  <script type='text/javascript'  src="angular-app/partials/modals/modalcontroller.js"></script>
 
   <!-- Dealer Controllers -->
   <script type='text/javascript' src="angular-app/dealer/dealer_signup/dealersignup.controller.js"></script>
@@ -40,6 +48,7 @@
   <script type='text/javascript' src="angular-app/vehicle/vehicle_all/vehicle_all.controller.js"></script>
   <script type='text/javascript' src="angular-app/vehicle/vehicle_add_by_vin/vehicle_addbyvin.controller.js"></script>
   <script type='text/javascript' src="angular-app/vehicle/vehicle_details/vehicle_details.controller.js"></script>
+  <script type='text/javascript' src="angular-app/partials/forms/vehicle_pricing/vehicle_addpricing.controller.js"></script>
 
 
 
@@ -59,6 +68,7 @@
   <script type='text/javascript' src="angular-app/vehicle/vehicle_all/vehicleAllProvider.js"></script>
   <script type='text/javascript' src="angular-app/vehicle/vehicle_add_by_vin/vehicle_addbyvinProvider.js"></script>
   <script type='text/javascript' src="angular-app/vehicle/vehicle_details/vehicle_detailsProvider.js"></script>
+  <script type='text/javascript' src="angular-app/partials/forms/vehicle_pricing/vehicle_addpricing.provider.js"></script>
 
 
 

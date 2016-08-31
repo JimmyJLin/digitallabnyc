@@ -1,6 +1,6 @@
 (function () {
 
-    function vehicleAllProvider ($http) {
+    function vehicleAllProvider($http) {
 
 
     this.getAllVehicle = function (callback){
@@ -19,11 +19,11 @@
           headers: {'Content-Type': 'application/json'}
         })
           .success(function (data, status, headers, config) {
-            console.log("DEBUG => data > " + data);
+            // console.log("DEBUG => data > " + data);
             var testData = JSON.parse(data);
 
-            console.log("DEBUG => testData raw > " + testData);
-            console.log("DEBUG => testData > " + JSON.stringify(testData));
+            // console.log("DEBUG => testData raw > " + testData);
+            // console.log("DEBUG => testData > " + JSON.stringify(testData));
               callback(null, testData);
           })
           .error(function (data, status, headers, config) {

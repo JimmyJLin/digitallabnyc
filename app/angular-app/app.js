@@ -1,6 +1,6 @@
 var naBaseApp = angular.module("naBaseApp", [ "ngRoute", "checklist-model" ])
 
-naBaseApp.config(function ($httpProvider, $routeProvider) {
+naBaseApp.config(function ($httpProvider, $routeProvider, $locationProvider) {
    $httpProvider.interceptors.push('AuthInterceptor')
 
     $routeProvider
@@ -11,10 +11,7 @@ naBaseApp.config(function ($httpProvider, $routeProvider) {
 		})
     .when("/index", {
 			controller: "PublicController",
-			templateUrl: "/angular-app/main/index.html",
-      access:{
-        restricted:false
-      }
+			templateUrl: "/angular-app/main/index.html"
 		})
 
 
@@ -52,11 +49,26 @@ naBaseApp.config(function ($httpProvider, $routeProvider) {
     templateUrl: "/angular-app/vehicle/vehicle_add/addVehicle.html",
     controllerAs: 'vm'
   })
+  .when('/vehicle/pricing/new', {
+    controller: "VehicleAddPricingController",
+    templateUrl: "/angular-app/partials/forms/vehicle_pricing/vehicle_pricing.html",
+    controllerAs: 'vm'
+  })
 
   /* Vehicle Condition Report */
   .when('/vehicle/condition/new', {
     controller: "AddConditionController",
     templateUrl: "/angular-app/vehicle/vehicle_condition/addcondition.html",
+    controllerAs: 'vm'
+  })
+  .when('/vehicles/condition/:conditionID', {
+    controller: "VehiclesInventoryController",
+    templateUrl: "/angular-app/partials/vehicle/condition_report/condition_report_details.html",
+    controllerAs: 'vm'
+  })
+  .when('/vehicle/damage/new', {
+    controller: "VehiclesInventoryController",
+    templateUrl: "/angular-app/partials/vehicle/tabs-partials/itemAddDamages.html",
     controllerAs: 'vm'
   })
 
@@ -96,6 +108,10 @@ naBaseApp.config(function ($httpProvider, $routeProvider) {
 		"/404_page"
 	});
 
+  $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: true
+  });
 });
 
 
@@ -103,7 +119,7 @@ naBaseApp.run(function($rootScope, $location, $window, AuthFactory){
   $rootScope.$on('$routeChangeStart', function(event, nextRoute, currentRoute) {
     if(  nextRoute.access !== undefined && nextRoute.access.restricted && !window.sessionStorage.token && !AuthFactory.isSignedIn ) {
       event.preventDefault();
-      $location.path('#/public/index')
+      $location.path('/public/index')
     }
   });
 })
