@@ -3,7 +3,7 @@
 </header>
 <loading></loading>
 <section class="mdview">
-  <section class="master">
+  <!-- <section class="master">
     <section>
       <section class="form open">
         <h4 tabindex="-1">Filters</h4>
@@ -90,7 +90,7 @@
         </ul>
       </section>
     </section>
-  </section>
+  </section> -->
   <section class="detail list">
 
 
@@ -103,22 +103,24 @@
       </section>-->
 
       <section>
+
         <h2>Unlisted <small>{{notActiveList.length}}</small></h2>
         <ul>
           <li ng-repeat="vehicle in vehicles | filter: {IsActive:false, VIN:search.VIN, Year:search.Year, ItemGuid:search.ItemGuid, Make: search.Make, Model: search.Model, VehicleType:search.VehicleType, InventoryStatus:search.InventoryStatus } | orderBy:sortBy  as notActiveList">
-            <div class="item vehicle" ng-include src="'/angular-app/partials/vehicle/item.html'"></div>
+            <div class="item vehicle" ng-include src="'/angular-app/partials/vehicle/itemList.html'"></div>
           </li>
         </ul>
       </section>
       <section>
         <h2>Listed <small>{{activeList.length}}</small></h2>
-        <ul>
+         <ul>
           <li ng-repeat="vehicle in vehicles | filter: {
             IsActive:true, VIN:search.VIN, Year:search.Year,  ItemGuid:search.ItemGuid , Make: search.Make, Model: search.Model, VehicleType:search.VehicleType, InventoryStatus:search.InventoryStatus ,  IsActive:search.IsActive }  | orderBy:sortBy as activeList">
-            <div class="item vehicle" ng-include src="'/angular-app/partials/vehicle/item.html'"></div>
+            <div class="item vehicle" ng-include src="'/angular-app/partials/vehicle/itemList.html'"></div>
           </li>
         </ul>
       </section>
+
 
   </section>
 </section>

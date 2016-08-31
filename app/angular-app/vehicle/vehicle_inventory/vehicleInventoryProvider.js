@@ -31,7 +31,7 @@
     				// console.log("DEBUG => data > " + data);
     				var testData = JSON.parse(data);
 
-    				// console.log("DEBUG => testData > " + JSON.stringify(testData));
+    				console.log("DEBUG => testData > " + JSON.stringify(testData));
     			    callback(null, testData);
     			})
           .error(function (data, status, headers, config) {
