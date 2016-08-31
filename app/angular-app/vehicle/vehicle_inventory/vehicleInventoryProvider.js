@@ -1,6 +1,6 @@
 (function () {
 
-    function vehicleInventoryProvider ($http) {
+    function vehicleInventoryProvider ($http, $location) {
 
 
     this.getVehicleByOwnerID = function (callback){
@@ -122,7 +122,31 @@
           });
       };
 
+
+      this.addConditionData = function(conditionData, callback){
+         // console.log('passed conditionDatadata', conditionData)
+         $http({
+           url: 'http://api.nationsauction.com/inventory/Vehicle/CRAdd',
+             method: "POST",
+             cache: 'false',
+             data: conditionData,
+             headers: {'Content-Type': 'application/json'}
+           })
+           .success(function (data, status, headers, config) {
+             var condD = JSON.parse(data)
+               callback(null,condD)
+               $location.path("/index")
+
+           })
+          .error(function (data, status, headers, config) {
+
+              callback(status);
+
+          });
+      }
+
+
     };
-    naBaseApp.service("vehicleInventoryProvider", [ "$http", vehicleInventoryProvider]);
+    naBaseApp.service("vehicleInventoryProvider", [ "$http", "$location", vehicleInventoryProvider]);
 
 })();

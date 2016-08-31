@@ -81,9 +81,6 @@ function AddConditionController($scope, $location, addConditionProvider){
   vm.addCond = function(){
 
 
-
-
-
     var conditionData = JSON.stringify({
       'submitter': "submitter",
       'owner': '617a69c3-bd34-445c-a762-1bbcf228f7bb',

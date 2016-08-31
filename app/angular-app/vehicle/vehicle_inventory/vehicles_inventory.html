@@ -106,7 +106,7 @@
         <h2>Unlisted <small>{{notActiveList.length}}</small></h2>
         <ul>
           <li ng-repeat="vehicle in vehicles | filter: {IsActive:false, VIN:search.VIN, Year:search.Year, ItemGuid:search.ItemGuid, Make: search.Make, Model: search.Model, VehicleType:search.VehicleType, InventoryStatus:search.InventoryStatus } | orderBy:sortBy  as notActiveList">
-            <div class="item vehicle" ng-include src="'angular-app/partials/vehicle/item.html'"></div>
+            <div class="item vehicle" ng-include src="'/angular-app/partials/vehicle/item.html'"></div>
           </li>
         </ul>
       </section>
@@ -115,7 +115,7 @@
         <ul>
           <li ng-repeat="vehicle in vehicles | filter: {
             IsActive:true, VIN:search.VIN, Year:search.Year,  ItemGuid:search.ItemGuid , Make: search.Make, Model: search.Model, VehicleType:search.VehicleType, InventoryStatus:search.InventoryStatus ,  IsActive:search.IsActive }  | orderBy:sortBy as activeList">
-            <div class="item vehicle" ng-include src="'angular-app/partials/vehicle/item.html'"></div>
+            <div class="item vehicle" ng-include src="'/angular-app/partials/vehicle/item.html'"></div>
           </li>
         </ul>
       </section>

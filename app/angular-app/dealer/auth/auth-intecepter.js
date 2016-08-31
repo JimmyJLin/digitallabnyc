@@ -34,7 +34,7 @@ function AuthInterceptor($location, $q, $window, AuthFactory){
       if (rejection.status === 401 || rejection.status === 403) {
         delete  $window.sessionStorage.token;
         AuthFactory.isSignedIn =  false;
-        $location.parth('#/public/index')
+        $location.parth('/public/index')
       }
       return $q.reject(rejection);
   }

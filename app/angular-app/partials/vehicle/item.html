@@ -11,8 +11,8 @@
 
   <div class="content">
     <div class="details">
-<!--      <h1 class="title"><a href="#/vehicles/{{ vehicle.ItemGuid }}" class="modal">{{ vehicle.Year }} {{ vehicle.Make }} {{ vehicle.Model }} {{ vehicle.Type }}</a></h1>-->
-      <h1 class="title">{{ vehicle.Year }} {{ vehicle.Make }} {{ vehicle.Model }} {{ vehicle.Type }}</h1>
+      <h1 class="title"><a href="#/vehicles/{{ vehicle.ItemGuid }}" class="modal">{{ vehicle.Year }} {{ vehicle.Make }} {{ vehicle.Model }} {{ vehicle.Type }}</a></h1>
+<!--      <h1 class="title">{{ vehicle.Year }} {{ vehicle.Make }} {{ vehicle.Model }} {{ vehicle.Type }}</h1>-->
 
       <h2>{{ vehicle.Miles }} miles &middot; {{ vehicle.Drive }} &middot; {{ vehicle.Transmission }} &middot; {{ vehicle.Color }} &middot; {{ vehicle.Engine }}</h2>
     </div>
@@ -42,8 +42,6 @@
     </div>
   </div>
 </header>
-<div class="extended">
-  <section class="body">
 
     <!-- <ul data-tabset="na-{{ vehicle.ItemGuid }}-desc" class="htabs flex">
       <li class=""><a href="#na-{{ vehicle.ItemGuid }}-desc">Description</a></li>
@@ -56,40 +54,40 @@
     <my-tabs>
       <my-pane title="Description">
         <div class="pane">
-          <div ng-include src="'angular-app/partials/vehicle/tabs-partials/itemDescription.html'"></div>
+          <div ng-include src="'/angular-app/partials/vehicle/tabs-partials/itemDescription.html'"></div>
         </div>
       </my-pane>
       <my-pane title="Options">
         <div class="pane">
-          <div ng-include src="'angular-app/partials/vehicle/tabs-partials/itemOptions.html'"></div>
+          <div ng-include src="'/angular-app/partials/vehicle/tabs-partials/itemOptions.html'"></div>
         </div>
       </my-pane>
       <my-pane title="Condition Report">
         <div class="pane">
-          <div ng-include src="'angular-app/partials/vehicle/tabs-partials/itemConditionReport.html'"></div>
+          <div ng-include src="'/angular-app/partials/vehicle/tabs-partials/itemConditionReport.html'"></div>
         </div>
       </my-pane>
       <my-pane title="Notes">
         <div class="pane">
-          <div ng-include src="'angular-app/partials/vehicle/tabs-partials/itemNotes.html'"></div>
+          <div ng-include src="'/angular-app/partials/vehicle/tabs-partials/itemNotes.html'"></div>
         </div>
       </my-pane>
 
       <my-pane title="Add Condition">
         <div class="pane">
-          <div ng-include src="'angular-app/partials/vehicle/tabs-partials/itemAddConditionReport.html'"></div>
+          <div ng-include src="'/angular-app/partials/vehicle/tabs-partials/itemAddConditionReport.html'"></div>
         </div>
       </my-pane>
 
       <my-pane title="Add Damage">
         <div class="pane">
-          <div ng-include src="'angular-app/partials/vehicle/tabs-partials/itemAddDamages.html'"></div>
+          <div ng-include src="'/angular-app/partials/vehicle/tabs-partials/itemAddDamages.html'"></div>
         </div>
       </my-pane>
 
       <my-pane title="Add Pricing">
         <div class="pane">
-          <div ng-include src="'angular-app/partials/forms/vehicle_pricing/vehicle_pricing.html'"></div>
+          <div ng-include src="'/angular-app/partials/forms/vehicle_pricing/vehicle_pricing.html'"></div>
         </div>
       </my-pane>
     </my-tabs>
