@@ -1760,3 +1760,11 @@ li:first-child .item.active {
 	0%{ opacity:1; }
 	100%{ opacity:0;}
 }
+
+.hide{
+  display: none;
+}
+
+#thepageview{
+  padding-left:300px;
+}

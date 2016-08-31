@@ -1,5 +1,9 @@
-<section class="secondModule"></section>
-  <div class="toolbar inline">
-    <h1><a ng-href="/inventory/vehicles/"+{{vehicle.itemGuid}}>{{ vehicle.Year }} {{ vehicle.Make }} {{ vehicle.Model }}</a></h1>
-  </div>
-</section>
+  <section>
+    <div   id="{{ vehicle.itemGuid }}" class="toolbar inline" id="detailedvehicle">
+      <h1>{{ vehicle.Year }} {{ vehicle.Make }} {{ vehicle.Model }}</h1>
+    </div>
+  </section>
+
+  <section id="details{{ vehicle.itemGuid }}" class="" style="width:300px;">
+     <div ng-include src="'/angular-app/partials/vehicle/newitem.html'"></div>
+  </section>

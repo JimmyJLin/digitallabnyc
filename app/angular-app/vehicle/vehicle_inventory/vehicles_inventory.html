@@ -2,7 +2,7 @@
   <h1>{{ vm.title }} <small>{{vehicles.length}}</small></h1>
 </header>
 <loading></loading>
-<section class="mdview">
+<!-- <section class="mdview"> -->
   <!-- <section class="master">
     <section>
       <section class="form open">
@@ -58,12 +58,12 @@
           </select>
         </li>
 
-        <!-- Marketplace Status -->
-        <!-- <select class="na-select" ng-model="search.IsActive">
+         Marketplace Status
+        <select class="na-select" ng-model="search.IsActive">
           <option value="">All</option>
           <option value="true">In Market</option>
           <option value="false">Not in the Market</option>
-        </select> -->
+        </select>
       </ul>
       </section>
       <section class="form">
@@ -91,7 +91,7 @@
       </section>
     </section>
   </section> -->
-  <section class="detail list">
+  <!-- <section> -->
 
 
     <!--  <section>
@@ -102,7 +102,7 @@
         </ul>
       </section>-->
 
-      <section>
+      <section class="mdview">
 
         <h2>Unlisted <small>{{notActiveList.length}}</small></h2>
         <ul>
@@ -110,8 +110,8 @@
             <div class="item vehicle" ng-include src="'/angular-app/partials/vehicle/itemList.html'"></div>
           </li>
         </ul>
-      </section>
-      <section>
+
+
         <h2>Listed <small>{{activeList.length}}</small></h2>
          <ul>
           <li ng-repeat="vehicle in vehicles | filter: {

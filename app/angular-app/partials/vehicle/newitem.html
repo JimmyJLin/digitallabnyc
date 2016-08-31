@@ -1,0 +1,55 @@
+  <figure>
+    <i class="image" style="background-image: url('http://placehold.it/300x250');"></i>
+  </figure>
+
+    <!-- <ul data-tabset="na-{{ vehicle.ItemGuid }}-desc" class="htabs flex">
+      <li class=""><a href="#na-{{ vehicle.ItemGuid }}-desc">Description</a></li>
+      <li><a href="#na-{{ vehicle.ItemGuid }}-options">Options</a></li>
+      <li><a href="#na-{{ vehicle.ItemGuid }}-cr">Condition Report</a></li>
+      <li><a href="#na-{{ vehicle.ItemGuid }}-notes">Notes</a></li>
+    </ul> -->
+
+
+    <my-tabs>
+      <my-pane title="Description">
+        <div class="pane">
+          <div ng-include src="'/angular-app/partials/vehicle/tabs-partials/itemDescription.html'"></div>
+        </div>
+      </my-pane>
+      <my-pane title="Options">
+        <div class="pane">
+          <div ng-include src="'/angular-app/partials/vehicle/tabs-partials/itemOptions.html'"></div>
+        </div>
+      </my-pane>
+      <my-pane title="Condition Report">
+        <div class="pane">
+          <div ng-include src="'/angular-app/partials/vehicle/tabs-partials/itemConditionReport.html'"></div>
+        </div>
+      </my-pane>
+      <my-pane title="Notes">
+        <div class="pane">
+          <div ng-include src="'/angular-app/partials/vehicle/tabs-partials/itemNotes.html'"></div>
+        </div>
+      </my-pane>
+
+      <my-pane title="Add Condition">
+        <div class="pane">
+          <div ng-include src="'/angular-app/partials/vehicle/tabs-partials/itemAddConditionReport.html'"></div>
+        </div>
+      </my-pane>
+
+      <my-pane title="Add Damage">
+        <div class="pane">
+          <div ng-include src="'/angular-app/partials/vehicle/tabs-partials/itemAddDamages.html'"></div>
+        </div>
+      </my-pane>
+
+      <my-pane title="Add Pricing">
+        <div class="pane">
+          <div ng-include src="'/angular-app/partials/forms/vehicle_pricing/vehicle_pricing.html'"></div>
+        </div>
+      </my-pane>
+    </my-tabs>
+
+  </section>
+</div>
