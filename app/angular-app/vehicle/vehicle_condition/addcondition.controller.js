@@ -80,12 +80,7 @@ function AddConditionController($scope, $location, addConditionProvider){
 
   vm.addCond = function(){
 
-    var damageData = JSON.stringify({
-      'submitter': "submitter",
-      'VIN': vm.vin,
-      'damages': $scope.damageReports,
-      'activity': "cradd"
-    })
+
 
 
 
@@ -127,18 +122,26 @@ function AddConditionController($scope, $location, addConditionProvider){
       'floorMats': vm.floorMats,
       'activity': 'add'
     })
-    console.log(conditionData)
-    console.log(damageData)
+    // console.log(conditionData)
+    // console.log(damageData)
+    // TEST VIN - 1GNEK13Z34J221437
 
-    var status = addConditionProvider.addConditionData(conditionData)
-      if (!status) {
-        vm.error_message_submit = "Vehicle Condition Report NOT posted"
-      } else {
+    var crGUID;
+    // var crGuid = addConditionProvider.addConditionData(conditionData)
+    addConditionProvider.addConditionData( conditionData, function(err,condD){
+      var crGUID = condD.message;
 
-      }
+      var damageData = JSON.stringify({
+        'submitter': "submitter",
+        'crGuid': crGUID,
+        'damages': $scope.damageReports,
+        'activity': "cradd"
+      })
 
-    // addConditionProvider.addConditionData(conditionData)
-    addConditionProvider.addDamageData(damageData)
+      addConditionProvider.addDamageData(damageData)
+
+    })
+
   }
 
 }

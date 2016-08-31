@@ -2,28 +2,48 @@
 
     function addConditionProvider ($http, $location) {
 
-      this.addConditionData = function(conditionData){
-        console.log('passed conditionDatadata', conditionData)
-
-        $http.post('http://api.nationsauction.com/inventory/Vehicle/CRAdd', conditionData)
-          .then(function(response){
-            // console.log("Condition posted!", response)
-
-            if (response.status === 200 && JSON.parse(response.data).status === "SUCCESS") {
-              // return response.data
-              console.log("Condition Report Posted!", response)
-
-              $location.path("/index")
-            } else {
-              console.log("Conditioning Report NOT posted!!!", error)
-            }
-
+      this.addConditionData = function(conditionData, callback){
+        // console.log('passed conditionDatadata', conditionData)
+        $http({
+          url: 'http://api.nationsauction.com/inventory/Vehicle/CRAdd',
+            method: "POST",
+            cache: 'false',
+            data: conditionData,
+            headers: {'Content-Type': 'application/json'}
           })
-          .catch(function(error){
-            console.log("Unable to Add condition, error: ", error)
+          .success(function (data, status, headers, config) {
+            var condD = JSON.parse(data)
+              callback(null,condD)
           })
+         .error(function (data, status, headers, config) {
+
+             callback(status);
+
+         });
 
       }
+
+      // $http({
+      //   url: 'http://api.nationsauction.com/inventory/APIInventory/GetVehicleAggregateDetailByVIN',
+      //   method: "POST",
+      //   cache: 'false',
+      //   data: getbyVinData,
+      //   headers: {'Content-Type': 'application/json'}
+      // })
+      //   .success(function (data, status, headers, config) {
+      //     var vehicledata = JSON.parse(data)
+      //       callback(null,vehicledata)
+      //   })
+      //   .error(function (data, status, headers, config) {
+      //
+      //       callback(status);
+      //
+      //   });
+      // };
+
+
+
+
 
       this.addDamageData = function(damageData){
         console.log('passed DamageData', damageData)
