@@ -11,6 +11,8 @@ function VehicleAddPricingController($scope, vehiclePricingProvider){
       'vin': "1GNEK13Z34J221437",
       'vehicleCost': vm.vehicleCost,
       'vehiclePurchaseDate': vm.purchaseDate,
+      'reservePrice': vm.reservePrice,
+      'startingBid': vm.startingBid,
       'activity': 'add'
 
     })

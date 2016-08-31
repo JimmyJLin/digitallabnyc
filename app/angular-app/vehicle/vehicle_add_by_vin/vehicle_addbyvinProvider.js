@@ -34,7 +34,6 @@
         $http.post('http://api.nationsauction.com/inventory/Vehicle/Add', addVehicleData)
           .then(function(response){
             console.log('this is the response', response)
-
             if (response.status === 200 && JSON.parse(response.data).status === "FAIL") {
               return false
               $location.path("/index")

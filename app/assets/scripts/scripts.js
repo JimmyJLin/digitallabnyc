@@ -3,7 +3,17 @@
 
   $(document).ready(function() {
     console.log("Hello from scripts")
-
+    
+    $(window).scroll(function(){
+      var sticky = $('.master'),
+          scroll = $(window).scrollTop();
+    
+      if (scroll >= 1) sticky.addClass('fixed');
+      else sticky.removeClass('fixed');
+      if (scroll >= window.innerHeight) sticky.addClass('off');
+      else sticky.removeClass('off');
+    });
+    
     // tab control
     jQuery(function() {
       $('*[data-tabset]').each(function() {

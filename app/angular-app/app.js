@@ -1,6 +1,6 @@
 var naBaseApp = angular.module("naBaseApp", [ "ngRoute", "checklist-model" ])
 
-naBaseApp.config(function ($httpProvider, $routeProvider) {
+naBaseApp.config(function ($httpProvider, $routeProvider, $locationProvider) {
    $httpProvider.interceptors.push('AuthInterceptor')
 
     $routeProvider
@@ -111,6 +111,10 @@ naBaseApp.config(function ($httpProvider, $routeProvider) {
 		"/404_page"
 	});
 
+  // $locationProvider.html5Mode({
+  //   enabled: true,
+  //   requireBase: false
+  // });
 });
 
 

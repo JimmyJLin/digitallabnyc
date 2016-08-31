@@ -95,6 +95,8 @@ function get_vehicles(){
       'vin': vin,
       'vehicleCost': vm.vehicleCost,
       'vehiclePurchaseDate': vm.purchaseDate,
+      'reservePrice': vm.reservePrice,
+      'startingBid': vm.startingBid,
       'activity': 'add'
 
     })
